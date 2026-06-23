@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japão 2026 · Roteiro da viagem</title>
+    <meta
+      name="description"
+      content="Plano da viagem ao Japão 2026 — dois casais, 22 dias, oeste a leste."
+    />
+
+    <!-- Tipografia: serif para títulos + sans para corpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============ NAVEGAÇÃO FIXA ============ -->
+    <nav class="nav">
+      <div class="container nav__inner">
+        <div class="nav__brand">
+          <span class="torii">⛩</span>
+          <span id="brand-title">Japão 2026</span>
+        </div>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#visao">Visão geral</a></li>
+          <li><a href="#roteiro">Roteiro</a></li>
+          <li><a href="#voos">Voos</a></li>
+          <li><a href="#orcamento">Orçamento</a></li>
+          <li><a href="#ficar">Onde ficar</a></li>
+          <li><a href="#logistica">Logística</a></li>
+          <li><a href="#celebracao">Celebração</a></li>
+          <li><a href="#pendencias">Pendências</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <!-- Cena de fundo: Fuji estilizado em SVG -->
+      <svg
+        class="hero__scene"
+        viewBox="0 0 1200 600"
+        preserveAspectRatio="xMidYMax slice"
+        aria-hidden="true"
+      >
+        <!-- Monte Fuji -->
+        <polygon points="600,180 870,520 330,520" fill="#1d2c4a" opacity="0.9" />
+        <polygon points="600,180 660,255 600,235 540,255" fill="#f7f0e4" opacity="0.5" />
+        <!-- Colinas -->
+        <path d="M0,520 Q300,470 600,520 T1200,520 L1200,600 L0,600 Z" fill="#16243e" />
+      </svg>
+
+      <div class="container hero__content">
+        <div class="hero__sun"></div>
+        <h1 id="hero-title">Japão 2026</h1>
+        <p class="hero__sub" id="hero-sub"></p>
+        <p class="hero__period" id="hero-period"></p>
+
+        <!-- Contagem regressiva ao vivo (preenchida pelo JS) -->
+        <div class="countdown" id="countdown"></div>
+
+        <p class="hero__phrase" id="hero-phrase"></p>
+
+        <!-- Os 4 viajantes -->
+        <div class="travelers" id="hero-travelers"></div>
+      </div>
+    </header>
+
+    <!-- ============ VISÃO GERAL ============ -->
+    <section class="section section--dark" id="visao">
+      <div class="container">
+        <div class="section__eyebrow">A estrutura</div>
+        <h2 class="section__title">Visão geral</h2>
+        <p class="section__intro">
+          Cada casal faz o que mais importa pra ele; todos compartilham
+          <strong>3 picos</strong>: a abertura nos Alpes, o reencontro/aniversário no
+          Fuji e o final em Tóquio. A separação acontece só na semana da China.
+        </p>
+
+        <div class="cards moments" id="moments"></div>
+
+        <h3 style="margin-top: 40px">Rota oeste → leste</h3>
+        <div class="route" id="route"></div>
+      </div>
+    </section>
+
+    <!-- ============ ROTEIRO DIA A DIA ============ -->
+    <section class="section" id="roteiro">
+      <div class="container">
+        <div class="section__eyebrow">Dia a dia</div>
+        <h2 class="section__title">Roteiro</h2>
+        <p class="section__intro">
+          Linha do tempo da viagem. Na semana separada (25–29/11), use as abas para ver
+          só o caminho de cada casal.
+        </p>
+
+        <button class="print-btn" id="print-btn">🖨 Imprimir / salvar PDF</button>
+
+        <!-- Filtro de abas -->
+        <div class="filters">
+          <button class="filter-btn is-active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="felipana">Felipana</button>
+          <button class="filter-btn" data-filter="thamandro">Thamandro</button>
+        </div>
+        <p class="filter-note">
+          🟡 Felipana (clássico) · 🔴 Thamandro (China) · pontos dourados/vermelhos na
+          linha indicam de quem é cada dia.
+        </p>
+
+        <ul class="timeline" id="timeline"></ul>
+      </div>
+    </section>
+
+    <!-- ============ VOOS ============ -->
+    <section class="section section--dark" id="voos">
+      <div class="container">
+        <div class="section__eyebrow">Trechos aéreos</div>
+        <h2 class="section__title">Voos</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Voo</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Trecho</th>
+              </tr>
+            </thead>
+            <tbody id="voos-body"></tbody>
+          </table>
+        </div>
+        <p class="note" id="voos-nota"></p>
+      </div>
+    </section>
+
+    <!-- ============ ORÇAMENTO ============ -->
+    <section class="section" id="orcamento">
+      <div class="container">
+        <div class="section__eyebrow">Quanto custa</div>
+        <h2 class="section__title">Orçamento</h2>
+        <p class="section__intro">
+          Estimativas (variam conforme as escolhas). Diária base por pessoa, conforto
+          médio (hotel 3–4★).
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Por dia (¥)</th>
+                <th>Por dia (R$)</th>
+              </tr>
+            </thead>
+            <tbody id="orc-body"></tbody>
+            <tfoot>
+              <tr id="orc-total"></tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="note">Base de 22 dias: <span id="orc-base"></span></p>
+
+        <!-- Conversor de câmbio ¥ → R$ -->
+        <div class="fx">
+          <label for="fx-input"><strong>¥ → R$</strong></label>
+          <input type="number" id="fx-input" value="10000" min="0" step="100" />
+          <span class="fx__result" id="fx-result"></span>
+          <span class="note" id="fx-taxa" style="width: 100%"></span>
+        </div>
+
+        <h3 style="margin-top: 36px">Custos pontuais a somar (por pessoa)</h3>
+        <ul class="bullet-list" id="orc-pontuais"></ul>
+
+        <h3 style="margin-top: 28px">Estimativa total (fora passagem internacional)</h3>
+        <ul class="bullet-list" id="orc-totais"></ul>
+      </div>
+    </section>
+
+    <!-- ============ ONDE FICAR ============ -->
+    <section class="section section--dark" id="ficar">
+      <div class="container">
+        <div class="section__eyebrow">Hospedagem</div>
+        <h2 class="section__title">Onde ficar</h2>
+        <p class="section__intro">Bairros recomendados por cidade.</p>
+        <div class="cards tips" id="onde-ficar"></div>
+
+        <h3 style="margin-top: 40px">Contagem de noites</h3>
+        <div class="nights" id="nights"></div>
+      </div>
+    </section>
+
+    <!-- ============ LOGÍSTICA & DICAS ============ -->
+    <section class="section" id="logistica">
+      <div class="container">
+        <div class="section__eyebrow">Como se vira por lá</div>
+        <h2 class="section__title">Logística &amp; dicas</h2>
+        <div class="cards tips" id="logistica-cards"></div>
+      </div>
+    </section>
+
+    <!-- ============ TOQUES ESPECIAIS ============ -->
+    <section class="section section--dark" id="celebracao">
+      <div class="container">
+        <div class="section__eyebrow">A celebração</div>
+        <h2 class="section__title">Toques especiais</h2>
+        <ul class="bullet-list" id="toques"></ul>
+      </div>
+    </section>
+
+    <!-- ============ PENDÊNCIAS ============ -->
+    <section class="section" id="pendencias">
+      <div class="container">
+        <div class="section__eyebrow">A decidir</div>
+        <h2 class="section__title">Decisões em aberto</h2>
+        <p class="section__intro">
+          Marque conforme forem resolvidas — fica salvo neste navegador.
+        </p>
+        <ul class="checklist" id="pendencias-list"></ul>
+      </div>
+    </section>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="footer">
+      <div class="torii">⛩</div>
+      <p>Japão 2026 · Felipana &amp; Thamandro · feito com carinho 🇯🇵</p>
+    </footer>
+
+    <!-- Dados primeiro (fonte de verdade), depois a lógica -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
