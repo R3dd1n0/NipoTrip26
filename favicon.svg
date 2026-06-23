@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fundo índigo arredondado -->
+  <rect width="64" height="64" rx="14" fill="#121E36" />
+  <!-- Sol nascente -->
+  <circle cx="32" cy="15" r="6" fill="#E8A846" />
+  <!-- Torii (vermelho) -->
+  <g fill="#D83A3A">
+    <rect x="9" y="24" width="46" height="6" rx="2" />
+    <rect x="14" y="32" width="36" height="4" rx="1.5" />
+    <rect x="20" y="30" width="6" height="26" rx="1.5" />
+    <rect x="38" y="30" width="6" height="26" rx="1.5" />
+  </g>
+</svg>

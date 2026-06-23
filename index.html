@@ -9,12 +9,23 @@
       content="Plano da viagem ao Japão 2026 — dois casais, 22 dias, oeste a leste."
     />
 
+    <!-- Favicon (torii) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
     <!-- Tipografia: serif para títulos + sans para corpo -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- Leaflet (mapa real, OpenStreetMap) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
     />
 
     <link rel="stylesheet" href="styles.css" />
@@ -103,8 +114,15 @@
           mais claros.
         </p>
 
-        <!-- O SVG do mapa é montado pelo app.js a partir de TRIP.mapa -->
-        <div class="map-panel" id="map-svg"></div>
+        <!-- Filtro do mapa (sincronizado com o roteiro abaixo) -->
+        <div class="filters" id="map-filters">
+          <button class="filter-btn is-active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="felipana">Felipana</button>
+          <button class="filter-btn" data-filter="thamandro">Thamandro</button>
+        </div>
+
+        <!-- Mapa real (Leaflet) montado pelo app.js a partir de TRIP.mapa -->
+        <div class="map-panel"><div id="trip-map"></div></div>
 
         <!-- Legenda -->
         <ul class="map-legend" id="map-legend">
@@ -258,6 +276,13 @@
       <div class="torii">⛩</div>
       <p>Japão 2026 · Felipana &amp; Thamandro · feito com carinho 🇯🇵</p>
     </footer>
+
+    <!-- Leaflet (mapa real) -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
     <!-- Dados primeiro (fonte de verdade), depois a lógica -->
     <script src="data.js"></script>

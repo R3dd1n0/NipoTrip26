@@ -100,116 +100,101 @@ function renderOverview() {
   });
 }
 
-/* ---------------- MAPA DA ROTA (SVG) ----------------
-   Projeta lat/lon reais no viewBox e desenha contornos decorativos,
-   rotas e marcadores a partir de TRIP.mapa. */
+/* ---------------- MAPA DA ROTA (Leaflet + OpenStreetMap) ----------------
+   Plota as cidades e rotas de TRIP.mapa num mapa real e interativo,
+   usando as coordenadas reais (lat/lon). Não precisa de chave de API. */
+
+// Cores por grupo (boa leitura sobre as tiles claras do OpenStreetMap)
+const CORES = {
+  comum: "#16243E", // índigo — trechos com todos
+  felipana: "#E8821E", // dourado/laranja — clássico
+  thamandro: "#D02B2B", // vermelho — China
+  fuji: "#E8821E", // reencontro
+};
+
+let leafletMap = null;
+// Camadas agrupadas por "grupo" para o filtro ligar/desligar
+const mapLayers = { comum: [], felipana: [], thamandro: [], fuji: [] };
+
 function renderMapa() {
   const m = TRIP.mapa;
-  if (!m) return;
-  const v = m.view;
+  if (!m || typeof L === "undefined") return; // Leaflet ainda não carregou
 
-  // Projeção equiretangular simples (oeste→leste, sul→norte)
-  const fx = (lon) =>
-    v.padX + ((lon - v.lonMin) / (v.lonMax - v.lonMin)) * (v.w - 2 * v.padX);
-  const fy = (lat) =>
-    v.padTop +
-    ((v.latMax - lat) / (v.latMax - v.latMin)) * (v.h - v.padTop - v.padBottom);
-
-  // Dicionário key -> {x, y, ...}
   const byKey = {};
-  m.cidades.forEach((c) => {
-    byKey[c.key] = Object.assign({}, c, { x: fx(c.lon), y: fy(c.lat) });
+  m.cidades.forEach((c) => (byKey[c.key] = c));
+
+  leafletMap = L.map("trip-map", {
+    scrollWheelZoom: false, // evita "prender" o scroll da página
+    zoomControl: true,
   });
 
-  // Cores por grupo (linhas e marcadores)
-  const cor = {
-    comum: "#F7F0E4", // creme — trechos compartilhados
-    felipana: "#E8A846", // dourado
-    thamandro: "#D83A3A", // vermelho torii
-    fuji: "#E8A846",
-  };
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(leafletMap);
 
-  // --- Rotas (desenhadas antes dos pontos, para ficarem por baixo) ---
-  let rotasSVG = "";
+  // --- Rotas (linhas) ---
   m.rotas.forEach((r) => {
-    const pts = r.pontos
-      .map((k) => byKey[k])
-      .filter(Boolean)
-      .map((c) => `${c.x.toFixed(1)},${c.y.toFixed(1)}`)
-      .join(" ");
-    const c = cor[r.grupo] || "#F7F0E4";
-    const dash = r.voo ? 'stroke-dasharray="2 8" stroke-linecap="round"' : "";
-    const op = r.tbd ? 0.45 : 0.9;
-    const w = r.voo ? 2 : 3;
-    rotasSVG += `<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linejoin="round" opacity="${op}" ${dash} />`;
+    const latlngs = r.pontos
+      .filter((k) => byKey[k])
+      .map((k) => [byKey[k].lat, byKey[k].lon]);
+    const pl = L.polyline(latlngs, {
+      color: CORES[r.grupo] || "#16243E",
+      weight: r.voo ? 3 : 4,
+      opacity: r.tbd ? 0.45 : 0.9,
+      dashArray: r.voo ? "6 10" : null, // tracejado = voo
+    });
+    pl.addTo(leafletMap);
+    mapLayers[r.grupo].push(pl);
   });
 
-  // --- Marcadores + rótulos ---
-  let pontosSVG = "";
+  // --- Marcadores (com rótulo fixo) ---
   m.cidades.forEach((c) => {
-    const p = byKey[c.key];
-    const cc = cor[c.grupo] || "#F7F0E4";
-    const rot = c.rotulo || { dx: 10, dy: 4, anchor: "start" };
-    const dashRing = c.tbd ? 'stroke-dasharray="3 3"' : "";
-
-    // Linha-guia ligando o ponto ao rótulo afastado (cluster do Japão)
-    if (rot.linha) {
-      pontosSVG += `<line x1="${p.x.toFixed(1)}" y1="${p.y.toFixed(
-        1
-      )}" x2="${(p.x + rot.dx).toFixed(1)}" y2="${(p.y + rot.dy - 4).toFixed(
-        1
-      )}" stroke="rgba(247,240,228,0.35)" stroke-width="1" />`;
-    }
-
-    if (c.grupo === "fuji") {
-      // Marcador especial do reencontro: estrela dourada
-      pontosSVG += estrela(p.x, p.y, 9, cc);
-    } else {
-      pontosSVG += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(
-        1
-      )}" r="6" fill="${cc}" stroke="#121E36" stroke-width="2" ${dashRing} />`;
-    }
-
-    pontosSVG += `<text x="${(p.x + rot.dx).toFixed(1)}" y="${(
-      p.y + rot.dy
-    ).toFixed(1)}" text-anchor="${rot.anchor}" class="map-label${
-      c.tbd ? " is-tbd" : ""
-    }">${esc(c.nome)}</text>`;
+    const mk = L.circleMarker([c.lat, c.lon], {
+      radius: c.grupo === "fuji" ? 9 : 7,
+      color: "#ffffff",
+      weight: 2,
+      fillColor: CORES[c.grupo] || "#16243E",
+      fillOpacity: 1,
+    });
+    mk.bindTooltip(c.nome, {
+      permanent: true,
+      direction: "right",
+      offset: [8, 0],
+      className: "map-tip" + (c.tbd ? " is-tbd" : ""),
+    });
+    mk.bindPopup("<strong>" + esc(c.nome) + "</strong>");
+    mk.addTo(leafletMap);
+    mapLayers[c.grupo].push(mk);
   });
 
-  // --- Contornos decorativos (ajustados aos limites `view` atuais) ---
-  const china =
-    '<path d="M120,90 L250,110 L300,250 L330,360 L320,470 L250,510 L140,500 L70,400 L60,260 L90,150 Z" fill="#1d2c4a" stroke="rgba(247,240,228,0.12)" stroke-width="1.5" />';
-  const japao =
-    '<ellipse cx="747" cy="308" rx="168" ry="52" transform="rotate(-21 747 308)" fill="#1d2c4a" stroke="rgba(247,240,228,0.12)" stroke-width="1.5" />';
+  // Enquadra todas as cidades
+  const bounds = L.latLngBounds(m.cidades.map((c) => [c.lat, c.lon]));
+  leafletMap.fitBounds(bounds, { padding: [40, 40] });
 
-  const svg =
-    `<svg viewBox="0 0 ${v.w} ${v.h}" class="map-svg" role="img" ` +
-    `aria-label="Mapa da rota pelo Japão e China" preserveAspectRatio="xMidYMid meet">` +
-    `<rect x="0" y="0" width="${v.w}" height="${v.h}" fill="#16243E" />` +
-    china +
-    japao +
-    `<text x="175" y="300" class="map-region">CHINA</text>` +
-    `<text x="770" y="430" class="map-region">JAPÃO</text>` +
-    rotasSVG +
-    pontosSVG +
-    `</svg>`;
+  // Recalcula o tamanho após o layout assentar
+  setTimeout(() => leafletMap.invalidateSize(), 250);
 
-  document.getElementById("map-svg").innerHTML = svg;
+  aplicarFiltroMapa();
 }
 
-/* Gera o path de uma estrela de 5 pontas centrada em (cx, cy). */
-function estrela(cx, cy, r, fill) {
-  let pts = "";
-  for (let i = 0; i < 10; i++) {
-    const raio = i % 2 === 0 ? r : r * 0.45;
-    const ang = (Math.PI / 5) * i - Math.PI / 2;
-    pts += `${(cx + raio * Math.cos(ang)).toFixed(1)},${(
-      cy +
-      raio * Math.sin(ang)
-    ).toFixed(1)} `;
-  }
-  return `<polygon points="${pts.trim()}" fill="${fill}" stroke="#121E36" stroke-width="1.5" />`;
+/* Liga/desliga camadas do mapa conforme o filtro de casal.
+   "comum" e "fuji" (trechos com todos) ficam sempre visíveis. */
+function aplicarFiltroMapa() {
+  if (!leafletMap) return;
+  const mostra = (grupo) => {
+    if (filtroAtual === "todos") return true;
+    if (grupo === "comum" || grupo === "fuji") return true;
+    return grupo === filtroAtual;
+  };
+  Object.keys(mapLayers).forEach((g) => {
+    mapLayers[g].forEach((layer) => {
+      const visivel = leafletMap.hasLayer(layer);
+      if (mostra(g) && !visivel) layer.addTo(leafletMap);
+      else if (!mostra(g) && visivel) leafletMap.removeLayer(layer);
+    });
+  });
 }
 
 /* ---------------- ROTEIRO (timeline + filtro) ---------------- */
@@ -259,6 +244,10 @@ function renderRoteiro() {
    "Todos" mostra tudo; "felipana"/"thamandro" mostram itens "todos"
    + os do casal escolhido (esconde apenas o caminho do outro casal). */
 function aplicarFiltro() {
+  // Marca o estado no container para o CSS realçar/atenuar os dias
+  const tl = document.getElementById("timeline");
+  if (tl) tl.dataset.filtro = filtroAtual;
+
   document.querySelectorAll(".tl-item").forEach((item) => {
     const quem = item.dataset.quem;
     let mostra = true;
@@ -282,16 +271,21 @@ function aplicarFiltro() {
   });
 }
 
+/* Define o filtro atual e sincroniza TUDO: estado dos botões (todos os
+   grupos de abas), timeline e mapa. */
+function setFilter(value) {
+  filtroAtual = value;
+  document.querySelectorAll(".filter-btn").forEach((b) => {
+    b.classList.toggle("is-active", b.dataset.filter === value);
+  });
+  aplicarFiltro();
+  aplicarFiltroMapa();
+}
+
 function setupFiltros() {
+  // Vale para as abas do roteiro e as do mapa (mesmas classes)
   document.querySelectorAll(".filter-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach((b) => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-      filtroAtual = btn.dataset.filter;
-      aplicarFiltro();
-    });
+    btn.addEventListener("click", () => setFilter(btn.dataset.filter));
   });
 }
 
@@ -393,10 +387,29 @@ function renderToques() {
 }
 
 /* ---------------- PENDÊNCIAS (checklist) ----------------
-   Estado salvo em localStorage para persistir entre visitas. */
+   Estado salvo em localStorage para persistir entre visitas.
+   Os acessos são protegidos: se o navegador bloquear o armazenamento,
+   o checklist continua funcionando (só não persiste). */
+const storage = {
+  ler() {
+    try {
+      return JSON.parse(localStorage.getItem("nipo-checklist") || "{}");
+    } catch (e) {
+      return {};
+    }
+  },
+  gravar(obj) {
+    try {
+      localStorage.setItem("nipo-checklist", JSON.stringify(obj));
+    } catch (e) {
+      /* armazenamento indisponível — ignora */
+    }
+  },
+};
+
 function renderPendencias() {
   const ul = document.getElementById("pendencias-list");
-  const salvos = JSON.parse(localStorage.getItem("nipo-checklist") || "{}");
+  const salvos = storage.ler();
 
   TRIP.pendencias.forEach((texto, i) => {
     const li = el("li", "check-item");
@@ -409,9 +422,9 @@ function renderPendencias() {
     const input = li.querySelector("input");
     input.addEventListener("change", () => {
       li.classList.toggle("is-done", input.checked);
-      const atual = JSON.parse(localStorage.getItem("nipo-checklist") || "{}");
+      const atual = storage.ler();
       atual[i] = input.checked;
-      localStorage.setItem("nipo-checklist", JSON.stringify(atual));
+      storage.gravar(atual);
     });
     ul.appendChild(li);
   });

@@ -384,44 +384,48 @@ svg {
   font-weight: 700;
 }
 
-/* ---------- Mapa da rota ---------- */
+/* ---------- Mapa da rota (Leaflet) ---------- */
 .map-panel {
-  background: #16243e;
   border-radius: var(--radius);
-  padding: 8px;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.map-svg {
-  display: block;
+#trip-map {
   width: 100%;
-  height: auto;
+  height: 480px;
+  background: #aadaff; /* tom de "mar" enquanto as tiles carregam */
 }
 
-/* Textos dentro do SVG */
-.map-label {
+@media (max-width: 720px) {
+  #trip-map {
+    height: 380px;
+  }
+}
+
+.leaflet-container {
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 600;
-  fill: var(--cream);
-  paint-order: stroke;
-  stroke: #121e36;
-  stroke-width: 3px; /* contorno p/ leitura sobre o mar */
 }
 
-.map-label.is-tbd {
-  fill: #f0c98a;
+/* Rótulos fixos das cidades sobre o mapa */
+.map-tip {
+  background: var(--indigo);
+  color: var(--cream);
+  border: 1px solid rgba(247, 240, 228, 0.25);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 2px 7px;
+  box-shadow: var(--shadow);
+}
+.map-tip.is-tbd {
+  color: #f0c98a;
   font-style: italic;
 }
-
-.map-region {
-  font-family: var(--serif);
-  font-size: 34px;
-  font-weight: 700;
-  fill: rgba(247, 240, 228, 0.12);
-  letter-spacing: 0.18em;
-  text-anchor: middle;
+/* Esconde a setinha do tooltip para um visual mais limpo */
+.map-tip.leaflet-tooltip-right::before,
+.map-tip.leaflet-tooltip-left::before {
+  display: none;
 }
 
 /* Legenda do mapa */
@@ -449,18 +453,19 @@ svg {
   flex-shrink: 0;
 }
 .map-legend .dot--comum {
-  background: var(--cream);
+  background: #16243e;
 }
 .map-legend .dot--felipana {
-  background: var(--gold);
+  background: #e8821e;
 }
 .map-legend .dot--thamandro {
-  background: var(--torii);
+  background: #d02b2b;
 }
 .map-legend .dot--fuji {
-  background: var(--gold);
-  border-radius: 2px;
-  transform: rotate(45deg);
+  background: #e8821e;
+  width: 16px;
+  height: 16px;
+  border-color: #fff;
 }
 
 .map-legend .line {
@@ -536,6 +541,20 @@ svg {
   border-radius: var(--radius);
   padding: 16px 18px;
   box-shadow: var(--shadow);
+  transition: opacity 0.25s, box-shadow 0.25s;
+}
+
+/* Quando um casal é selecionado, atenua os dias "com todos" e realça
+   os dias do casal escolhido — deixa a mudança do filtro bem visível. */
+.timeline[data-filtro="felipana"] .tl-item[data-quem="todos"],
+.timeline[data-filtro="thamandro"] .tl-item[data-quem="todos"] {
+  opacity: 0.45;
+}
+.timeline[data-filtro="felipana"] .tl-item[data-quem="felipana"] {
+  box-shadow: 0 0 0 2px var(--gold), var(--shadow);
+}
+.timeline[data-filtro="thamandro"] .tl-item[data-quem="thamandro"] {
+  box-shadow: 0 0 0 2px var(--torii), var(--shadow);
 }
 
 .tl-item::before {
@@ -885,7 +904,8 @@ tfoot td {
   .filters,
   .print-btn,
   .footer,
-  .fx {
+  .fx,
+  #mapa {
     display: none !important;
   }
   body {
