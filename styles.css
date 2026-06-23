@@ -112,7 +112,7 @@ svg {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000; /* acima dos panes/controles do Leaflet */
   background: rgba(18, 30, 54, 0.95);
   backdrop-filter: blur(8px);
   color: var(--cream);
@@ -405,18 +405,18 @@ svg {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
+  /* Isola os z-index internos do Leaflet para que o mapa não passe
+     por cima da navegação fixa ao rolar a página. */
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
 }
 
 #trip-map {
   width: 100%;
-  height: 480px;
+  /* Altura fluida: acompanha a viewport, com limites mín/máx */
+  height: clamp(340px, 58vh, 600px);
   background: #aadaff; /* tom de "mar" enquanto as tiles carregam */
-}
-
-@media (max-width: 720px) {
-  #trip-map {
-    height: 380px;
-  }
 }
 
 .leaflet-container {

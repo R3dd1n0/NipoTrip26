@@ -128,11 +128,17 @@ function renderMapa() {
     zoomControl: true,
   });
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(leafletMap);
+  // Tiles SEM rótulos (CARTO Voyager) — assim não aparecem nomes em
+  // japonês; as cidades ficam só nos nossos marcadores (em português).
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
+    {
+      subdomains: "abcd",
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    }
+  ).addTo(leafletMap);
 
   // --- Rotas (linhas) ---
   m.rotas.forEach((r) => {
@@ -175,6 +181,15 @@ function renderMapa() {
 
   // Recalcula o tamanho após o layout assentar
   setTimeout(() => leafletMap.invalidateSize(), 250);
+
+  // Mantém o mapa responsivo a mudanças de tamanho/orientação
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (leafletMap) leafletMap.invalidateSize();
+    }, 200);
+  });
 
   aplicarFiltroMapa();
 }
