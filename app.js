@@ -100,6 +100,118 @@ function renderOverview() {
   });
 }
 
+/* ---------------- MAPA DA ROTA (SVG) ----------------
+   Projeta lat/lon reais no viewBox e desenha contornos decorativos,
+   rotas e marcadores a partir de TRIP.mapa. */
+function renderMapa() {
+  const m = TRIP.mapa;
+  if (!m) return;
+  const v = m.view;
+
+  // Projeção equiretangular simples (oeste→leste, sul→norte)
+  const fx = (lon) =>
+    v.padX + ((lon - v.lonMin) / (v.lonMax - v.lonMin)) * (v.w - 2 * v.padX);
+  const fy = (lat) =>
+    v.padTop +
+    ((v.latMax - lat) / (v.latMax - v.latMin)) * (v.h - v.padTop - v.padBottom);
+
+  // Dicionário key -> {x, y, ...}
+  const byKey = {};
+  m.cidades.forEach((c) => {
+    byKey[c.key] = Object.assign({}, c, { x: fx(c.lon), y: fy(c.lat) });
+  });
+
+  // Cores por grupo (linhas e marcadores)
+  const cor = {
+    comum: "#F7F0E4", // creme — trechos compartilhados
+    felipana: "#E8A846", // dourado
+    thamandro: "#D83A3A", // vermelho torii
+    fuji: "#E8A846",
+  };
+
+  // --- Rotas (desenhadas antes dos pontos, para ficarem por baixo) ---
+  let rotasSVG = "";
+  m.rotas.forEach((r) => {
+    const pts = r.pontos
+      .map((k) => byKey[k])
+      .filter(Boolean)
+      .map((c) => `${c.x.toFixed(1)},${c.y.toFixed(1)}`)
+      .join(" ");
+    const c = cor[r.grupo] || "#F7F0E4";
+    const dash = r.voo ? 'stroke-dasharray="2 8" stroke-linecap="round"' : "";
+    const op = r.tbd ? 0.45 : 0.9;
+    const w = r.voo ? 2 : 3;
+    rotasSVG += `<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linejoin="round" opacity="${op}" ${dash} />`;
+  });
+
+  // --- Marcadores + rótulos ---
+  let pontosSVG = "";
+  m.cidades.forEach((c) => {
+    const p = byKey[c.key];
+    const cc = cor[c.grupo] || "#F7F0E4";
+    const rot = c.rotulo || { dx: 10, dy: 4, anchor: "start" };
+    const dashRing = c.tbd ? 'stroke-dasharray="3 3"' : "";
+
+    // Linha-guia ligando o ponto ao rótulo afastado (cluster do Japão)
+    if (rot.linha) {
+      pontosSVG += `<line x1="${p.x.toFixed(1)}" y1="${p.y.toFixed(
+        1
+      )}" x2="${(p.x + rot.dx).toFixed(1)}" y2="${(p.y + rot.dy - 4).toFixed(
+        1
+      )}" stroke="rgba(247,240,228,0.35)" stroke-width="1" />`;
+    }
+
+    if (c.grupo === "fuji") {
+      // Marcador especial do reencontro: estrela dourada
+      pontosSVG += estrela(p.x, p.y, 9, cc);
+    } else {
+      pontosSVG += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(
+        1
+      )}" r="6" fill="${cc}" stroke="#121E36" stroke-width="2" ${dashRing} />`;
+    }
+
+    pontosSVG += `<text x="${(p.x + rot.dx).toFixed(1)}" y="${(
+      p.y + rot.dy
+    ).toFixed(1)}" text-anchor="${rot.anchor}" class="map-label${
+      c.tbd ? " is-tbd" : ""
+    }">${esc(c.nome)}</text>`;
+  });
+
+  // --- Contornos decorativos (ajustados aos limites `view` atuais) ---
+  const china =
+    '<path d="M120,90 L250,110 L300,250 L330,360 L320,470 L250,510 L140,500 L70,400 L60,260 L90,150 Z" fill="#1d2c4a" stroke="rgba(247,240,228,0.12)" stroke-width="1.5" />';
+  const japao =
+    '<ellipse cx="747" cy="308" rx="168" ry="52" transform="rotate(-21 747 308)" fill="#1d2c4a" stroke="rgba(247,240,228,0.12)" stroke-width="1.5" />';
+
+  const svg =
+    `<svg viewBox="0 0 ${v.w} ${v.h}" class="map-svg" role="img" ` +
+    `aria-label="Mapa da rota pelo Japão e China" preserveAspectRatio="xMidYMid meet">` +
+    `<rect x="0" y="0" width="${v.w}" height="${v.h}" fill="#16243E" />` +
+    china +
+    japao +
+    `<text x="175" y="300" class="map-region">CHINA</text>` +
+    `<text x="770" y="430" class="map-region">JAPÃO</text>` +
+    rotasSVG +
+    pontosSVG +
+    `</svg>`;
+
+  document.getElementById("map-svg").innerHTML = svg;
+}
+
+/* Gera o path de uma estrela de 5 pontas centrada em (cx, cy). */
+function estrela(cx, cy, r, fill) {
+  let pts = "";
+  for (let i = 0; i < 10; i++) {
+    const raio = i % 2 === 0 ? r : r * 0.45;
+    const ang = (Math.PI / 5) * i - Math.PI / 2;
+    pts += `${(cx + raio * Math.cos(ang)).toFixed(1)},${(
+      cy +
+      raio * Math.sin(ang)
+    ).toFixed(1)} `;
+  }
+  return `<polygon points="${pts.trim()}" fill="${fill}" stroke="#121E36" stroke-width="1.5" />`;
+}
+
 /* ---------------- ROTEIRO (timeline + filtro) ---------------- */
 let filtroAtual = "todos";
 
@@ -342,6 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHero();
   startCountdown();
   renderOverview();
+  renderMapa();
   renderRoteiro();
   setupFiltros();
   renderVoos();

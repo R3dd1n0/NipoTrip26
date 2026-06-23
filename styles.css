@@ -384,6 +384,98 @@ svg {
   font-weight: 700;
 }
 
+/* ---------- Mapa da rota ---------- */
+.map-panel {
+  background: #16243e;
+  border-radius: var(--radius);
+  padding: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Textos dentro do SVG */
+.map-label {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--cream);
+  paint-order: stroke;
+  stroke: #121e36;
+  stroke-width: 3px; /* contorno p/ leitura sobre o mar */
+}
+
+.map-label.is-tbd {
+  fill: #f0c98a;
+  font-style: italic;
+}
+
+.map-region {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 700;
+  fill: rgba(247, 240, 228, 0.12);
+  letter-spacing: 0.18em;
+  text-anchor: middle;
+}
+
+/* Legenda do mapa */
+.map-legend {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 0.85rem;
+}
+
+.map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-legend .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--indigo);
+  flex-shrink: 0;
+}
+.map-legend .dot--comum {
+  background: var(--cream);
+}
+.map-legend .dot--felipana {
+  background: var(--gold);
+}
+.map-legend .dot--thamandro {
+  background: var(--torii);
+}
+.map-legend .dot--fuji {
+  background: var(--gold);
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.map-legend .line {
+  width: 26px;
+  height: 0;
+  border-top: 3px solid var(--indigo);
+  flex-shrink: 0;
+}
+.map-legend .line--solid {
+  border-top-style: solid;
+}
+.map-legend .line--dash {
+  border-top-style: dashed;
+}
+
 /* ---------- Roteiro / Timeline ---------- */
 .filters {
   display: flex;

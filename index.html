@@ -30,6 +30,7 @@
         <button class="nav__toggle" id="nav-toggle" aria-label="Menu">☰</button>
         <ul class="nav__links" id="nav-links">
           <li><a href="#visao">Visão geral</a></li>
+          <li><a href="#mapa">Mapa</a></li>
           <li><a href="#roteiro">Roteiro</a></li>
           <li><a href="#voos">Voos</a></li>
           <li><a href="#orcamento">Orçamento</a></li>
@@ -88,6 +89,32 @@
 
         <h3 style="margin-top: 40px">Rota oeste → leste</h3>
         <div class="route" id="route"></div>
+      </div>
+    </section>
+
+    <!-- ============ MAPA DA ROTA ============ -->
+    <section class="section" id="mapa">
+      <div class="container">
+        <div class="section__eyebrow">Onde fica o quê</div>
+        <h2 class="section__title">Mapa da rota</h2>
+        <p class="section__intro">
+          Cidades e deslocamentos pelo Japão e pela China. Linhas cheias são
+          trajetos por terra; tracejadas são voos. Trechos opcionais aparecem
+          mais claros.
+        </p>
+
+        <!-- O SVG do mapa é montado pelo app.js a partir de TRIP.mapa -->
+        <div class="map-panel" id="map-svg"></div>
+
+        <!-- Legenda -->
+        <ul class="map-legend" id="map-legend">
+          <li><span class="dot dot--comum"></span> Todos (abertura + final)</li>
+          <li><span class="dot dot--felipana"></span> Felipana (clássico)</li>
+          <li><span class="dot dot--thamandro"></span> Thamandro (China)</li>
+          <li><span class="dot dot--fuji"></span> Reencontro no Fuji</li>
+          <li><span class="line line--solid"></span> Por terra</li>
+          <li><span class="line line--dash"></span> Voo</li>
+        </ul>
       </div>
     </section>
 

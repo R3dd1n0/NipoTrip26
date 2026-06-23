@@ -90,6 +90,61 @@ const TRIP = {
   ],
 
   /* ----------------------------------------------------------------
+   * 3.1. MAPA — cidades (lat/lon reais) e rotas
+   * ----------------------------------------------------------------
+   * As coordenadas são projetadas no SVG pelo app.js usando `view`.
+   * Para adicionar uma cidade: inclua em `cidades` com lat/lon e
+   * `grupo` ("comum" | "felipana" | "thamandro" | "fuji").
+   * `rotulo` ajusta a posição do texto (dx, dy, anchor: start|end|middle).
+   * Em `rotas`, liste as chaves (`key`) na ordem; `voo: true` desenha
+   * tracejado (deslocamento aéreo) e `tbd: true` marca trecho opcional.
+   *
+   * OBS: os contornos decorativos de China/Japão (no app.js) foram
+   * desenhados para estes limites `view`. Se mudar muito os limites,
+   * ajuste também os contornos.
+   */
+  mapa: {
+    view: {
+      lonMin: 113, lonMax: 143, // longitude (oeste→leste)
+      latMin: 29, latMax: 42, // latitude (sul→norte)
+      w: 1000, h: 620, // viewBox do SVG
+      padX: 60, padTop: 70, padBottom: 70,
+    },
+    cidades: [
+      // Japão — abertura/final (todos juntos)
+      { key: "toquio", nome: "Tóquio (Haneda)", lat: 35.55, lon: 139.78, grupo: "comum", rotulo: { dx: 14, dy: 4, anchor: "start" } },
+      { key: "nagano", nome: "Nagano", lat: 36.65, lon: 138.18, grupo: "comum", rotulo: { dx: 70, dy: -26, anchor: "start", linha: true } },
+      { key: "takayama", nome: "Takayama", lat: 36.14, lon: 137.25, grupo: "comum", rotulo: { dx: -78, dy: -50, anchor: "end", linha: true } },
+      { key: "shirakawa", nome: "Shirakawa-go", lat: 36.26, lon: 136.91, grupo: "comum", rotulo: { dx: -104, dy: -8, anchor: "end", linha: true } },
+      // Japão — clássico (Felipana)
+      { key: "kyoto", nome: "Kyoto", lat: 35.01, lon: 135.77, grupo: "felipana", rotulo: { dx: -120, dy: 6, anchor: "end", linha: true } },
+      { key: "osaka", nome: "Osaka", lat: 34.69, lon: 135.50, grupo: "felipana", rotulo: { dx: -96, dy: 56, anchor: "end", linha: true } },
+      { key: "hiroshima", nome: "Hiroshima (opc.)", lat: 34.39, lon: 132.46, grupo: "felipana", tbd: true, rotulo: { dx: -8, dy: 24, anchor: "end", linha: true } },
+      // Transferência aérea do Thamandro
+      { key: "nagoya", nome: "Nagoya", lat: 35.18, lon: 136.91, grupo: "thamandro", rotulo: { dx: 0, dy: 92, anchor: "middle", linha: true } },
+      // China (Thamandro)
+      { key: "pequim", nome: "Pequim", lat: 39.90, lon: 116.40, grupo: "thamandro", rotulo: { dx: 12, dy: 4, anchor: "start" } },
+      { key: "xangai", nome: "Xangai (opc.)", lat: 31.23, lon: 121.47, grupo: "thamandro", tbd: true, rotulo: { dx: 12, dy: 4, anchor: "start" } },
+      // Reencontro (todos)
+      { key: "kawaguchiko", nome: "Kawaguchiko · Fuji", lat: 35.50, lon: 138.77, grupo: "fuji", rotulo: { dx: 150, dy: 74, anchor: "end", linha: true } },
+    ],
+    rotas: [
+      // Abertura nos Alpes (todos)
+      { grupo: "comum", pontos: ["toquio", "nagano", "takayama", "shirakawa"] },
+      // Felipana — o clássico (terrestre)
+      { grupo: "felipana", pontos: ["takayama", "kyoto", "osaka", "kawaguchiko"] },
+      { grupo: "felipana", pontos: ["osaka", "hiroshima"], tbd: true },
+      // Thamandro — China (Nagoya por terra, depois voos)
+      { grupo: "thamandro", pontos: ["takayama", "nagoya"] },
+      { grupo: "thamandro", pontos: ["nagoya", "pequim"], voo: true },
+      { grupo: "thamandro", pontos: ["pequim", "xangai"], voo: true, tbd: true },
+      { grupo: "thamandro", pontos: ["pequim", "kawaguchiko"], voo: true }, // volta direto ao Fuji
+      // Reencontro + final (todos)
+      { grupo: "comum", pontos: ["kawaguchiko", "toquio"] },
+    ],
+  },
+
+  /* ----------------------------------------------------------------
    * 4. ROTEIRO DIA A DIA
    * ----------------------------------------------------------------
    * Campo `quem`: "todos" | "felipana" | "thamandro"
