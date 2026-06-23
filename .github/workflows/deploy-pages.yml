@@ -1,0 +1,45 @@
+# Publica o site estático no GitHub Pages.
+# Habilita o Pages automaticamente (enablement: true) e faz o deploy
+# do conteúdo da raiz do repositório — não precisa configurar nada na UI.
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - claude/tender-mendel-ngsm3a
+  workflow_dispatch: # permite rodar manualmente pela aba Actions
+
+# Permissões necessárias para o deploy oficial do Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Garante um deploy por vez (não cancela um em andamento)
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages (habilita se necessário)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Subir artefato (raiz do site)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
