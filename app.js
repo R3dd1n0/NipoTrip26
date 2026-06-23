@@ -411,10 +411,14 @@ function renderPendencias() {
   const ul = document.getElementById("pendencias-list");
   const salvos = storage.ler();
 
-  TRIP.pendencias.forEach((texto, i) => {
+  TRIP.pendencias.forEach((item, i) => {
+    // Aceita string ou objeto { texto, feito }
+    const texto = typeof item === "string" ? item : item.texto;
+    const padrao = typeof item === "object" && item.feito;
     const li = el("li", "check-item");
     const id = "chk-" + i;
-    const marcado = !!salvos[i];
+    // localStorage tem prioridade; senão usa o padrão do dado (feito)
+    const marcado = i in salvos ? !!salvos[i] : !!padrao;
     if (marcado) li.classList.add("is-done");
     li.innerHTML = `
       <input type="checkbox" id="${id}" ${marcado ? "checked" : ""}>
@@ -427,6 +431,34 @@ function renderPendencias() {
       storage.gravar(atual);
     });
     ul.appendChild(li);
+  });
+}
+
+/* ---------------- MONSTER HUNTER ---------------- */
+function renderMonsterHunter() {
+  const mh = TRIP.monsterHunter;
+  if (!mh) return;
+  const intro = document.getElementById("mh-intro");
+  if (intro) intro.textContent = mh.intro;
+
+  const wrap = document.getElementById("mh-cards");
+  if (wrap) {
+    mh.locais.forEach((l) => {
+      const card = el("div", "card");
+      card.innerHTML = `<div class="tip__title">${esc(l.cidade)}</div><p>${esc(l.texto)}</p>`;
+      wrap.appendChild(card);
+    });
+  }
+  const dica = document.getElementById("mh-dica");
+  if (dica) dica.textContent = "💡 " + mh.dica;
+}
+
+/* ---------------- THAMANDRO JÁ CONHECE ---------------- */
+function renderJaForam() {
+  const wrap = document.getElementById("ja-foram");
+  if (!wrap || !TRIP.jaForam) return;
+  TRIP.jaForam.forEach((lugar) => {
+    wrap.appendChild(el("span", "chip", esc(lugar)));
   });
 }
 
@@ -474,6 +506,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOrcamento();
   renderOndeFicar();
   renderLogistica();
+  renderMonsterHunter();
+  renderJaForam();
   renderToques();
   renderPendencias();
   renderNoites();

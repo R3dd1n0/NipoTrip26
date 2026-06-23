@@ -3,9 +3,6 @@
  * ---------------------------------------------------
  * Edite SOMENTE este arquivo para atualizar o site.
  * O layout (index.html / styles.css / app.js) lê tudo daqui.
- *
- * Dica: mantenha as datas no formato "AAAA-MM-DD" onde houver `iso`,
- * e use o texto livre em `data`/`diaSemana` para exibição.
  */
 
 const TRIP = {
@@ -32,7 +29,7 @@ const TRIP = {
       membros: "Felipe + Mariana",
       tag: "1ª vez no Japão",
       descricao:
-        "A viagem celebra o casamento deles (vão casar ainda este ano). Priorizam o Japão clássico e os momentos românticos.",
+        "A viagem celebra o casamento deles (vão casar ainda este ano). Priorizam o Japão clássico, os parques (USJ + Disney) e os momentos românticos.",
     },
     {
       grupo: "Thamandro",
@@ -40,7 +37,7 @@ const TRIP = {
       membros: "Thamires + Leandro",
       tag: "2ª vez · China é o capítulo novo",
       descricao:
-        "Já fizeram Japão + Coreia há ~1 ano e amaram. Aniversário da Thamires: 01/12 (data sagrada — todos juntos).",
+        "Já fizeram Japão + Coreia há ~1 ano e amaram. Aniversário da Thamires: 01/12 (data sagrada — todos juntos). No Japão, exploram o que ainda não conhecem.",
     },
   ],
 
@@ -58,32 +55,36 @@ const TRIP = {
     {
       n: 2,
       titulo: "Semana separada",
-      quando: "25–29/11",
+      quando: "24–30/11",
       quem: "Felipana × Thamandro",
-      resumo: "Felipana no clássico (Kyoto/Osaka); Thamandro na China.",
+      resumo:
+        "Felipana no clássico + Hiroshima/Miyajima + USJ; Thamandro na China (~6 dias).",
     },
     {
       n: 3,
       titulo: "Reencontro no Fuji",
       quando: "30/11–02/12",
       quem: "Juntos",
-      resumo: "Aniversário da Thamires + celebração. Ryokan top em Kawaguchiko.",
+      resumo:
+        "Thamandro chega dia 30 (descanso); Felipana no dia 1º (aniversário). Ryokan top em Kawaguchiko.",
     },
     {
       n: 4,
       titulo: "Final em Tóquio",
       quando: "03–12/12",
-      quem: "Juntos",
-      resumo: "Disney, bairros, bate-voltas e jantar de despedida.",
+      quem: "Juntos + dias solo",
+      resumo:
+        "Disney (Felipana) e dias solo do Thamandro, bairros, teamLab, Nikko e jantar de despedida.",
     },
   ],
 
-  // Rota oeste → leste (para o mapa/linha da rota)
+  // Rota oeste → leste (para a linha da rota)
   rota: [
     "Nagano",
     "Takayama",
     "Shirakawa-go",
     "Kyoto / China",
+    "Hiroshima",
     "Osaka",
     "Kawaguchiko (Fuji)",
     "Tóquio",
@@ -106,10 +107,13 @@ const TRIP = {
       { key: "nagano", nome: "Nagano", lat: 36.65, lon: 138.18, grupo: "comum" },
       { key: "takayama", nome: "Takayama", lat: 36.14, lon: 137.25, grupo: "comum" },
       { key: "shirakawa", nome: "Shirakawa-go", lat: 36.26, lon: 136.91, grupo: "comum" },
+      { key: "nikko", nome: "Nikko (bate-volta)", lat: 36.76, lon: 139.60, grupo: "comum" },
       // Japão — clássico (Felipana)
       { key: "kyoto", nome: "Kyoto", lat: 35.01, lon: 135.77, grupo: "felipana" },
-      { key: "osaka", nome: "Osaka", lat: 34.69, lon: 135.50, grupo: "felipana" },
-      { key: "hiroshima", nome: "Hiroshima (opc.)", lat: 34.39, lon: 132.46, grupo: "felipana", tbd: true },
+      { key: "nara", nome: "Nara (bate-volta)", lat: 34.69, lon: 135.83, grupo: "felipana" },
+      { key: "hiroshima", nome: "Hiroshima", lat: 34.39, lon: 132.46, grupo: "felipana" },
+      { key: "miyajima", nome: "Miyajima", lat: 34.30, lon: 132.32, grupo: "felipana" },
+      { key: "osaka", nome: "Osaka (USJ)", lat: 34.69, lon: 135.50, grupo: "felipana" },
       // Transferência aérea do Thamandro
       { key: "nagoya", nome: "Nagoya", lat: 35.18, lon: 136.91, grupo: "thamandro" },
       // China (Thamandro)
@@ -121,16 +125,18 @@ const TRIP = {
     rotas: [
       // Abertura nos Alpes (todos)
       { grupo: "comum", pontos: ["toquio", "nagano", "takayama", "shirakawa"] },
-      // Felipana — o clássico (terrestre)
-      { grupo: "felipana", pontos: ["takayama", "kyoto", "osaka", "kawaguchiko"] },
-      { grupo: "felipana", pontos: ["osaka", "hiroshima"], tbd: true },
+      // Felipana — o clássico + oeste (terrestre)
+      { grupo: "felipana", pontos: ["takayama", "kyoto", "hiroshima", "osaka", "kawaguchiko"] },
+      { grupo: "felipana", pontos: ["kyoto", "nara"] }, // bate-volta
+      { grupo: "felipana", pontos: ["hiroshima", "miyajima"] }, // bate-volta
       // Thamandro — China (Nagoya por terra, depois voos)
       { grupo: "thamandro", pontos: ["takayama", "nagoya"] },
       { grupo: "thamandro", pontos: ["nagoya", "pequim"], voo: true },
       { grupo: "thamandro", pontos: ["pequim", "xangai"], voo: true, tbd: true },
-      { grupo: "thamandro", pontos: ["pequim", "kawaguchiko"], voo: true }, // volta direto ao Fuji
+      { grupo: "thamandro", pontos: ["pequim", "kawaguchiko"], voo: true }, // volta dia 30
       // Reencontro + final (todos)
       { grupo: "comum", pontos: ["kawaguchiko", "toquio"] },
+      { grupo: "comum", pontos: ["toquio", "nikko"] }, // bate-volta
     ],
   },
 
@@ -138,25 +144,21 @@ const TRIP = {
    * 4. ROTEIRO DIA A DIA
    * ----------------------------------------------------------------
    * Campo `quem`: "todos" | "felipana" | "thamandro"
-   * (usado pelo filtro de abas na semana separada).
-   * Campo `tbd: true` marca itens "a confirmar".
+   * (usado pelo filtro de abas). Campo `tbd: true` marca "a confirmar".
    */
   roteiro: [
     // 1. ABERTURA NOS ALPES — juntos
     {
-      iso: "2026-11-21",
       data: "21/11",
       diaSemana: "Sábado",
       local: "Nagano",
       quem: "todos",
       bloco: "Abertura nos Alpes",
-      atividades:
-        "Tarde leve por causa do jet lag: templo Zenkō-ji.",
+      atividades: "Tarde leve por causa do jet lag: templo Zenkō-ji.",
       transporte:
-        "Haneda → Tokyo Station → Shinkansen até Nagano (~1h30).",
+        "Pouso em Haneda (~06:50) → Tokyo Station → Shinkansen até Nagano (~1h30).",
     },
     {
-      iso: "2026-11-22",
       data: "22/11",
       diaSemana: "Domingo",
       local: "Jigokudani / Shibu Onsen",
@@ -167,176 +169,189 @@ const TRIP = {
       transporte: "~45 min de Nagano + caminhada.",
     },
     {
-      iso: "2026-11-23",
       data: "23/11",
       diaSemana: "Segunda",
       local: "Takayama",
       quem: "todos",
       bloco: "Abertura nos Alpes",
-      atividades: "Cidade velha de Hida; provar Hida beef.",
+      atividades: "Cidade velha de Hida; provar Hida beef. (1 noite)",
       transporte: "Nagano → Takayama via Toyama (~3h).",
     },
     {
-      iso: "2026-11-24",
       data: "24/11",
       diaSemana: "Terça",
-      local: "Shirakawa-go",
+      local: "Shirakawa-go → separação",
       quem: "todos",
       bloco: "Abertura nos Alpes",
       atividades:
-        "Bate-volta às casas gasshō-zukuri (possível neve). À noite, a separação dos casais.",
-      transporte: "Bate-volta de Takayama (~50 min).",
+        "Manhã: Shirakawa-go (todos, casas gasshō-zukuri). À tarde, a separação: Thamandro segue p/ Nagoya → voo China; Felipana segue p/ Kyoto.",
+      transporte: "Bate-volta de Takayama (~50 min); à tarde cada casal segue.",
     },
 
     // 2. SEMANA SEPARADA — Thamandro (China)
     {
-      iso: "2026-11-25",
       data: "25/11",
       diaSemana: "Quarta",
-      local: "Takayama → China",
+      local: "China (Pequim)",
       quem: "thamandro",
       bloco: "Semana separada · China",
-      atividades: "Início do capítulo China.",
+      atividades: "Início do capítulo China — Pequim de base (Muralha, Cidade Proibida).",
       transporte:
-        "Takayama → Nagoya (~2h30) → voo p/ Pequim (~4h) ou Xangai (~3h).",
+        "Takayama → Nagoya → voo p/ China (ou pernoite em Nagoya e voo dia 25).",
     },
     {
-      iso: "2026-11-26",
-      data: "25–29/11",
-      diaSemana: "Qua–Dom",
-      local: "China (Pequim de base)",
+      data: "26–29/11",
+      diaSemana: "Qui–Dom",
+      local: "China (Pequim · opc. Xangai)",
       quem: "thamandro",
       bloco: "Semana separada · China",
       atividades:
-        "~5 dias: Muralha, Cidade Proibida. Opcional emendar Xangai de trem-bala. Brasileiros entram sem visto (até 30 dias, política vigente até 31/12/2026 — confirmar; levar passagem de volta + hospedagem).",
+        "~6 dias na China: Muralha, Cidade Proibida e mais. Opcional emendar Xangai de trem-bala. Brasileiros entram sem visto (até 30 dias — confirmar; levar passagem de volta + hospedagem).",
       transporte: "Trem-bala Pequim ⇄ Xangai (opcional).",
       tbd: true,
     },
     {
-      iso: "2026-11-30",
       data: "30/11",
-      diaSemana: "Domingo",
-      local: "China → Fuji",
+      diaSemana: "Segunda",
+      local: "Kawaguchiko (volta da China)",
       quem: "thamandro",
       bloco: "Semana separada · China",
-      atividades: "Voo de volta direto para o reencontro no Fuji.",
-      transporte: "Voo China → Tóquio/Fuji.",
+      atividades:
+        "Volta da China e segue direto pro ryokan do Fuji; descanso no onsen antes do reencontro.",
+      transporte: "Voo China → Tóquio → Kawaguchiko.",
     },
 
-    // 2. SEMANA SEPARADA — Felipana (o clássico)
+    // 2. SEMANA SEPARADA — Felipana (o clássico + oeste)
     {
-      iso: "2026-11-25",
       data: "25/11",
       diaSemana: "Quarta",
       local: "Kyoto",
       quem: "felipana",
       bloco: "Semana separada · clássico",
-      atividades: "Chegada e primeiro contato com Kyoto.",
-      transporte: "Takayama → Kyoto (~3h30 via Nagoya).",
+      atividades:
+        "Fushimi Inari, Arashiyama (bambu cedo), Gion, Kiyomizu. Cabe o ensaio de quimono/pré-wedding.",
+      transporte: "Chegada na véspera (24, Takayama → Kyoto ~3h30).",
     },
     {
-      iso: "2026-11-26",
-      data: "25–27/11",
-      diaSemana: "Qua–Sex",
-      local: "Kyoto (+ Nara)",
+      data: "26/11",
+      diaSemana: "Quinta",
+      local: "Nara (bate-volta)",
+      quem: "felipana",
+      bloco: "Semana separada · clássico",
+      atividades: "Grande Buda de Tōdai-ji e os cervos.",
+      transporte: "Bate-volta de Kyoto (~45 min).",
+    },
+    {
+      data: "27/11",
+      diaSemana: "Sexta",
+      local: "Hiroshima",
+      quem: "felipana",
+      bloco: "Semana separada · clássico",
+      atividades: "Parque e Museu da Paz.",
+      transporte: "Kyoto → Hiroshima (Shinkansen ~1h40).",
+    },
+    {
+      data: "28/11",
+      diaSemana: "Sábado",
+      local: "Miyajima",
+      quem: "felipana",
+      bloco: "Semana separada · clássico",
+      atividades: "Torii flutuante de Itsukushima. Okonomiyaki à noite.",
+      transporte: "Bate-volta de Hiroshima (trem + balsa).",
+    },
+    {
+      data: "29/11",
+      diaSemana: "Domingo",
+      local: "Osaka — USJ",
       quem: "felipana",
       bloco: "Semana separada · clássico",
       atividades:
-        "Fushimi Inari, Arashiyama, Gion, Kiyomizu; bate-volta a Nara. Folhas de outono no pico. Cabe o ensaio de quimono/pré-wedding.",
-      transporte: "Trens locais + bate-volta a Nara.",
+        "Dia inteiro de Universal Studios Japan (Super Nintendo World). Reservar ingresso + passe da Área Nintendo.",
+      transporte: "Hiroshima → Osaka (~1h25).",
     },
     {
-      iso: "2026-11-28",
-      data: "28–29/11",
-      diaSemana: "Sáb–Dom",
+      data: "30/11",
+      diaSemana: "Segunda",
       local: "Osaka",
       quem: "felipana",
       bloco: "Semana separada · clássico",
       atividades:
-        "Dotonbori, Castelo de Osaka. Opcional: trocar uma noite por Hiroshima + Miyajima.",
-      transporte: "Kyoto → Osaka (~30 min).",
-      tbd: true,
-    },
-    {
-      iso: "2026-11-30",
-      data: "30/11",
-      diaSemana: "Domingo",
-      local: "Osaka → Fuji",
-      quem: "felipana",
-      bloco: "Semana separada · clássico",
-      atividades: "Seguir para o reencontro no Fuji.",
-      transporte: "Osaka → Kawaguchiko (~3h30–4h).",
+        "Dotonbori, Castelo de Osaka + Monster Hunter (Hunters Bar Namba / Capcom Store Shinsaibashi). Véspera do reencontro.",
+      transporte: "Dia em Osaka.",
     },
 
     // 3. REENCONTRO — o pico (Kawaguchiko)
     {
-      iso: "2026-11-30b",
-      data: "30/11",
-      diaSemana: "Domingo",
-      local: "Kawaguchiko",
-      quem: "todos",
-      bloco: "Reencontro no Fuji",
-      atividades:
-        "Todos chegam, check-in, onsen, jantar de reencontro. Avisar o ryokan sobre o aniversário (bolo/jantar especial).",
-      transporte: "Chegada ao ryokan (lado norte do lago).",
-    },
-    {
-      iso: "2026-12-01",
       data: "01/12",
-      diaSemana: "Segunda",
-      local: "Kawaguchiko — Aniversário",
+      diaSemana: "Terça",
+      local: "Kawaguchiko — Aniversário 🎂",
       quem: "todos",
       bloco: "Reencontro no Fuji",
       atividades:
-        "Aniversário da Thamires: lago, Pagode Chūreitō (foto Fuji + pagode), Oishi Park. Jantar de aniversário e celebração.",
-      transporte: "Locomoção local no entorno do lago.",
+        "Aniversário da Thamires. Felipana chega e todos se reúnem: Pagode Chūreitō (foto Fuji + pagode), lago e Oishi Park. Jantar de aniversário e celebração no ryokan.",
+      transporte: "Felipana: Osaka → Kawaguchiko (~4h).",
     },
     {
-      iso: "2026-12-02",
       data: "02/12",
-      diaSemana: "Terça",
+      diaSemana: "Quarta",
       local: "Kawaguchiko → Tóquio",
       quem: "todos",
       bloco: "Reencontro no Fuji",
-      atividades: "Onsen sem pressa, mais Fuji, e seguir para Tóquio à tarde.",
-      transporte: "Kawaguchiko → Tóquio.",
+      atividades: "Onsen sem pressa, mais Fuji. À tarde, seguir para Tóquio.",
+      transporte: "Kawaguchiko → Tóquio (~2h).",
     },
 
-    // 4. FINAL — Tóquio juntos
+    // 4. FINAL — Tóquio (juntos + dias solo)
     {
-      iso: "2026-12-03",
       data: "03/12",
-      diaSemana: "Quarta",
+      diaSemana: "Quinta",
       local: "Tóquio — Shibuya",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades: "Shibuya ao anoitecer.",
+      atividades:
+        "Tarde leve em Shibuya + Capcom Store (Shibuya Parco 6F — Monster Hunter).",
       transporte: "Fuji → Tóquio (~2h).",
     },
     {
-      iso: "2026-12-04",
       data: "04/12",
-      diaSemana: "Quinta",
+      diaSemana: "Sexta",
       local: "Tokyo DisneySea",
-      quem: "todos",
+      quem: "felipana",
       bloco: "Final em Tóquio",
       atividades: "Decoração de Natal. Comprar ingresso com antecedência.",
       transporte: "Trem até Maihama.",
     },
     {
-      iso: "2026-12-05",
-      data: "05/12",
+      data: "04/12",
       diaSemana: "Sexta",
+      local: "Kawagoe",
+      quem: "thamandro",
+      bloco: "Final em Tóquio",
+      atividades: "Bate-volta à 'pequena Edo'.",
+      transporte: "Trem (~30 min de Tóquio).",
+    },
+    {
+      data: "05/12",
+      diaSemana: "Sábado",
       local: "Tokyo Disneyland",
-      quem: "todos",
+      quem: "felipana",
       bloco: "Final em Tóquio",
       atividades: "Dia de parque.",
       transporte: "Trem até Maihama.",
     },
     {
-      iso: "2026-12-06",
-      data: "06/12",
+      data: "05/12",
       diaSemana: "Sábado",
+      local: "Yokohama",
+      quem: "thamandro",
+      bloco: "Final em Tóquio",
+      atividades:
+        "Minato Mirai, Chinatown, museu do Cup Noodle. Alternativa: Monte Takao.",
+      transporte: "Trem (~30 min).",
+    },
+    {
+      data: "06/12",
+      diaSemana: "Domingo",
       local: "Asakusa / Skytree / Yanaka",
       quem: "todos",
       bloco: "Final em Tóquio",
@@ -344,69 +359,58 @@ const TRIP = {
       transporte: "Metrô.",
     },
     {
-      iso: "2026-12-07",
       data: "07/12",
-      diaSemana: "Domingo",
+      diaSemana: "Segunda",
       local: "Meiji / Harajuku / Shinjuku",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades:
-        "Meiji Jingu + Harajuku + Omotesando; Shinjuku à noite.",
+      atividades: "Meiji Jingu + Harajuku + Omotesando; Shinjuku à noite.",
       transporte: "Metrô / linha Yamanote.",
     },
     {
-      iso: "2026-12-08",
       data: "08/12",
-      diaSemana: "Segunda",
+      diaSemana: "Terça",
       local: "teamLab + Akihabara",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades: "teamLab (reservar) + Akihabara.",
+      atividades:
+        "teamLab (reservar) + Akihabara → Hunters Bar Akihabara à noite (Monster Hunter).",
       transporte: "Metrô.",
     },
     {
-      iso: "2026-12-09",
       data: "09/12",
-      diaSemana: "Terça",
-      local: "Nikko ou Kawagoe",
-      quem: "todos",
-      bloco: "Final em Tóquio",
-      atividades:
-        "Bate-volta: Nikko (Tōshō-gū) ou Kawagoe (a 'pequena Edo').",
-      transporte: "Trem (bate-volta).",
-      tbd: true,
-    },
-    {
-      iso: "2026-12-10",
-      data: "10/12",
       diaSemana: "Quarta",
-      local: "Kamakura ou compras",
+      local: "Nikko",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades:
-        "Bate-volta leve: Kamakura (Grande Buda) ou compras/descanso.",
+      atividades: "Bate-volta: Tōshō-gū + outono na montanha. (Novo pra todos.)",
       transporte: "Trem (bate-volta).",
-      tbd: true,
     },
     {
-      iso: "2026-12-11",
-      data: "11/12",
+      data: "10/12",
       diaSemana: "Quinta",
+      local: "Tóquio (flexível)",
+      quem: "todos",
+      bloco: "Final em Tóquio",
+      atividades: "Dia flexível: Odaiba, Toyosu, jardins ou repetir um favorito.",
+      transporte: "Metrô.",
+    },
+    {
+      data: "11/12",
+      diaSemana: "Sexta",
       local: "Tóquio",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades:
-        "Último dia inteiro: compras, mala, jantar marcante de despedida.",
+      atividades: "Último dia inteiro: compras, mala, jantar especial de despedida.",
       transporte: "Metrô.",
     },
     {
-      iso: "2026-12-12",
       data: "12/12",
       diaSemana: "Sábado",
-      local: "Haneda — voo de volta",
+      local: "Haneda — partida",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades: "Café e Haneda às ~15h → NH963 17:25.",
+      atividades: "Café tranquilo e Haneda às ~15h → NH963 17:25.",
       transporte: "Tóquio → Haneda.",
     },
   ],
@@ -439,14 +443,15 @@ const TRIP = {
     diariaTotal: { iene: 16200, real: 525 },
     base22dias: "≈ R$11–12 mil/pessoa (fora a passagem internacional, que já temos).",
     pontuais: [
-      { item: "Tokyo Disney", valor: "~R$300/dia × 2 dias ≈ R$600 (por pessoa)" },
-      { item: "Ryokan especial no Fuji (celebração)", valor: "R$1.000–1.600/noite × 2–3 noites" },
-      { item: "Ensaio quimono/pré-wedding (Felipana)", valor: "R$300–800" },
-      { item: "Só Thamandro: voo Japão⇄China", valor: "R$1.500–3.000" },
-      { item: "Só Thamandro: ~5 dias na China", valor: "R$2.000–3.500" },
+      { item: "USJ (Universal Studios Japan)", valor: "Ingresso ~¥8.600–10.400/dia (~R$275–335). Área Nintendo costuma exigir passe de horário/Express — reservar." },
+      { item: "Tokyo Disney (Felipana)", valor: "~R$290–320/dia × 2 dias." },
+      { item: "Ryokan especial no Fuji (celebração)", valor: "R$1.000–1.600/noite × 2–3 noites." },
+      { item: "Ensaio quimono/pré-wedding (Felipana)", valor: "R$300–800." },
+      { item: "Só Thamandro: voo Japão⇄China", valor: "R$1.500–3.000." },
+      { item: "Só Thamandro: ~6 dias na China", valor: "R$2.500–4.000." },
     ],
     totais: [
-      { grupo: "Felipana", valor: "~R$13–16 mil/pessoa (com os mimos da celebração)." },
+      { grupo: "Felipana", valor: "~R$14–17 mil/pessoa (USJ + Disney + celebração)." },
       { grupo: "Thamandro", valor: "~R$15–19 mil/pessoa (China inclusa)." },
     ],
   },
@@ -458,8 +463,9 @@ const TRIP = {
     { cidade: "Nagano", bairro: "Perto da estação ou Shibu Onsen (p/ os macacos)." },
     { cidade: "Takayama", bairro: "Centro histórico (Sanmachi)." },
     { cidade: "Kyoto", bairro: "Centro (Kawaramachi/Gion) — a pé de comida e templos, estação perto." },
-    { cidade: "Osaka", bairro: "Namba/Dotonbori." },
-    { cidade: "Kawaguchiko", bairro: "Ryokan com vista do Fuji (lado norte do lago)." },
+    { cidade: "Hiroshima", bairro: "Perto da estação ou do Parque da Paz." },
+    { cidade: "Osaka", bairro: "Namba/Dotonbori (e perto da linha p/ USJ)." },
+    { cidade: "Kawaguchiko", bairro: "Ryokan com vista do Fuji (lado norte do lago) — local do reencontro." },
     { cidade: "Tóquio", bairro: "Shinjuku (hub de trens e vida noturna). Alternativas: Shibuya, estação de Tóquio." },
   ],
 
@@ -495,12 +501,33 @@ const TRIP = {
     {
       titulo: "Aniversário à prova de falhas (01/12)",
       texto:
-        "Thamandro volta da China dia 30; Felipana termina o oeste em Osaka. Todos chegam ao ryokan ainda no dia 30.",
+        "Thamandro chega ao ryokan do Fuji já no dia 30 (volta da China e descansa); Felipana chega no dia 1º para o aniversário. Margem de sobra para o jantar de celebração.",
     },
   ],
 
   /* ----------------------------------------------------------------
-   * 9. TOQUES ESPECIAIS (celebração)
+   * 9. MONSTER HUNTER (Capcom) 🐉
+   * ---------------------------------------------------------------- */
+  monsterHunter: {
+    intro:
+      "Capcom é de Osaka — então a franquia aparece em vários pontos da viagem.",
+    locais: [
+      {
+        cidade: "Osaka",
+        texto:
+          "Hunters Bar Osaka (Namba) — réplicas de armas, consoles com Monster Hunter Wilds, comida/drinks pagos em \"Zenny\". Capcom Store (Shinsaibashi Parco).",
+      },
+      {
+        cidade: "Tóquio",
+        texto:
+          "Capcom Store (Shibuya Parco 6F) — mural do Rathalos e espada gigante p/ foto. Hunters Bar Akihabara.",
+      },
+    ],
+    dica: "Reservar o Hunters Bar com antecedência (couvert ~¥700–900/pessoa).",
+  },
+
+  /* ----------------------------------------------------------------
+   * 10. TOQUES ESPECIAIS (celebração)
    * ---------------------------------------------------------------- */
   toquesEspeciais: [
     "Ensaio de quimono / pré-wedding pra Felipana (Kyoto ou com o Fuji ao fundo).",
@@ -510,23 +537,42 @@ const TRIP = {
   ],
 
   /* ----------------------------------------------------------------
-   * 10. DECISÕES EM ABERTO (checklist)
+   * 11. THAMANDRO JÁ CONHECE (não repetir)
    * ---------------------------------------------------------------- */
-  pendencias: [
-    "Hiroshima/Miyajima entra na trilha da Felipana?",
-    "Takayama: 2 noites ou 1?",
-    "China: só Pequim (5 dias) ou Pequim + Xangai?",
-    "Reencontro: Kawaguchiko ou Hakone?",
-    "Reservar Disney (data específica, época de Natal lota).",
-    "Confirmar regra de entrada sem visto na China perto da data.",
-    "Confirmar cidade brasileira de origem (AF545/AF546).",
+  jaForam: [
+    "Nara",
+    "Kyoto (e Uji)",
+    "Osaka",
+    "Kanazawa",
+    "Kamakura",
+    "Enoshima",
   ],
 
-  // Contagem de noites (resumo)
+  /* ----------------------------------------------------------------
+   * 12. DECISÕES / CHECKLIST
+   * ----------------------------------------------------------------
+   * `feito: true` deixa o item já marcado por padrão. O estado também
+   * é salvo no navegador (localStorage) ao clicar.
+   */
+  pendencias: [
+    { texto: "Hiroshima na trilha da Felipana — confirmado", feito: true },
+    { texto: "USJ confirmado (Felipe), na semana de Osaka", feito: true },
+    { texto: "Takayama com 1 noite", feito: true },
+    { texto: "Reencontro no dia 1º (Thamandro chega dia 30 pra descansar)", feito: true },
+    { texto: "Nikko: conjunto (recomendado) ou Thamandro solo?", feito: false },
+    { texto: "China: só Pequim ou Pequim + Xangai (cabe, ~6 dias)?", feito: false },
+    { texto: "Reservar USJ (ingresso + passe da Área Nintendo)", feito: false },
+    { texto: "Reservar Disney (época de Natal lota)", feito: false },
+    { texto: "Reservar Hunters Bar (Osaka e/ou Akihabara)", feito: false },
+    { texto: "Confirmar entrada sem visto na China perto da data", feito: false },
+    { texto: "Confirmar cidade brasileira de origem (AF545/AF546)", feito: false },
+  ],
+
+  // Contagem de noites (resumo) — total 21
   noites: [
     { local: "Nagano", n: 2 },
-    { local: "Takayama", n: 2 },
-    { local: "Separados", n: 5 },
+    { local: "Takayama", n: 1 },
+    { local: "Separados", n: 6 },
     { local: "Kawaguchiko", n: 3 },
     { local: "Tóquio", n: 9 },
   ],
