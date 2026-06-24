@@ -116,6 +116,30 @@ let leafletMap = null;
 // Camadas agrupadas por "grupo" para o filtro ligar/desligar
 const mapLayers = { comum: [], felipana: [], thamandro: [], fuji: [] };
 
+// Direção do rótulo por cidade, para "abrir em leque" os clusters
+// (Kansai, Hiroshima/Miyajima, Takayama/Shirakawa) e evitar sobreposição.
+const LABEL_DIR = {
+  toquio: "right",
+  nagano: "top",
+  nikko: "right",
+  takayama: "top",
+  shirakawa: "left",
+  kyoto: "top",
+  nara: "bottom",
+  hiroshima: "left",
+  miyajima: "bottom",
+  osaka: "left",
+  kawaguchiko: "bottom",
+  pequim: "right",
+  xangai: "right",
+};
+const TIP_OFFSET = {
+  right: [8, 0],
+  left: [-8, 0],
+  top: [0, -8],
+  bottom: [0, 10],
+};
+
 function renderMapa() {
   const m = TRIP.mapa;
   if (!m || typeof L === "undefined") return; // Leaflet ainda não carregou
@@ -164,10 +188,11 @@ function renderMapa() {
       fillColor: CORES[c.grupo] || "#16243E",
       fillOpacity: 1,
     });
+    const dir = LABEL_DIR[c.key] || "right";
     mk.bindTooltip(c.nome, {
       permanent: true,
-      direction: "right",
-      offset: [8, 0],
+      direction: dir,
+      offset: TIP_OFFSET[dir] || [8, 0],
       className: "map-tip" + (c.tbd ? " is-tbd" : ""),
     });
     mk.bindPopup("<strong>" + esc(c.nome) + "</strong>");
@@ -175,9 +200,14 @@ function renderMapa() {
     mapLayers[c.grupo].push(mk);
   });
 
-  // Enquadra todas as cidades
-  const bounds = L.latLngBounds(m.cidades.map((c) => [c.lat, c.lon]));
-  leafletMap.fitBounds(bounds, { padding: [40, 40] });
+  // Zoom inicial focado no JAPÃO (lon ≥ 128). As cidades da China
+  // (Pequim/Xangai) e as linhas de voo continuam no mapa — basta
+  // diminuir o zoom ou arrastar para vê-las.
+  const japao = m.cidades.filter((c) => c.lon >= 128);
+  const bounds = L.latLngBounds(
+    (japao.length ? japao : m.cidades).map((c) => [c.lat, c.lon])
+  );
+  leafletMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 8 });
 
   // Recalcula o tamanho após o layout assentar
   setTimeout(() => leafletMap.invalidateSize(), 250);
@@ -449,25 +479,6 @@ function renderPendencias() {
   });
 }
 
-/* ---------------- MONSTER HUNTER ---------------- */
-function renderMonsterHunter() {
-  const mh = TRIP.monsterHunter;
-  if (!mh) return;
-  const intro = document.getElementById("mh-intro");
-  if (intro) intro.textContent = mh.intro;
-
-  const wrap = document.getElementById("mh-cards");
-  if (wrap) {
-    mh.locais.forEach((l) => {
-      const card = el("div", "card");
-      card.innerHTML = `<div class="tip__title">${esc(l.cidade)}</div><p>${esc(l.texto)}</p>`;
-      wrap.appendChild(card);
-    });
-  }
-  const dica = document.getElementById("mh-dica");
-  if (dica) dica.textContent = "💡 " + mh.dica;
-}
-
 /* ---------------- THAMANDRO JÁ CONHECE ---------------- */
 function renderJaForam() {
   const wrap = document.getElementById("ja-foram");
@@ -521,7 +532,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOrcamento();
   renderOndeFicar();
   renderLogistica();
-  renderMonsterHunter();
   renderJaForam();
   renderToques();
   renderPendencias();

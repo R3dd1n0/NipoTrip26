@@ -272,7 +272,7 @@ const TRIP = {
       quem: "felipana",
       bloco: "Semana separada · clássico",
       atividades:
-        "Dotonbori, Castelo de Osaka + Monster Hunter (Hunters Bar Namba / Capcom Store Shinsaibashi).",
+        "Dotonbori, Castelo de Osaka + loja da Capcom (Shinsaibashi) e um bar temático de games em Namba.",
       transporte: "Dia em Osaka; véspera do reencontro.",
     },
 
@@ -305,7 +305,7 @@ const TRIP = {
       quem: "todos",
       bloco: "Final em Tóquio",
       atividades:
-        "Instalar em Tóquio. Shibuya + Capcom Store (Shibuya Parco 6F — Monster Hunter).",
+        "Instalar em Tóquio. Shibuya + loja da Capcom (Shibuya Parco).",
       transporte: "Kawaguchiko → Tóquio (~2h).",
     },
     {
@@ -360,7 +360,7 @@ const TRIP = {
       quem: "todos",
       bloco: "Final em Tóquio",
       atividades:
-        "teamLab (reservar) + Akihabara → Hunters Bar Akihabara à noite (Monster Hunter).",
+        "teamLab (reservar) + Akihabara; bar temático de games à noite.",
       transporte: "Metrô.",
     },
     {
@@ -503,28 +503,7 @@ const TRIP = {
   ],
 
   /* ----------------------------------------------------------------
-   * 9. MONSTER HUNTER (Capcom) 🐉
-   * ---------------------------------------------------------------- */
-  monsterHunter: {
-    intro:
-      "Capcom é de Osaka — então a franquia aparece em vários pontos da viagem.",
-    locais: [
-      {
-        cidade: "Osaka — Felipana (30/11)",
-        texto:
-          "Hunters Bar Osaka (Namba) — réplicas de armas, consoles com Monster Hunter Wilds, comida/drinks pagos em \"Zenny\". Capcom Store (Shinsaibashi Parco).",
-      },
-      {
-        cidade: "Tóquio — todos",
-        texto:
-          "Capcom Store (Shibuya Parco 6F) — mural do Rathalos e espada gigante p/ foto (03/12). Hunters Bar Akihabara (08/12).",
-      },
-    ],
-    dica: "Reservar o Hunters Bar com antecedência (couvert ~¥700–900/pessoa).",
-  },
-
-  /* ----------------------------------------------------------------
-   * 10. TOQUES ESPECIAIS (celebração)
+   * 9. TOQUES ESPECIAIS (celebração)
    * ---------------------------------------------------------------- */
   toquesEspeciais: [
     "Ensaio de quimono / pré-wedding pra Felipana (Kyoto ou com o Fuji ao fundo).",
@@ -561,7 +540,7 @@ const TRIP = {
     { texto: "Confirmar Kawaguchiko (vs Hakone) no reencontro", feito: false },
     { texto: "Reservar USJ (ingresso + passe da Área Nintendo)", feito: false },
     { texto: "Reservar Disney (época de Natal lota)", feito: false },
-    { texto: "Reservar Hunters Bar e ryokan de Nikko", feito: false },
+    { texto: "Reservar bar temático de games e ryokan de Nikko", feito: false },
     { texto: "Confirmar entrada sem visto na China perto da data", feito: false },
     { texto: "Confirmar cidade brasileira de origem (AF545/AF546)", feito: false },
   ],
