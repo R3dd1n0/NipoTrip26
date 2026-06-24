@@ -37,7 +37,7 @@ const TRIP = {
       membros: "Thamires + Leandro",
       tag: "2ª vez · China é o capítulo novo",
       descricao:
-        "Já fizeram Japão + Coreia há ~1 ano e amaram. Aniversário da Thamires: 01/12 (data sagrada — todos juntos). No Japão, exploram o que ainda não conhecem.",
+        "Já fizeram Japão + Coreia há ~1 ano e amaram. Aniversário da Thamires: 01/12 (data sagrada — todos juntos). Trocam Takayama/Shirakawa por 6 dias cheios na China.",
     },
   ],
 
@@ -47,26 +47,25 @@ const TRIP = {
   momentos: [
     {
       n: 1,
-      titulo: "Abertura nos Alpes",
-      quando: "21–24/11",
+      titulo: "Abertura em Nagano",
+      quando: "21–22/11",
       quem: "Juntos",
-      resumo: "Nagano, macacos da neve, Takayama e Shirakawa-go.",
+      resumo: "Chegada e os macacos da neve em Jigokudani.",
     },
     {
       n: 2,
       titulo: "Semana separada",
-      quando: "24–30/11",
+      quando: "23–30/11",
       quem: "Felipana × Thamandro",
       resumo:
-        "Felipana no clássico + Hiroshima/Miyajima + USJ; Thamandro na China (~6 dias).",
+        "Felipana: Takayama/Shirakawa + clássico + Hiroshima/Miyajima + USJ. Thamandro: China (6 dias).",
     },
     {
       n: 3,
       titulo: "Reencontro no Fuji",
-      quando: "30/11–02/12",
+      quando: "01–02/12",
       quem: "Juntos",
-      resumo:
-        "Thamandro chega dia 30 (descanso); Felipana no dia 1º (aniversário). Ryokan top em Kawaguchiko.",
+      resumo: "Todos chegam no dia 1º (aniversário). Ryokan top em Kawaguchiko.",
     },
     {
       n: 4,
@@ -74,7 +73,7 @@ const TRIP = {
       quando: "03–12/12",
       quem: "Juntos + dias solo",
       resumo:
-        "Disney (Felipana) e dias solo do Thamandro, bairros, teamLab, Nikko e jantar de despedida.",
+        "Tóquio, Nikko (1 pernoite), Disney/dias solo do Thamandro, Kawagoe e despedida.",
     },
   ],
 
@@ -83,11 +82,12 @@ const TRIP = {
     "Nagano",
     "Takayama",
     "Shirakawa-go",
-    "Kyoto / China",
+    "Kyoto",
     "Hiroshima",
     "Osaka",
     "Kawaguchiko (Fuji)",
     "Tóquio",
+    "Nikko",
   ],
 
   /* ----------------------------------------------------------------
@@ -96,26 +96,23 @@ const TRIP = {
    * Renderizado num mapa real (Leaflet + OpenStreetMap) pelo app.js.
    * Para adicionar uma cidade: inclua em `cidades` com `lat`, `lon` e
    * `grupo` ("comum" | "felipana" | "thamandro" | "fuji"). Use
-   * `tbd: true` para marcar como opcional (trecho/cidade a confirmar).
-   * Em `rotas`, liste as chaves (`key`) na ordem do trajeto;
-   * `voo: true` desenha linha tracejada (deslocamento aéreo).
+   * `tbd: true` para marcar como opcional. Em `rotas`, liste as chaves
+   * (`key`) na ordem; `voo: true` desenha linha tracejada (voo).
    */
   mapa: {
     cidades: [
-      // Japão — abertura/final (todos juntos)
+      // Pontos comuns (abertura / final)
       { key: "toquio", nome: "Tóquio (Haneda)", lat: 35.55, lon: 139.78, grupo: "comum" },
       { key: "nagano", nome: "Nagano", lat: 36.65, lon: 138.18, grupo: "comum" },
-      { key: "takayama", nome: "Takayama", lat: 36.14, lon: 137.25, grupo: "comum" },
-      { key: "shirakawa", nome: "Shirakawa-go", lat: 36.26, lon: 136.91, grupo: "comum" },
-      { key: "nikko", nome: "Nikko (bate-volta)", lat: 36.76, lon: 139.60, grupo: "comum" },
-      // Japão — clássico (Felipana)
+      { key: "nikko", nome: "Nikko (pernoite)", lat: 36.76, lon: 139.60, grupo: "comum" },
+      // Felipana — Takayama/Shirakawa + clássico + oeste
+      { key: "takayama", nome: "Takayama", lat: 36.14, lon: 137.25, grupo: "felipana" },
+      { key: "shirakawa", nome: "Shirakawa-go", lat: 36.26, lon: 136.91, grupo: "felipana" },
       { key: "kyoto", nome: "Kyoto", lat: 35.01, lon: 135.77, grupo: "felipana" },
       { key: "nara", nome: "Nara (bate-volta)", lat: 34.69, lon: 135.83, grupo: "felipana" },
       { key: "hiroshima", nome: "Hiroshima", lat: 34.39, lon: 132.46, grupo: "felipana" },
       { key: "miyajima", nome: "Miyajima", lat: 34.30, lon: 132.32, grupo: "felipana" },
       { key: "osaka", nome: "Osaka (USJ)", lat: 34.69, lon: 135.50, grupo: "felipana" },
-      // Transferência aérea do Thamandro
-      { key: "nagoya", nome: "Nagoya", lat: 35.18, lon: 136.91, grupo: "thamandro" },
       // China (Thamandro)
       { key: "pequim", nome: "Pequim", lat: 39.90, lon: 116.40, grupo: "thamandro" },
       { key: "xangai", nome: "Xangai (opc.)", lat: 31.23, lon: 121.47, grupo: "thamandro", tbd: true },
@@ -123,20 +120,21 @@ const TRIP = {
       { key: "kawaguchiko", nome: "Kawaguchiko · Fuji", lat: 35.50, lon: 138.77, grupo: "fuji" },
     ],
     rotas: [
-      // Abertura nos Alpes (todos)
-      { grupo: "comum", pontos: ["toquio", "nagano", "takayama", "shirakawa"] },
-      // Felipana — o clássico + oeste (terrestre)
-      { grupo: "felipana", pontos: ["takayama", "kyoto", "hiroshima", "osaka", "kawaguchiko"] },
+      // Abertura (todos) — só Nagano
+      { grupo: "comum", pontos: ["toquio", "nagano"] },
+      // Felipana — oeste por terra
+      { grupo: "felipana", pontos: ["nagano", "takayama", "kyoto", "hiroshima", "osaka", "kawaguchiko"] },
+      { grupo: "felipana", pontos: ["takayama", "shirakawa"] }, // bate-volta
       { grupo: "felipana", pontos: ["kyoto", "nara"] }, // bate-volta
       { grupo: "felipana", pontos: ["hiroshima", "miyajima"] }, // bate-volta
-      // Thamandro — China (Nagoya por terra, depois voos)
-      { grupo: "thamandro", pontos: ["takayama", "nagoya"] },
-      { grupo: "thamandro", pontos: ["nagoya", "pequim"], voo: true },
+      // Thamandro — China (sai de Tóquio dia 23)
+      { grupo: "thamandro", pontos: ["nagano", "toquio"] },
+      { grupo: "thamandro", pontos: ["toquio", "pequim"], voo: true },
       { grupo: "thamandro", pontos: ["pequim", "xangai"], voo: true, tbd: true },
-      { grupo: "thamandro", pontos: ["pequim", "kawaguchiko"], voo: true }, // volta dia 30
+      { grupo: "thamandro", pontos: ["toquio", "kawaguchiko"] }, // dia 1: Tóquio → Fuji
       // Reencontro + final (todos)
       { grupo: "comum", pontos: ["kawaguchiko", "toquio"] },
-      { grupo: "comum", pontos: ["toquio", "nikko"] }, // bate-volta
+      { grupo: "comum", pontos: ["toquio", "nikko"] }, // pernoite
     ],
   },
 
@@ -147,13 +145,13 @@ const TRIP = {
    * (usado pelo filtro de abas). Campo `tbd: true` marca "a confirmar".
    */
   roteiro: [
-    // 1. ABERTURA NOS ALPES — juntos
+    // 1. ABERTURA EM NAGANO — juntos
     {
       data: "21/11",
       diaSemana: "Sábado",
       local: "Nagano",
       quem: "todos",
-      bloco: "Abertura nos Alpes",
+      bloco: "Abertura em Nagano",
       atividades: "Tarde leve por causa do jet lag: templo Zenkō-ji.",
       transporte:
         "Pouso em Haneda (~06:50) → Tokyo Station → Shinkansen até Nagano (~1h30).",
@@ -163,83 +161,81 @@ const TRIP = {
       diaSemana: "Domingo",
       local: "Jigokudani / Shibu Onsen",
       quem: "todos",
-      bloco: "Abertura nos Alpes",
+      bloco: "Abertura em Nagano",
       atividades:
         "Macacos da neve em Jigokudani (no onsen) + Shibu Onsen. Opcional: Castelo de Matsumoto.",
       transporte: "~45 min de Nagano + caminhada.",
     },
-    {
-      data: "23/11",
-      diaSemana: "Segunda",
-      local: "Takayama",
-      quem: "todos",
-      bloco: "Abertura nos Alpes",
-      atividades: "Cidade velha de Hida; provar Hida beef. (1 noite)",
-      transporte: "Nagano → Takayama via Toyama (~3h).",
-    },
-    {
-      data: "24/11",
-      diaSemana: "Terça",
-      local: "Shirakawa-go → separação",
-      quem: "todos",
-      bloco: "Abertura nos Alpes",
-      atividades:
-        "Manhã: Shirakawa-go (todos, casas gasshō-zukuri). À tarde, a separação: Thamandro segue p/ Nagoya → voo China; Felipana segue p/ Kyoto.",
-      transporte: "Bate-volta de Takayama (~50 min); à tarde cada casal segue.",
-    },
 
     // 2. SEMANA SEPARADA — Thamandro (China)
     {
-      data: "25/11",
-      diaSemana: "Quarta",
-      local: "China (Pequim)",
+      data: "23/11",
+      diaSemana: "Segunda",
+      local: "Nagano → China",
       quem: "thamandro",
       bloco: "Semana separada · China",
-      atividades: "Início do capítulo China — Pequim de base (Muralha, Cidade Proibida).",
-      transporte:
-        "Takayama → Nagoya → voo p/ China (ou pernoite em Nagoya e voo dia 25).",
+      atividades:
+        "Separação: seguem para a China (Pequim de base — Muralha, Cidade Proibida).",
+      transporte: "Nagano → Tóquio → voo p/ a China.",
     },
     {
-      data: "26–29/11",
-      diaSemana: "Qui–Dom",
+      data: "24–29/11",
+      diaSemana: "Ter–Dom",
       local: "China (Pequim · opc. Xangai)",
       quem: "thamandro",
       bloco: "Semana separada · China",
       atividades:
-        "~6 dias na China: Muralha, Cidade Proibida e mais. Opcional emendar Xangai de trem-bala. Brasileiros entram sem visto (até 30 dias — confirmar; levar passagem de volta + hospedagem).",
+        "6 dias cheios na China: Muralha, Cidade Proibida e mais. Opcional emendar Xangai de trem-bala. Sem visto p/ brasileiros (até 30 dias — confirmar; levar passagem de volta + hospedagem).",
       transporte: "Trem-bala Pequim ⇄ Xangai (opcional).",
       tbd: true,
     },
     {
       data: "30/11",
       diaSemana: "Segunda",
-      local: "Kawaguchiko (volta da China)",
+      local: "Volta da China → Tóquio",
       quem: "thamandro",
       bloco: "Semana separada · China",
-      atividades:
-        "Volta da China e segue direto pro ryokan do Fuji; descanso no onsen antes do reencontro.",
-      transporte: "Voo China → Tóquio → Kawaguchiko.",
+      atividades: "Volta da China e pernoite em Tóquio antes do reencontro.",
+      transporte: "Voo China → Tóquio (pernoite).",
     },
 
-    // 2. SEMANA SEPARADA — Felipana (o clássico + oeste)
+    // 2. SEMANA SEPARADA — Felipana (Takayama + clássico + oeste)
+    {
+      data: "23/11",
+      diaSemana: "Segunda",
+      local: "Takayama",
+      quem: "felipana",
+      bloco: "Semana separada · clássico",
+      atividades: "Cidade velha de Hida; provar Hida beef.",
+      transporte: "Nagano → Takayama via Toyama (~3h).",
+    },
+    {
+      data: "24/11",
+      diaSemana: "Terça",
+      local: "Shirakawa-go",
+      quem: "felipana",
+      bloco: "Semana separada · clássico",
+      atividades: "Bate-volta às casas gasshō-zukuri (possível neve).",
+      transporte: "Bate-volta de Takayama (~50 min).",
+    },
     {
       data: "25/11",
       diaSemana: "Quarta",
       local: "Kyoto",
       quem: "felipana",
       bloco: "Semana separada · clássico",
-      atividades:
-        "Fushimi Inari, Arashiyama (bambu cedo), Gion, Kiyomizu. Cabe o ensaio de quimono/pré-wedding.",
-      transporte: "Chegada na véspera (24, Takayama → Kyoto ~3h30).",
+      atividades: "Fushimi Inari ao entardecer. Cabe o ensaio de quimono/pré-wedding.",
+      transporte: "Takayama → Kyoto (~3h30).",
     },
     {
       data: "26/11",
       diaSemana: "Quinta",
-      local: "Nara (bate-volta)",
+      local: "Kyoto + Nara",
       quem: "felipana",
       bloco: "Semana separada · clássico",
-      atividades: "Grande Buda de Tōdai-ji e os cervos.",
-      transporte: "Bate-volta de Kyoto (~45 min).",
+      atividades:
+        "Arashiyama (bambu cedo), Gion + bate-volta a Nara (Grande Buda de Tōdai-ji e os cervos).",
+      transporte: "Bate-volta a Nara (~45 min).",
     },
     {
       data: "27/11",
@@ -276,8 +272,8 @@ const TRIP = {
       quem: "felipana",
       bloco: "Semana separada · clássico",
       atividades:
-        "Dotonbori, Castelo de Osaka + Monster Hunter (Hunters Bar Namba / Capcom Store Shinsaibashi). Véspera do reencontro.",
-      transporte: "Dia em Osaka.",
+        "Dotonbori, Castelo de Osaka + Monster Hunter (Hunters Bar Namba / Capcom Store Shinsaibashi).",
+      transporte: "Dia em Osaka; véspera do reencontro.",
     },
 
     // 3. REENCONTRO — o pico (Kawaguchiko)
@@ -288,17 +284,17 @@ const TRIP = {
       quem: "todos",
       bloco: "Reencontro no Fuji",
       atividades:
-        "Aniversário da Thamires. Felipana chega e todos se reúnem: Pagode Chūreitō (foto Fuji + pagode), lago e Oishi Park. Jantar de aniversário e celebração no ryokan.",
-      transporte: "Felipana: Osaka → Kawaguchiko (~4h).",
+        "Aniversário da Thamires. Felipana (Osaka→Fuji ~4h) e Thamandro (Tóquio→Fuji ~2h) chegam ao ryokan. Pagode Chūreitō (foto Fuji + pagode), lago e Oishi Park. Jantar de aniversário e celebração.",
+      transporte: "Felipana de Osaka; Thamandro de Tóquio.",
     },
     {
       data: "02/12",
       diaSemana: "Quarta",
-      local: "Kawaguchiko → Tóquio",
+      local: "Kawaguchiko",
       quem: "todos",
       bloco: "Reencontro no Fuji",
-      atividades: "Onsen sem pressa, mais Fuji. À tarde, seguir para Tóquio.",
-      transporte: "Kawaguchiko → Tóquio (~2h).",
+      atividades: "Onsen sem pressa, mais Fuji.",
+      transporte: "Dia tranquilo no lago.",
     },
 
     // 4. FINAL — Tóquio (juntos + dias solo)
@@ -309,12 +305,39 @@ const TRIP = {
       quem: "todos",
       bloco: "Final em Tóquio",
       atividades:
-        "Tarde leve em Shibuya + Capcom Store (Shibuya Parco 6F — Monster Hunter).",
-      transporte: "Fuji → Tóquio (~2h).",
+        "Instalar em Tóquio. Shibuya + Capcom Store (Shibuya Parco 6F — Monster Hunter).",
+      transporte: "Kawaguchiko → Tóquio (~2h).",
     },
     {
       data: "04/12",
       diaSemana: "Sexta",
+      local: "Nikko (pernoite)",
+      quem: "todos",
+      bloco: "Final em Tóquio",
+      atividades: "Tōshō-gū. Pernoite em Nikko (onsen / área do Lago Chuzenji).",
+      transporte: "Tóquio → Nikko (~2h).",
+    },
+    {
+      data: "05/12",
+      diaSemana: "Sábado",
+      local: "Nikko → Tóquio",
+      quem: "todos",
+      bloco: "Final em Tóquio",
+      atividades: "Lago Chuzenji e Cataratas Kegon. À tarde, volta a Tóquio.",
+      transporte: "Nikko → Tóquio.",
+    },
+    {
+      data: "06/12",
+      diaSemana: "Domingo",
+      local: "Tóquio livre",
+      quem: "todos",
+      bloco: "Final em Tóquio",
+      atividades: "Asakusa/Sensō-ji, Skytree ou bairros à escolha.",
+      transporte: "Metrô.",
+    },
+    {
+      data: "07/12",
+      diaSemana: "Segunda",
       local: "Tokyo DisneySea",
       quem: "felipana",
       bloco: "Final em Tóquio",
@@ -322,50 +345,13 @@ const TRIP = {
       transporte: "Trem até Maihama.",
     },
     {
-      data: "04/12",
-      diaSemana: "Sexta",
-      local: "Kawagoe",
-      quem: "thamandro",
-      bloco: "Final em Tóquio",
-      atividades: "Bate-volta à 'pequena Edo'.",
-      transporte: "Trem (~30 min de Tóquio).",
-    },
-    {
-      data: "05/12",
-      diaSemana: "Sábado",
-      local: "Tokyo Disneyland",
-      quem: "felipana",
-      bloco: "Final em Tóquio",
-      atividades: "Dia de parque.",
-      transporte: "Trem até Maihama.",
-    },
-    {
-      data: "05/12",
-      diaSemana: "Sábado",
+      data: "07/12",
+      diaSemana: "Segunda",
       local: "Yokohama",
       quem: "thamandro",
       bloco: "Final em Tóquio",
-      atividades:
-        "Minato Mirai, Chinatown, museu do Cup Noodle. Alternativa: Monte Takao.",
+      atividades: "Minato Mirai, Chinatown, museu do Cup Noodle.",
       transporte: "Trem (~30 min).",
-    },
-    {
-      data: "06/12",
-      diaSemana: "Domingo",
-      local: "Asakusa / Skytree / Yanaka",
-      quem: "todos",
-      bloco: "Final em Tóquio",
-      atividades: "Sensō-ji, Skytree e o bairro retrô de Yanaka.",
-      transporte: "Metrô.",
-    },
-    {
-      data: "07/12",
-      diaSemana: "Segunda",
-      local: "Meiji / Harajuku / Shinjuku",
-      quem: "todos",
-      bloco: "Final em Tóquio",
-      atividades: "Meiji Jingu + Harajuku + Omotesando; Shinjuku à noite.",
-      transporte: "Metrô / linha Yamanote.",
     },
     {
       data: "08/12",
@@ -380,28 +366,37 @@ const TRIP = {
     {
       data: "09/12",
       diaSemana: "Quarta",
-      local: "Nikko",
-      quem: "todos",
+      local: "Tokyo Disneyland",
+      quem: "felipana",
       bloco: "Final em Tóquio",
-      atividades: "Bate-volta: Tōshō-gū + outono na montanha. (Novo pra todos.)",
-      transporte: "Trem (bate-volta).",
+      atividades: "Dia de parque.",
+      transporte: "Trem até Maihama.",
+    },
+    {
+      data: "09/12",
+      diaSemana: "Quarta",
+      local: "Monte Takao",
+      quem: "thamandro",
+      bloco: "Final em Tóquio",
+      atividades: "Trilha no Monte Takao.",
+      transporte: "Trem (~50 min).",
     },
     {
       data: "10/12",
       diaSemana: "Quinta",
-      local: "Tóquio (flexível)",
+      local: "Kawagoe",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades: "Dia flexível: Odaiba, Toyosu, jardins ou repetir um favorito.",
-      transporte: "Metrô.",
+      atividades: "A 'pequena Edo'.",
+      transporte: "Trem (~30 min de Tóquio).",
     },
     {
       data: "11/12",
       diaSemana: "Sexta",
-      local: "Tóquio",
+      local: "Tóquio livre",
       quem: "todos",
       bloco: "Final em Tóquio",
-      atividades: "Último dia inteiro: compras, mala, jantar especial de despedida.",
+      atividades: "Compras finais, malas e jantar especial de despedida.",
       transporte: "Metrô.",
     },
     {
@@ -445,7 +440,8 @@ const TRIP = {
     pontuais: [
       { item: "USJ (Universal Studios Japan)", valor: "Ingresso ~¥8.600–10.400/dia (~R$275–335). Área Nintendo costuma exigir passe de horário/Express — reservar." },
       { item: "Tokyo Disney (Felipana)", valor: "~R$290–320/dia × 2 dias." },
-      { item: "Ryokan especial no Fuji (celebração)", valor: "R$1.000–1.600/noite × 2–3 noites." },
+      { item: "Nikko (1 pernoite, ryokan/onsen)", valor: "Somar 1 diária (~R$300–600/pessoa)." },
+      { item: "Ryokan especial no Fuji (celebração)", valor: "R$1.000–1.600/noite × 2 noites." },
       { item: "Ensaio quimono/pré-wedding (Felipana)", valor: "R$300–800." },
       { item: "Só Thamandro: voo Japão⇄China", valor: "R$1.500–3.000." },
       { item: "Só Thamandro: ~6 dias na China", valor: "R$2.500–4.000." },
@@ -466,6 +462,7 @@ const TRIP = {
     { cidade: "Hiroshima", bairro: "Perto da estação ou do Parque da Paz." },
     { cidade: "Osaka", bairro: "Namba/Dotonbori (e perto da linha p/ USJ)." },
     { cidade: "Kawaguchiko", bairro: "Ryokan com vista do Fuji (lado norte do lago) — local do reencontro." },
+    { cidade: "Nikko", bairro: "1 noite — área do Lago Chuzenji ou Kinugawa Onsen." },
     { cidade: "Tóquio", bairro: "Shinjuku (hub de trens e vida noturna). Alternativas: Shibuya, estação de Tóquio." },
   ],
 
@@ -476,7 +473,7 @@ const TRIP = {
     {
       titulo: "Bagagem (takkyūbin)",
       texto:
-        "Serviço porta a porta em toda troca de cidade. Na semana separada, cada casal manda a mala adiante e viaja leve.",
+        "Serviço porta a porta em toda troca de cidade. Na semana separada, cada casal manda a mala adiante e viaja leve. Em Nikko, leve só uma mochila de 1 noite.",
     },
     {
       titulo: "Trens",
@@ -486,7 +483,7 @@ const TRIP = {
     {
       titulo: "Voos internos",
       texto:
-        "Nenhum no Japão nesta versão (sem Hokkaido). Único voo extra é o do Thamandro p/ China (Nagoya ⇄ Pequim/Xangai).",
+        "Nenhum no Japão nesta versão (sem Hokkaido). Único voo extra é o do Thamandro p/ China (Tóquio ⇄ Pequim/Xangai).",
     },
     {
       titulo: "Clima",
@@ -501,7 +498,7 @@ const TRIP = {
     {
       titulo: "Aniversário à prova de falhas (01/12)",
       texto:
-        "Thamandro chega ao ryokan do Fuji já no dia 30 (volta da China e descansa); Felipana chega no dia 1º para o aniversário. Margem de sobra para o jantar de celebração.",
+        "Thamandro volta da China dia 30 e pernoita em Tóquio (a ~2h do Fuji); Felipana termina o oeste em Osaka. Todos chegam ao ryokan no dia 1º com folga.",
     },
   ],
 
@@ -513,14 +510,14 @@ const TRIP = {
       "Capcom é de Osaka — então a franquia aparece em vários pontos da viagem.",
     locais: [
       {
-        cidade: "Osaka",
+        cidade: "Osaka — Felipana (30/11)",
         texto:
           "Hunters Bar Osaka (Namba) — réplicas de armas, consoles com Monster Hunter Wilds, comida/drinks pagos em \"Zenny\". Capcom Store (Shinsaibashi Parco).",
       },
       {
-        cidade: "Tóquio",
+        cidade: "Tóquio — todos",
         texto:
-          "Capcom Store (Shibuya Parco 6F) — mural do Rathalos e espada gigante p/ foto. Hunters Bar Akihabara.",
+          "Capcom Store (Shibuya Parco 6F) — mural do Rathalos e espada gigante p/ foto (03/12). Hunters Bar Akihabara (08/12).",
       },
     ],
     dica: "Reservar o Hunters Bar com antecedência (couvert ~¥700–900/pessoa).",
@@ -555,15 +552,16 @@ const TRIP = {
    * é salvo no navegador (localStorage) ao clicar.
    */
   pendencias: [
-    { texto: "Hiroshima na trilha da Felipana — confirmado", feito: true },
-    { texto: "USJ confirmado (Felipe), na semana de Osaka", feito: true },
-    { texto: "Takayama com 1 noite", feito: true },
-    { texto: "Reencontro no dia 1º (Thamandro chega dia 30 pra descansar)", feito: true },
-    { texto: "Nikko: conjunto (recomendado) ou Thamandro solo?", feito: false },
-    { texto: "China: só Pequim ou Pequim + Xangai (cabe, ~6 dias)?", feito: false },
+    { texto: "Hiroshima — confirmado", feito: true },
+    { texto: "USJ — confirmado", feito: true },
+    { texto: "Takayama + Shirakawa só Felipana", feito: true },
+    { texto: "China com 6 dias", feito: true },
+    { texto: "Nikko = 1 pernoite (todos)", feito: true },
+    { texto: "China: só Pequim ou Pequim + Xangai (cabe em 6 dias)?", feito: false },
+    { texto: "Confirmar Kawaguchiko (vs Hakone) no reencontro", feito: false },
     { texto: "Reservar USJ (ingresso + passe da Área Nintendo)", feito: false },
     { texto: "Reservar Disney (época de Natal lota)", feito: false },
-    { texto: "Reservar Hunters Bar (Osaka e/ou Akihabara)", feito: false },
+    { texto: "Reservar Hunters Bar e ryokan de Nikko", feito: false },
     { texto: "Confirmar entrada sem visto na China perto da data", feito: false },
     { texto: "Confirmar cidade brasileira de origem (AF545/AF546)", feito: false },
   ],
@@ -571,9 +569,8 @@ const TRIP = {
   // Contagem de noites (resumo) — total 21
   noites: [
     { local: "Nagano", n: 2 },
-    { local: "Takayama", n: 1 },
-    { local: "Separados", n: 6 },
-    { local: "Kawaguchiko", n: 3 },
-    { local: "Tóquio", n: 9 },
+    { local: "Separados", n: 8 },
+    { local: "Kawaguchiko", n: 2 },
+    { local: "Tóquio / Nikko", n: 9 },
   ],
 };
