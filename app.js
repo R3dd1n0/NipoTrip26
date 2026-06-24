@@ -340,8 +340,12 @@ function renderVoos() {
   TRIP.voos.forEach((v) => {
     const tr = el("tr");
     const tbd = v.tbd ? ' <span class="badge badge--tbd">TBD</span>' : "";
+    // Link de status do voo (Flightradar24, por código IATA)
+    const url =
+      "https://www.flightradar24.com/data/flights/" +
+      encodeURIComponent(v.voo.toLowerCase());
     tr.innerHTML = `
-      <td><strong>${esc(v.voo)}</strong></td>
+      <td><a class="voo-link" href="${url}" target="_blank" rel="noopener" title="Ver status do voo">${esc(v.voo)} ↗</a></td>
       <td>${esc(v.data)}</td>
       <td>${esc(v.hora)}</td>
       <td>${esc(v.trecho)}${tbd}</td>`;

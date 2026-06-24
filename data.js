@@ -414,14 +414,14 @@ const TRIP = {
    * 5. VOOS
    * ---------------------------------------------------------------- */
   voos: [
-    { voo: "AF545", data: "18/11", hora: "21:50", trecho: "Brasil → Paris (CDG)", tbd: true },
+    { voo: "AF545", data: "18/11", hora: "21:50", trecho: "Fortaleza (FOR) → Paris (CDG)" },
     { voo: "AF282", data: "20/11", hora: "09:45", trecho: "Paris (CDG) → Tóquio-Haneda (chega 21/11 ~06:50)" },
     { voo: "NH963", data: "12/12", hora: "17:25", trecho: "Tóquio-Haneda → Pequim (PEK)" },
     { voo: "AF381", data: "13/12", hora: "00:05", trecho: "Pequim (PEK) → Paris (CDG)" },
-    { voo: "AF546", data: "13/12", hora: "10:55", trecho: "Paris (CDG) → Brasil", tbd: true },
+    { voo: "AF546", data: "13/12", hora: "10:55", trecho: "Paris (CDG) → Fortaleza (FOR)" },
   ],
   voosNota:
-    "Não há dia 13 no Japão — a volta apenas conecta em Pequim de madrugada. Confirmar a cidade brasileira de origem nos trechos AF545/AF546.",
+    "Não há dia 13 no Japão — a volta apenas conecta em Pequim de madrugada. Clique no número do voo para abrir o status (Flightradar24). Dica: ative os alertas de mudança de horário na sua reserva Air France (e-mail/SMS).",
 
   /* ----------------------------------------------------------------
    * 6. ORÇAMENTO

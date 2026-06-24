@@ -720,6 +720,17 @@ tfoot td {
   margin-top: 12px;
 }
 
+/* Link de status do voo */
+.voo-link {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.voo-link:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Conversor de câmbio ---------- */
 .fx {
   display: flex;
