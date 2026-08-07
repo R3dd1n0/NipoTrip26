@@ -30,19 +30,25 @@ function renderHero() {
   document.getElementById("hero-phrase").textContent = m.frase;
   document.getElementById("brand-title").textContent = m.titulo;
 
-  // Viajantes
+  // Viajantes (3 casais)
   const wrap = document.getElementById("hero-travelers");
-  TRIP.pessoas.forEach((p) => {
+  (TRIP.grupos || []).forEach((g) => {
     const card = el("div", "traveler");
-    card.style.borderLeftColor = p.cor;
+    card.style.borderLeftColor = g.cor;
     card.innerHTML = `
-      <div class="traveler__name">${esc(p.grupo)}</div>
-      <div class="traveler__members">${esc(p.membros)}</div>
-      <span class="traveler__tag">${esc(p.tag)}</span>
-      <p class="traveler__desc">${esc(p.descricao)}</p>`;
+      <div class="traveler__name">${g.emoji ? g.emoji + " " : ""}${esc(g.nome)}</div>
+      <div class="traveler__members" style="color:${g.cor}">${esc(g.membros)}</div>
+      <span class="traveler__tag">${esc(g.tag)}</span>
+      <p class="traveler__desc">${esc(g.descricao)}</p>`;
     wrap.appendChild(card);
   });
 }
+
+// Lookup rápido de grupo por chave (nome, cor, emoji)
+const GRUPO_BY_KEY = {};
+(typeof TRIP !== "undefined" ? TRIP.grupos || [] : []).forEach((g) => {
+  GRUPO_BY_KEY[g.key] = g;
+});
 
 /* ---------------- CONTAGEM REGRESSIVA ---------------- */
 function startCountdown() {
@@ -104,34 +110,45 @@ function renderOverview() {
    Plota as cidades e rotas de TRIP.mapa num mapa real e interativo,
    usando as coordenadas reais (lat/lon). Não precisa de chave de API. */
 
-// Cores por grupo (boa leitura sobre as tiles claras do OpenStreetMap)
+// Cores por grupo (boa leitura sobre as tiles claras)
 const CORES = {
-  comum: "#16243E", // índigo — trechos com todos
-  felipana: "#E8821E", // dourado/laranja — clássico
-  thamandro: "#D02B2B", // vermelho — China
-  fuji: "#E8821E", // reencontro
+  rafaelo: "#D83A3A", // vermelho
+  thamandro: "#2FA36B", // verde
+  felipana: "#3E78C9", // azul
+  compart: "#E8A846", // dourado — 2+ casais / todos
 };
 
-let leafletMap = null;
-// Camadas agrupadas por "grupo" para o filtro ligar/desligar
-const mapLayers = { comum: [], felipana: [], thamandro: [], fuji: [] };
+// Cor de uma lista de grupos: 1 casal → cor dele; 2+ → dourado.
+function corGrupos(grupos) {
+  const g = (grupos || []).filter((x) => CORES[x]);
+  return g.length === 1 ? CORES[g[0]] : CORES.compart;
+}
 
-// Direção do rótulo por cidade, para "abrir em leque" os clusters
-// (Kansai, Hiroshima/Miyajima, Takayama/Shirakawa) e evitar sobreposição.
+let leafletMap = null;
+// Lista plana de camadas do mapa: { layer, grupos } — o filtro liga/
+// desliga conforme os grupos de cada camada.
+let mapLayerList = [];
+
+// Direção do rótulo por cidade, para "abrir em leque" os clusters e
+// evitar sobreposição.
 const LABEL_DIR = {
   toquio: "right",
   nagano: "top",
   nikko: "right",
-  takayama: "top",
-  shirakawa: "left",
+  karuizawa: "top",
+  kamakura: "bottom",
+  enoshima: "left",
   kyoto: "top",
   nara: "bottom",
-  hiroshima: "left",
-  miyajima: "bottom",
   osaka: "left",
+  hiroshima: "left",
+  fukuoka: "left",
   kawaguchiko: "bottom",
-  pequim: "right",
+  hongkong: "left",
+  hangzhou: "right",
+  suzhou: "top",
   xangai: "right",
+  pequim: "right",
 };
 const TIP_OFFSET = {
   right: [8, 0],
@@ -164,28 +181,30 @@ function renderMapa() {
     }
   ).addTo(leafletMap);
 
+  mapLayerList = [];
+
   // --- Rotas (linhas) ---
   m.rotas.forEach((r) => {
     const latlngs = r.pontos
       .filter((k) => byKey[k])
       .map((k) => [byKey[k].lat, byKey[k].lon]);
     const pl = L.polyline(latlngs, {
-      color: CORES[r.grupo] || "#16243E",
+      color: corGrupos(r.grupos),
       weight: r.voo ? 3 : 4,
       opacity: r.tbd ? 0.45 : 0.9,
       dashArray: r.voo ? "6 10" : null, // tracejado = voo
     });
     pl.addTo(leafletMap);
-    mapLayers[r.grupo].push(pl);
+    mapLayerList.push({ layer: pl, grupos: r.grupos || [] });
   });
 
   // --- Marcadores (com rótulo fixo) ---
   m.cidades.forEach((c) => {
     const mk = L.circleMarker([c.lat, c.lon], {
-      radius: c.grupo === "fuji" ? 9 : 7,
+      radius: c.star ? 9 : 7,
       color: "#ffffff",
       weight: 2,
-      fillColor: CORES[c.grupo] || "#16243E",
+      fillColor: corGrupos(c.grupos),
       fillOpacity: 1,
     });
     const dir = LABEL_DIR[c.key] || "right";
@@ -197,7 +216,7 @@ function renderMapa() {
     });
     mk.bindPopup("<strong>" + esc(c.nome) + "</strong>");
     mk.addTo(leafletMap);
-    mapLayers[c.grupo].push(mk);
+    mapLayerList.push({ layer: mk, grupos: c.grupos || [] });
   });
 
   // Zoom inicial focado no JAPÃO (lon ≥ 128). As cidades da China
@@ -225,20 +244,14 @@ function renderMapa() {
 }
 
 /* Liga/desliga camadas do mapa conforme o filtro de casal.
-   "comum" e "fuji" (trechos com todos) ficam sempre visíveis. */
+   Mostra a camada se o filtro é "todos" ou se o casal participa dela. */
 function aplicarFiltroMapa() {
   if (!leafletMap) return;
-  const mostra = (grupo) => {
-    if (filtroAtual === "todos") return true;
-    if (grupo === "comum" || grupo === "fuji") return true;
-    return grupo === filtroAtual;
-  };
-  Object.keys(mapLayers).forEach((g) => {
-    mapLayers[g].forEach((layer) => {
-      const visivel = leafletMap.hasLayer(layer);
-      if (mostra(g) && !visivel) layer.addTo(leafletMap);
-      else if (!mostra(g) && visivel) leafletMap.removeLayer(layer);
-    });
+  mapLayerList.forEach(({ layer, grupos }) => {
+    const mostra = filtroAtual === "todos" || (grupos || []).includes(filtroAtual);
+    const visivel = leafletMap.hasLayer(layer);
+    if (mostra && !visivel) layer.addTo(leafletMap);
+    else if (!mostra && visivel) leafletMap.removeLayer(layer);
   });
 }
 
@@ -258,14 +271,21 @@ function renderRoteiro() {
     }
 
     const item = el("li", "tl-item");
-    item.dataset.quem = dia.quem;
+    // quem é uma lista de casais; deriva um "tipo" para cor do marcador
+    const quem = Array.isArray(dia.quem) ? dia.quem : [dia.quem];
+    const tipo = quem.length >= 3 ? "todos" : quem.length === 1 ? quem[0] : "misto";
+    item.dataset.quem = tipo;
+    item.dataset.grupos = quem.join(" ");
 
     const badgeQuem =
-      dia.quem === "todos"
+      quem.length >= 3
         ? '<span class="badge badge--todos">Todos</span>'
-        : dia.quem === "felipana"
-        ? '<span class="badge badge--felipana">Felipana</span>'
-        : '<span class="badge badge--thamandro">Thamandro</span>';
+        : quem
+            .map((k) => {
+              const g = GRUPO_BY_KEY[k];
+              return `<span class="badge badge--${k}">${g ? esc(g.nome) : esc(k)}</span>`;
+            })
+            .join(" ");
     const badgeTbd = dia.tbd
       ? '<span class="badge badge--tbd">A confirmar</span>'
       : "";
@@ -294,10 +314,8 @@ function aplicarFiltro() {
   if (tl) tl.dataset.filtro = filtroAtual;
 
   document.querySelectorAll(".tl-item").forEach((item) => {
-    const quem = item.dataset.quem;
-    let mostra = true;
-    if (filtroAtual === "felipana") mostra = quem !== "thamandro";
-    else if (filtroAtual === "thamandro") mostra = quem !== "felipana";
+    const grupos = (item.dataset.grupos || "").split(" ").filter(Boolean);
+    const mostra = filtroAtual === "todos" || grupos.includes(filtroAtual);
     item.hidden = !mostra;
   });
 

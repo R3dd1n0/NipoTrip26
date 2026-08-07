@@ -12,6 +12,10 @@
   --cream: #f7f0e4;
   --white: #ffffff;
   --ink: #1a1a1a;
+  /* Cores dos 3 casais */
+  --rafaelo: #d83a3a; /* vermelho */
+  --thamandro: #2fa36b; /* verde */
+  --felipana: #3e78c9; /* azul */
 
   --serif: "Zilla Slab", "Noto Serif JP", Georgia, serif;
   --sans: "Inter", "Noto Sans", system-ui, -apple-system, sans-serif;
@@ -266,7 +270,7 @@ svg {
 /* Viajantes no hero */
 .travelers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -468,17 +472,20 @@ svg {
   border: 2px solid var(--indigo);
   flex-shrink: 0;
 }
-.map-legend .dot--comum {
-  background: #16243e;
-}
-.map-legend .dot--felipana {
-  background: #e8821e;
+.map-legend .dot--rafaelo {
+  background: var(--rafaelo);
 }
 .map-legend .dot--thamandro {
-  background: #d02b2b;
+  background: var(--thamandro);
+}
+.map-legend .dot--felipana {
+  background: var(--felipana);
+}
+.map-legend .dot--compart {
+  background: var(--gold);
 }
 .map-legend .dot--fuji {
-  background: #e8821e;
+  background: var(--gold);
   width: 16px;
   height: 16px;
   border-color: #fff;
@@ -562,15 +569,14 @@ svg {
 
 /* Quando um casal é selecionado, atenua os dias "com todos" e realça
    os dias do casal escolhido — deixa a mudança do filtro bem visível. */
-.timeline[data-filtro="felipana"] .tl-item[data-quem="todos"],
-.timeline[data-filtro="thamandro"] .tl-item[data-quem="todos"] {
-  opacity: 0.45;
-}
-.timeline[data-filtro="felipana"] .tl-item[data-quem="felipana"] {
-  box-shadow: 0 0 0 2px var(--gold), var(--shadow);
+.timeline[data-filtro="rafaelo"] .tl-item[data-quem="rafaelo"] {
+  box-shadow: 0 0 0 2px var(--rafaelo), var(--shadow);
 }
 .timeline[data-filtro="thamandro"] .tl-item[data-quem="thamandro"] {
-  box-shadow: 0 0 0 2px var(--torii), var(--shadow);
+  box-shadow: 0 0 0 2px var(--thamandro), var(--shadow);
+}
+.timeline[data-filtro="felipana"] .tl-item[data-quem="felipana"] {
+  box-shadow: 0 0 0 2px var(--felipana), var(--shadow);
 }
 
 .tl-item::before {
@@ -585,11 +591,18 @@ svg {
   border-radius: 50%;
 }
 
-.tl-item[data-quem="felipana"]::before {
-  background: var(--gold);
+.tl-item[data-quem="rafaelo"]::before {
+  background: var(--rafaelo);
 }
 .tl-item[data-quem="thamandro"]::before {
-  background: var(--torii);
+  background: var(--thamandro);
+}
+.tl-item[data-quem="felipana"]::before {
+  background: var(--felipana);
+}
+.tl-item[data-quem="misto"]::before,
+.tl-item[data-quem="todos"]::before {
+  background: var(--gold);
 }
 
 .tl-item__head {
@@ -641,13 +654,17 @@ svg {
   padding: 2px 8px;
 }
 
-.badge--felipana {
-  background: rgba(232, 168, 70, 0.2);
-  color: #8a5a00;
+.badge--rafaelo {
+  background: rgba(216, 58, 58, 0.15);
+  color: #a01f1f;
 }
 .badge--thamandro {
-  background: rgba(216, 58, 58, 0.16);
-  color: #a01f1f;
+  background: rgba(47, 163, 107, 0.18);
+  color: #1c6e46;
+}
+.badge--felipana {
+  background: rgba(62, 120, 201, 0.18);
+  color: #274f86;
 }
 .badge--todos {
   background: rgba(18, 30, 54, 0.1);

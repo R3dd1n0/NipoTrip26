@@ -125,8 +125,9 @@
         <!-- Filtro do mapa (sincronizado com o roteiro abaixo) -->
         <div class="filters" id="map-filters">
           <button class="filter-btn is-active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="felipana">Felipana</button>
-          <button class="filter-btn" data-filter="thamandro">Thamandro</button>
+          <button class="filter-btn" data-filter="rafaelo">🔴 Rafaelo</button>
+          <button class="filter-btn" data-filter="thamandro">🟢 Thamandro</button>
+          <button class="filter-btn" data-filter="felipana">🔵 Felipana</button>
         </div>
 
         <!-- Mapa real (Leaflet) montado pelo app.js a partir de TRIP.mapa -->
@@ -134,10 +135,10 @@
 
         <!-- Legenda -->
         <ul class="map-legend" id="map-legend">
-          <li><span class="dot dot--comum"></span> Todos (abertura + final)</li>
-          <li><span class="dot dot--felipana"></span> Felipana (clássico)</li>
-          <li><span class="dot dot--thamandro"></span> Thamandro (China)</li>
-          <li><span class="dot dot--fuji"></span> Reencontro no Fuji</li>
+          <li><span class="dot dot--rafaelo"></span> Rafaelo</li>
+          <li><span class="dot dot--thamandro"></span> Thamandro</li>
+          <li><span class="dot dot--felipana"></span> Felipana</li>
+          <li><span class="dot dot--compart"></span> 2+ casais / todos</li>
           <li><span class="line line--solid"></span> Por terra</li>
           <li><span class="line line--dash"></span> Voo</li>
         </ul>
@@ -150,7 +151,7 @@
         <div class="section__eyebrow">Dia a dia</div>
         <h2 class="section__title">Roteiro</h2>
         <p class="section__intro">
-          Linha do tempo da viagem. Na semana separada (25–29/11), use as abas para ver
+          Linha do tempo da viagem. Na separação (23/11–02/12), use as abas para ver
           só o caminho de cada casal.
         </p>
 
@@ -159,12 +160,13 @@
         <!-- Filtro de abas -->
         <div class="filters">
           <button class="filter-btn is-active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="felipana">Felipana</button>
-          <button class="filter-btn" data-filter="thamandro">Thamandro</button>
+          <button class="filter-btn" data-filter="rafaelo">🔴 Rafaelo</button>
+          <button class="filter-btn" data-filter="thamandro">🟢 Thamandro</button>
+          <button class="filter-btn" data-filter="felipana">🔵 Felipana</button>
         </div>
         <p class="filter-note">
-          🟡 Felipana (clássico) · 🔴 Thamandro (China) · pontos dourados/vermelhos na
-          linha indicam de quem é cada dia.
+          🔴 Rafaelo · 🟢 Thamandro · 🔵 Felipana — o ponto na linha indica de quem é
+          cada dia (dourado = 2+ casais / todos juntos).
         </p>
 
         <ul class="timeline" id="timeline"></ul>
