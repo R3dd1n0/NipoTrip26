@@ -70,7 +70,8 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Voo | HK Express — Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro | Cód. reserva **SCG3YQ** |
 | Voo | Hong Kong → Hangzhou | 25/11 21:15 | 🟢 Thamandro | nº a confirmar |
 | Voo | Osaka → Shanghai | 28/11 22:10 | 🔵 Felipana (Marlipe) | nº a confirmar |
-| Voo | Air China — Pequim (PEK) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 | Thamandro + Felipana | ≈ R$4.987 total · nº a confirmar |
+| Hotel Kyoto | Tune Stay Kyoto (Quarto Duplo) | 25/11 → 28/11 (3 noites) | 🔵 ou 🔴 (1 casal — confirmar quem) | Booking 5155888463 · ≈ R$2.502 |
+| Voo | Air China **CA183** — Pequim (PEK, Terminal 3) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 (3h20, Economy) | Thamandro + Felipana | Ref. **NKKEN8** · ≈ R$4.987 total · status "Agendado" |
 
 ---
 
@@ -80,7 +81,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 - 🟢 **Haneda → Hong Kong:** 22/11 23:55 → 23/11 04:15 (HK Express, SCG3YQ) ✅
 - 🟢 **Hong Kong → Hangzhou:** 25/11 21:15 (nº a confirmar)
 - 🔵 **Osaka → Shanghai:** 28/11 22:10 (nº a confirmar)
-- 🟢🔵 **Pequim → Tóquio:** 05/12 17:10→21:30 (Air China) ✅
+- 🟢🔵 **Pequim → Tóquio:** 05/12 17:10→21:30 — Air China **CA183** (ref NKKEN8) ✅
 - 🔴 **Rafaelo volta:** Fukuoka → Tóquio → Brasil, 02/12 (a confirmar)
 - 🟢🔵 **Volta:** Tóquio → Brasil, 12/12 (a confirmar)
 
@@ -89,6 +90,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 ## ❓ PENDÊNCIAS / A RESERVAR
 
 - [ ] Trens: Haneda→Kawaguchiko (21/11) e Tóquio→Kyoto (22/11) — em aberto.
+- [ ] **Tune Stay Kyoto** (25–28/11, 1 quarto duplo): é da Felipana ou do Rafaelo? Se os dois casais ficam em Kyoto juntos, falta o 2º quarto.
 - [ ] Hospedagem de Hong Kong (🟢) — a definir.
 - [ ] Números dos voos HK→Hangzhou, Osaka→Shanghai e retornos ao Brasil.
 - [ ] Reservar USJ, Disney (Xangai + Tóquio + talvez HK Disney), ryokan/onsen Fuji.
