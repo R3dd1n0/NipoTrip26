@@ -149,6 +149,7 @@ const LABEL_DIR = {
   suzhou: "top",
   xangai: "right",
   pequim: "right",
+  kawagoe: "right",
 };
 const TIP_OFFSET = {
   right: [8, 0],
@@ -358,12 +359,15 @@ function renderVoos() {
   TRIP.voos.forEach((v) => {
     const tr = el("tr");
     const tbd = v.tbd ? ' <span class="badge badge--tbd">TBD</span>' : "";
-    // Link de status do voo (Flightradar24, por código IATA)
-    const url =
-      "https://www.flightradar24.com/data/flights/" +
-      encodeURIComponent(v.voo.toLowerCase());
+    // Link de status do voo (Flightradar24) só quando há código IATA
+    const temLink = v.link !== false && /^[a-z]{2}\d{1,4}$/i.test(v.voo);
+    const cel = temLink
+      ? `<a class="voo-link" href="https://www.flightradar24.com/data/flights/${encodeURIComponent(
+          v.voo.toLowerCase()
+        )}" target="_blank" rel="noopener" title="Ver status do voo">${esc(v.voo)} ↗</a>`
+      : `<span class="voo-cod">${esc(v.voo)}</span>`;
     tr.innerHTML = `
-      <td><a class="voo-link" href="${url}" target="_blank" rel="noopener" title="Ver status do voo">${esc(v.voo)} ↗</a></td>
+      <td>${cel}</td>
       <td>${esc(v.data)}</td>
       <td>${esc(v.hora)}</td>
       <td>${esc(v.trecho)}${tbd}</td>`;
