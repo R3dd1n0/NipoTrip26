@@ -80,7 +80,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Voo | Air China **CA183** — Pequim (PEK, Terminal 3) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 (3h20, Economy) | Thamandro + Felipana | Ref. **NKKEN8** · ≈ R$4.987 · Pago (Mariana) |
 | Hotel Hong Kong | Empire Hotel Kowloon — Tsim Sha Tsui (No.62 Kimberley Rd, TST) | 23/11 → 25/11 (2 noites) | 🟢 Thamandro | Booking 1528371849830727 |
 | Hotel Suzhou | Anyi Hotel (Guanqian St / Pingjiang Rd Branch), No.9 Zhenzhu Lane, Gusu, Suzhou | 27/11 → 28/11 (1 noite) | 🟢 Thamandro | Booking 1528371865070957 |
-| Hotel Pequim | **Hotel Manxin** (área de Tiananmen) | 02/12 → 05/12 (3 noites) | Thamandro + Felipana | Citado na lista da Thamires · confirmar reserva/datas |
+| Hotel Pequim | Sunworld Hotel Wangfujing (4★) — 88 Dengshikou, Dongcheng, Pequim | 02/12 → 05/12 (3 noites, 2 quartos) | Thamandro + Felipana | ✅ confirmado (hóspede Felipe) · ⚠️ Thamires citou "Manxin" — este (Sunworld) é o válido? |
 | Hotel Hangzhou | Nostalgia S Hotel (West Lake Intime), No.56 Hefang St, Shangcheng, Hangzhou | 25/11 → 27/11 (2 noites) | 🟢 Thamandro | Booking 1528371864893080 |
 | Hotel Tóquio | COMMA HOUSE Nishi-ikebukuro (apto 2 quartos, Toshima) | 05/12 → 12/12 (7 diárias) | Thamandro + Felipana (4 adultos) | Booking 5976.616.628 · ≈ R$6.280 (reta final) |
 
@@ -118,17 +118,17 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 **🔵 Felipana (Felipe + Mariana):**
 - 21/11 Fuji ✅ (Airbnb) · 22, 23, 24/11 Osaka ✅ (Henn na Hotel Namba)
 - 25, 26, 27/11 Kyoto ✅ (Tune Stay) · 28/11 → voo p/ Xangai
-- 28/11–01/12 Xangai ✅ (Atour) · 02–04/12 Pequim 🟡 (Hotel Manxin — confirmar)
+- 28/11–01/12 Xangai ✅ (Atour) · 02–04/12 Pequim ✅ (Sunworld Wangfujing)
 - 05–11/12 Tóquio ✅ (COMMA HOUSE)
 
 **🟢 Thamandro (Thami + Leandro):**
 - 21/11 Fuji ✅ · 22/11 voo noturno (dorme no avião)
 - 23–24/11 Hong Kong ✅ (Empire) · 25–26/11 Hangzhou ✅ (Nostalgia S)
 - 27/11 Suzhou ✅ (Anyi) · 28/11–01/12 Xangai ✅ (Atour)
-- 02–04/12 Pequim 🟡 (Hotel Manxin — confirmar) · 05–11/12 Tóquio ✅ (COMMA HOUSE)
+- 02–04/12 Pequim ✅ (Sunworld Wangfujing) · 05–11/12 Tóquio ✅ (COMMA HOUSE)
 
-> **Ainda em aberto na hospedagem:** só **confirmar o Hotel Manxin em Pequim**
-> (🟡, 02–04/12). Todo o resto ✅.
+> **Hospedagem dos 4: 100% coberta ✅** (falta só confirmar que o hotel de
+> Pequim é o Sunworld Wangfujing e não o "Manxin" que a Thamires citou).
 
 ### 🚆 Transporte — trechos em aberto
 - Haneda → Kawaguchiko (21/11) — Fuji Excursion/ônibus (abre 30d antes).
@@ -150,7 +150,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ## ❓ PENDÊNCIAS / A RESERVAR
 
-- [ ] **Hotel Manxin (Pequim, 02–04/12):** confirmar reserva/datas (único hotel pendente).
+- [ ] **Pequim:** confirmar que o hotel é o **Sunworld Wangfujing** (Thamires citou "Manxin").
 - [ ] nº do voo **Osaka → Shanghai** (28/11) e confirmar se está pago.
 - [ ] Trens (janela): Fuji Excursion (30d antes) · G-trains China (14d antes, Trip.com).
 - [ ] Reservar USJ, Disney (Xangai + Tóquio + talvez HK Disney), ryokan/onsen Fuji.
