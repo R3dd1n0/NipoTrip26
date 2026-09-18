@@ -70,7 +70,9 @@ na estação → Kawaguchiko. Trem: em aberto.
 
 | Tipo | Detalhe | Data | Quem | Obs |
 |------|---------|------|------|-----|
-| Hospedagem Fuji | Airbnb — 3172-1 Saiko, Fujikawaguchiko, Minamitsuru District, Yamanashi 401-0332 | 21/11 | Todos (os 6) | Reservado pela Thamires (Airbnb) |
+| Hospedagem Fuji | Airbnb — 3172-1 Saiko, Fujikawaguchiko, Minamitsuru District, Yamanashi 401-0332 | 21/11 | Todos (os 6) | Reservado pela Thamires · ✅ comporta 6 |
+| Voo IDA | AF489 (18/11 21:50 Fortaleza→Paris-CDG) + AF282 (20/11 09:50 Paris→Tóquio-Haneda, chega 21/11 06:50) | 18–21/11 | Thamandro (XOOM5W) + Felipana (X3QBBE), 2+2 | ✅ Air France/Flying Blue |
+| Voo VOLTA | NH963 (12/12 17:25 Haneda→Pequim) + AF381 (13/12 00:05 Pequim→Paris) + AF488 (13/12 14:30 Paris→Fortaleza 19:40) | 12–13/12 | Thamandro (XOOM5W) + Felipana (X3QBBE), 2+2 | ✅ conexão via Pequim (não pernoita) |
 | Hotel Osaka | Henn na Hotel Express Osaka Namba Nipponbashi (3★) — 1-5-20 Nipponbashi, Chuo-ku | 22/11 → 25/11 (3 noites) | 🔵 Felipana | ✅ confirmado (Booking) |
 | Hotel Xangai | Atour Hotel Shanghai Bund Land Plaza (409 East Nanjing Rd) | 28/11 → 02/12 (2 quartos / 4 diárias) | Thamandro + Felipana (4 adultos) | Booking 6057.321.176 · ≈ R$5.692 |
 | Voo | HK Express — Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro | Cód. **SCG3YQ** · Pago (Leandro) |
@@ -118,16 +120,16 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 **Os 4 (🟢 Thamandro + 🔵 Felipana): NENHUMA noite descoberta.** 21→11/12 tudo com hotel:
 - 🔵 Felipana: Fuji(21) → Osaka(22–24) → Kyoto(25–27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
 - 🟢 Thamandro: Fuji(21) → [voo noturno 22] → HK(23–24) → Hangzhou(25–26) → Suzhou(27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
-- ⚠️ **Fuji (21):** só tenho 1 Airbnb (reserva da Thamires). Confirmar se comporta **6 pessoas** (encontro dos 6) ou se o Rafaelo tem hospedagem própria lá.
+- ✅ **Fuji (21):** Airbnb comporta **6 pessoas** (confirmado). Encontro dos 6 ok.
 - 🔴 **Rafaelo:** NÃO tenho as reservas dele (reserva por conta) — não dá pra auditar as noites do Rafaelo.
 
 ### 2) Voos — comprados COM número/data? (não só print de pesquisa)
+- ✅ **IDA** AF489 (18/11) + AF282 (20/11) — Air France/Flying Blue, refs XOOM5W (Thamandro) e X3QBBE (Felipana). Comprados.
+- ✅ **VOLTA** NH963 (12/12) + AF381 + AF488 (13/12) via Pequim — mesmos PNRs. Comprados.
 - ✅ **HX128** HK→Hangzhou (25/11 21:15) — nº + data + reserva confirmada. OK.
 - ✅ **CA183** Pequim→Tóquio (05/12 17:10) — nº + data + ref NKKEN8. OK.
 - 🟡 **Tóquio→Hong Kong** (HK Express, 22/11 23:55) — tem **código SCG3YQ** e horário, mas **falta o número do voo**. Marcado "pago (Leandro)".
-- 🟡 **Ida Brasil→Japão** (AF545 18/11 + AF282 20/11) — números do seu texto inicial e "pago" na lista, mas **não vi o e-ticket** nesta sessão.
-- ❌ **Osaka→Shanghai** (Felipana, 28/11 22:10) — **sem número, sem reserva** e **não estava na lista de pagos** da Thamires. Tratar como **NÃO confirmado**.
-- ❌ **Volta Japão→Brasil** (12/12) — a lista diz "pago (Air France)", mas **não tenho número/data reais** dessa volta (os AF antigos eram do roteiro via Pequim, que mudou).
+- ❌ **Osaka→Shanghai** (Felipana, 28/11 22:10) — **sem número, sem reserva** e **não estava na lista de pagos** da Thamires. Tratar como **NÃO confirmado**. ❗prioridade
 
 ### 3) Reservas x nº de pessoas (2 ou 4)
 - ✅ **4 pessoas / 2 quartos:** Atour Xangai (4 ad., 2 qtos), Sunworld Pequim (2 qtos), COMMA HOUSE Tóquio (4 ad., apto 2 qtos). Batem.
@@ -167,7 +169,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - Retornos ao Brasil (12/12): ✅ pagos (Air France) — só anotar nº/horário.
 
 ### ✈️ Transporte já CONFIRMADO
-- Ida: AF545 (18/11) + AF282 (20/11).
+- Ida: AF489 (18/11) + AF282 (20/11). Volta: NH963 + AF381 + AF488 (12–13/12).
 - HK Express HND→HKG (22/11, SCG3YQ) · HX128 HKG→Hangzhou (25/11).
 - Air China CA183 Pequim→Tóquio (05/12).
 
