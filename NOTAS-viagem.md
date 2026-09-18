@@ -1,8 +1,7 @@
 # NOTAS DA VIAGEM — Japão 2026 (buffer de planejamento)
 
-> **Modo atual:** APENAS ACUMULAR informação aqui. **Não editar o site**
-> (data.js / roteiro / mapa) até o Felipe dizer "pode aplicar".
-> Quando for aplicar, transferir a seção **📥 A INCORPORAR** para o `data.js`.
+> **Modo atual:** ✅ **APLICADO no site em 18/09/2026.** Este caderno segue como
+> registro/rascunho. Novas mudanças: anotar aqui e avisar quando aplicar de novo.
 
 Última atualização: 2026-09-17
 
