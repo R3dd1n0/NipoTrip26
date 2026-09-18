@@ -81,7 +81,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Hotel Hong Kong | Empire Hotel Kowloon — Tsim Sha Tsui (No.62 Kimberley Rd, TST) | 23/11 → 25/11 (2 noites) | 🟢 Thamandro | Booking 1528371849830727 |
 | Hotel Suzhou | Anyi Hotel (Guanqian St / Pingjiang Rd Branch), No.9 Zhenzhu Lane, Gusu, Suzhou | 27/11 → 28/11 (1 noite) | 🟢 Thamandro | Booking 1528371865070957 |
 | Hotel Pequim | **Hotel Manxin** (área de Tiananmen) | 02/12 → 05/12 (3 noites) | Thamandro + Felipana | Citado na lista da Thamires · confirmar reserva/datas |
-| Hotel Hangzhou | (nome a confirmar — a Thamires citou traslado "aeroporto→hotel Hangzhou") | 25/11 → 27/11 (2 noites) | 🟢 Thamandro | Existe, falta o nome/voucher |
+| Hotel Hangzhou | Nostalgia S Hotel (West Lake Intime), No.56 Hefang St, Shangcheng, Hangzhou | 25/11 → 27/11 (2 noites) | 🟢 Thamandro | Booking 1528371864893080 |
 | Hotel Tóquio | COMMA HOUSE Nishi-ikebukuro (apto 2 quartos, Toshima) | 05/12 → 12/12 (7 diárias) | Thamandro + Felipana (4 adultos) | Booking 5976.616.628 · ≈ R$6.280 (reta final) |
 
 ---
@@ -123,13 +123,12 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 **🟢 Thamandro (Thami + Leandro):**
 - 21/11 Fuji ✅ · 22/11 voo noturno (dorme no avião)
-- 23–24/11 Hong Kong ✅ (Empire) · 25–26/11 Hangzhou 🟡 (hotel existe, falta o nome)
+- 23–24/11 Hong Kong ✅ (Empire) · 25–26/11 Hangzhou ✅ (Nostalgia S)
 - 27/11 Suzhou ✅ (Anyi) · 28/11–01/12 Xangai ✅ (Atour)
 - 02–04/12 Pequim 🟡 (Hotel Manxin — confirmar) · 05–11/12 Tóquio ✅ (COMMA HOUSE)
 
-> **Ainda em aberto na hospedagem:** nome do **hotel de Hangzhou** (🟡) e
-> **confirmar o Hotel Manxin em Pequim** (🟡). Osaka, Kyoto, Xangai, Suzhou,
-> HK, Fuji e Tóquio ✅.
+> **Ainda em aberto na hospedagem:** só **confirmar o Hotel Manxin em Pequim**
+> (🟡, 02–04/12). Todo o resto ✅.
 
 ### 🚆 Transporte — trechos em aberto
 - Haneda → Kawaguchiko (21/11) — Fuji Excursion/ônibus (abre 30d antes).
@@ -151,8 +150,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ## ❓ PENDÊNCIAS / A RESERVAR
 
-- [ ] **Hangzhou (Thamandro, 25–26/11):** confirmar nome/voucher do hotel.
-- [ ] **Hotel Manxin (Pequim, 02–04/12):** confirmar reserva/datas.
+- [ ] **Hotel Manxin (Pequim, 02–04/12):** confirmar reserva/datas (único hotel pendente).
 - [ ] nº do voo **Osaka → Shanghai** (28/11) e confirmar se está pago.
 - [ ] Trens (janela): Fuji Excursion (30d antes) · G-trains China (14d antes, Trip.com).
 - [ ] Reservar USJ, Disney (Xangai + Tóquio + talvez HK Disney), ryokan/onsen Fuji.
