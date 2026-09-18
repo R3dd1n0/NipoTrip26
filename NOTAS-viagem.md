@@ -34,7 +34,7 @@ Grupos: 🔴 Rafaelo · 🟢 Thamandro · 🔵 Felipana (=“Marlipe” no texto
 na estação → Kawaguchiko. Trem: em aberto.
 
 **22/11:**
-- 🟢🔵🔴 Manhã: Monte Fuji, Ryokan e Onsen — todos juntos.
+- 🟢🔵🔴 Manhã: Monte Fuji e onsen — todos juntos. (Abriram mão do ryokan; Fuji = só o Airbnb de Saiko no dia 21.)
 - 🟢 Thamandro: voo noturno p/ Hong Kong (HND 23:55 T3 → HKG 04:15 T1).
 - 🔵🔴 Marlipe + Rafaelo: 🚄 Tóquio → Kyoto (trem em aberto).
 
@@ -182,7 +182,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - [ ] **Pequim:** confirmar que o hotel é o **Sunworld Wangfujing** (Thamires citou "Manxin").
 - [ ] (opcional) descobrir o nº do voo Tóquio→HK (HK Express) — só falta isso nos voos.
 - [ ] Trens (janela): Fuji Excursion (30d antes) · G-trains China (14d antes, Trip.com).
-- [ ] Reservar USJ, Disney (Xangai + Tóquio + talvez HK Disney), ryokan/onsen Fuji.
+- [ ] Reservar USJ e Disney (Xangai + Tóquio + talvez HK Disney). (Ryokan: cancelado — não reservar.)
 - [ ] 07/12: Thamandro faz Karuizawa ou Tóquio livre? · 11/12: Kawagoe ou Tóquio livre?
 - [ ] Rafaelo segue Osaka-first junto da Felipana no Kansai, ou Kyoto-first?
 - [ ] Regras de visto/trânsito na China (HK + continente) perto da data.
