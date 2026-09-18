@@ -75,9 +75,9 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Voo VOLTA | NH963 (12/12 17:25 Haneda→Pequim) + AF381 (13/12 00:05 Pequim→Paris) + AF488 (13/12 14:30 Paris→Fortaleza 19:40) | 12–13/12 | Thamandro (XOOM5W) + Felipana (X3QBBE), 2+2 | ✅ conexão via Pequim (não pernoita) |
 | Hotel Osaka | Henn na Hotel Express Osaka Namba Nipponbashi (3★) — 1-5-20 Nipponbashi, Chuo-ku | 22/11 → 25/11 (3 noites) | 🔵 Felipana | ✅ confirmado (Booking) |
 | Hotel Xangai | Atour Hotel Shanghai Bund Land Plaza (409 East Nanjing Rd) | 28/11 → 02/12 (2 quartos / 4 diárias) | Thamandro + Felipana (4 adultos) | Booking 6057.321.176 · ≈ R$5.692 |
-| Voo | HK Express — Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro | Cód. **SCG3YQ** · Pago (Leandro) |
+| Voo | HK Express (via Trip.com) — Tóquio-Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro (Leandro + Thamires, 2) | Trip.com 1207315052544522 · tkt SCG3YQ · ✅ pago · nº do voo não mostrado |
 | Voo | Hong Kong Airlines **HX128** — Hong Kong (HKG T2) → Hangzhou Xiaoshan (HGH T4) | 25/11 21:15 → 23:40 (2h25, Econômica) | 🟢 Thamandro | Reserva 1528371(...) · ≈ R$1.212 · Pago (Thamires) |
-| Voo | Osaka → Shanghai | 28/11 22:10 | 🔵 Felipana | nº a confirmar (não estava na lista da Thamires) |
+| Voo | Juneyao Airlines **HO1338** — Osaka (KIX) → Shanghai (PVG) | 28/11 22:10 → 23:40 (2h30, Econômica) | 🔵 Felipana (Felipe + Mariana, 2) | Ref. **QFNY57** · ✅ confirmado |
 | Hotel Kyoto | Tune Stay Kyoto (Quarto Duplo) | 25/11 → 28/11 (3 noites: 25,26,27) | 🔵 Felipana | Booking 5155888463 · ≈ R$2.502 · ✅ datas ok (Osaka-first) |
 | Voo | Air China **CA183** — Pequim (PEK, Terminal 3) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 (3h20, Economy) | Thamandro + Felipana | Ref. **NKKEN8** · ≈ R$4.987 · Pago (Mariana) |
 | Hotel Hong Kong | Empire Hotel Kowloon — Tsim Sha Tsui (No.62 Kimberley Rd, TST) | 23/11 → 25/11 (2 noites) | 🟢 Thamandro | Booking 1528371849830727 |
@@ -94,7 +94,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 - **Brasil → Japão (ida):** ✅ Pago — Air France.
 - 🟢 **Tóquio → Hong Kong:** ✅ Pago (Leandro) — HK Express (SCG3YQ).
 - 🟢 **Hong Kong → Hangzhou:** ✅ Pago (Thamires) — HX128 Hong Kong Airlines.
-- 🔵 **Osaka → Shanghai (28/11 22:10):** ❓ não estava na lista — confirmar se está pago.
+- 🔵 **Osaka → Shanghai (28/11 22:10):** ✅ HO1338 Juneyao Airlines (ref QFNY57).
 - 🟢🔵 **China → Japão (Pequim → Tóquio, 05/12):** ✅ Pago (Mariana) — Air China CA183.
 - 🟢🔵 **Japão → Brasil (volta):** ✅ Pago — Air France (nº/data a anotar).
 - 🔴 **Rafaelo volta:** Fukuoka → Tóquio → Brasil, 02/12 (por conta do Rafaelo).
@@ -128,8 +128,11 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - ✅ **VOLTA** NH963 (12/12) + AF381 + AF488 (13/12) via Pequim — mesmos PNRs. Comprados.
 - ✅ **HX128** HK→Hangzhou (25/11 21:15) — nº + data + reserva confirmada. OK.
 - ✅ **CA183** Pequim→Tóquio (05/12 17:10) — nº + data + ref NKKEN8. OK.
-- 🟡 **Tóquio→Hong Kong** (HK Express, 22/11 23:55) — tem **código SCG3YQ** e horário, mas **falta o número do voo**. Marcado "pago (Leandro)".
-- ❌ **Osaka→Shanghai** (Felipana, 28/11 22:10) — **sem número, sem reserva** e **não estava na lista de pagos** da Thamires. Tratar como **NÃO confirmado**. ❗prioridade
+- ✅ **HO1338** Juneyao — Osaka→Shanghai (28/11 22:10→23:40) — ref QFNY57, Felipe+Mariana. Comprado.
+- ✅ **Tóquio→Hong Kong** (HK Express, 22/11 23:55) — comprovante Trip.com (1207315052544522), tkt SCG3YQ, 2 pax. Comprado (só o **nº do voo** não aparece).
+
+> **✈️ TODOS os voos aéreos = COMPRADOS.** Único detalhe: o número do voo
+> Tóquio→HK (HK Express) não aparece no recibo.
 
 ### 3) Reservas x nº de pessoas (2 ou 4)
 - ✅ **4 pessoas / 2 quartos:** Atour Xangai (4 ad., 2 qtos), Sunworld Pequim (2 qtos), COMMA HOUSE Tóquio (4 ad., apto 2 qtos). Batem.
@@ -178,7 +181,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 ## ❓ PENDÊNCIAS / A RESERVAR
 
 - [ ] **Pequim:** confirmar que o hotel é o **Sunworld Wangfujing** (Thamires citou "Manxin").
-- [ ] nº do voo **Osaka → Shanghai** (28/11) e confirmar se está pago.
+- [ ] (opcional) descobrir o nº do voo Tóquio→HK (HK Express) — só falta isso nos voos.
 - [ ] Trens (janela): Fuji Excursion (30d antes) · G-trains China (14d antes, Trip.com).
 - [ ] Reservar USJ, Disney (Xangai + Tóquio + talvez HK Disney), ryokan/onsen Fuji.
 - [ ] 07/12: Thamandro faz Karuizawa ou Tóquio livre? · 11/12: Kawagoe ou Tóquio livre?
