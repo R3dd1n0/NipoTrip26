@@ -71,6 +71,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Tipo | Detalhe | Data | Quem | Obs |
 |------|---------|------|------|-----|
 | Hospedagem Fuji | Airbnb — 3172-1 Saiko, Fujikawaguchiko, Minamitsuru District, Yamanashi 401-0332 | 21/11 | Todos (os 6) | Reservado pela Thamires (Airbnb) |
+| Hotel Osaka | Henn na Hotel Express Osaka Namba Nipponbashi (3★) — 1-5-20 Nipponbashi, Chuo-ku | 22/11 → 25/11 (3 noites) | 🔵 Felipana | ✅ confirmado (Booking) |
 | Hotel Xangai | Atour Hotel Shanghai Bund Land Plaza (409 East Nanjing Rd) | 28/11 → 02/12 (2 quartos / 4 diárias) | Thamandro + Felipana (4 adultos) | Booking 6057.321.176 · ≈ R$5.692 |
 | Voo | HK Express — Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro | Cód. **SCG3YQ** · Pago (Leandro) |
 | Voo | Hong Kong Airlines **HX128** — Hong Kong (HKG T2) → Hangzhou Xiaoshan (HGH T4) | 25/11 21:15 → 23:40 (2h25, Econômica) | 🟢 Thamandro | Reserva 1528371(...) · ≈ R$1.212 · Pago (Thamires) |
@@ -115,7 +116,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ### 🏨 Hospedagem por noite
 **🔵 Felipana (Felipe + Mariana):**
-- 21/11 Fuji ✅ (Airbnb) · **22, 23, 24/11 Osaka ❌ FALTA** (Osaka-first, USJ dia 23)
+- 21/11 Fuji ✅ (Airbnb) · 22, 23, 24/11 Osaka ✅ (Henn na Hotel Namba)
 - 25, 26, 27/11 Kyoto ✅ (Tune Stay) · 28/11 → voo p/ Xangai
 - 28/11–01/12 Xangai ✅ (Atour) · 02–04/12 Pequim 🟡 (Hotel Manxin — confirmar)
 - 05–11/12 Tóquio ✅ (COMMA HOUSE)
@@ -126,8 +127,9 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - 27/11 Suzhou ✅ (Anyi) · 28/11–01/12 Xangai ✅ (Atour)
 - 02–04/12 Pequim 🟡 (Hotel Manxin — confirmar) · 05–11/12 Tóquio ✅ (COMMA HOUSE)
 
-> **Ainda em aberto na hospedagem:** **Osaka 22–24 (Felipana ❌)**, nome do
-> **hotel de Hangzhou** (🟡) e **confirmar o Hotel Manxin em Pequim** (🟡).
+> **Ainda em aberto na hospedagem:** nome do **hotel de Hangzhou** (🟡) e
+> **confirmar o Hotel Manxin em Pequim** (🟡). Osaka, Kyoto, Xangai, Suzhou,
+> HK, Fuji e Tóquio ✅.
 
 ### 🚆 Transporte — trechos em aberto
 - Haneda → Kawaguchiko (21/11) — Fuji Excursion/ônibus (abre 30d antes).
@@ -149,7 +151,6 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ## ❓ PENDÊNCIAS / A RESERVAR
 
-- [ ] **Osaka (Felipana, 22–24/11):** falta reservar hotel.
 - [ ] **Hangzhou (Thamandro, 25–26/11):** confirmar nome/voucher do hotel.
 - [ ] **Hotel Manxin (Pequim, 02–04/12):** confirmar reserva/datas.
 - [ ] nº do voo **Osaka → Shanghai** (28/11) e confirmar se está pago.
