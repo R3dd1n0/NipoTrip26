@@ -80,6 +80,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Hotel Kyoto | Tune Stay Kyoto (Quarto Duplo) | 25/11 → 28/11 (3 noites: 25,26,27) | 🔵 Felipana (provável — Thamandro está na China nessas datas) | Booking 5155888463 · ≈ R$2.502 · ⚠️ datas não batem com o roteiro (ver dúvidas) |
 | Voo | Air China **CA183** — Pequim (PEK, Terminal 3) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 (3h20, Economy) | Thamandro + Felipana | Ref. **NKKEN8** · ≈ R$4.987 total · status "Agendado" |
 | Hotel Hong Kong | Empire Hotel Kowloon — Tsim Sha Tsui (No.62 Kimberley Rd, TST) | 23/11 → 25/11 (2 noites) | 🟢 Thamandro | Booking 1528371849830727 |
+| Hotel Suzhou | Anyi Hotel (Guanqian St / Pingjiang Rd Branch), No.9 Zhenzhu Lane, Gusu, Suzhou | 27/11 → 28/11 (1 noite) | 🟢 Thamandro | Booking 1528371865070957 |
 | Hotel Tóquio | COMMA HOUSE Nishi-ikebukuro (apto 2 quartos, Toshima) | 05/12 → 12/12 (7 diárias) | Thamandro + Felipana (4 adultos) | Booking 5976.616.628 · ≈ R$6.280 (reta final) |
 
 ---
@@ -108,11 +109,11 @@ na estação → Kawaguchiko. Trem: em aberto.
 **🟢 Thamandro (Thami + Leandro):**
 - 21/11 Fuji ✅ · 22/11 voo noturno (dorme no avião)
 - 23–24/11 Hong Kong ✅ (Empire) · **25–26/11 Hangzhou ❌ FALTA**
-- **27/11 Suzhou ou Xangai ❌ FALTA** · 28/11–01/12 Xangai ✅ (Atour)
+- 27/11 Suzhou ✅ (Anyi) · 28/11–01/12 Xangai ✅ (Atour)
 - **02, 03, 04/12 Pequim ❌ FALTA** · 05–11/12 Tóquio ✅ (COMMA HOUSE)
 
-> **Maiores buracos de hospedagem:** Kyoto 22–24 (Felipana), Hangzhou/Suzhou
-> 25–27 (Thamandro) e **Pequim 02–04 (os 4)**.
+> **Maiores buracos de hospedagem:** Kyoto 22–24 (Felipana), Hangzhou 25–26
+> (Thamandro) e **Pequim 02–04 (os 4)**.
 
 ### 🚆 Transporte — trechos em aberto
 - Haneda → Kawaguchiko (21/11) — trem a definir.
