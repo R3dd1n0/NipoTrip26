@@ -112,6 +112,31 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ---
 
+## 🔎 AUDITORIA (checagem pré-fechamento) — 18/09
+
+### 1) Noites sem cama?
+**Os 4 (🟢 Thamandro + 🔵 Felipana): NENHUMA noite descoberta.** 21→11/12 tudo com hotel:
+- 🔵 Felipana: Fuji(21) → Osaka(22–24) → Kyoto(25–27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
+- 🟢 Thamandro: Fuji(21) → [voo noturno 22] → HK(23–24) → Hangzhou(25–26) → Suzhou(27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
+- ⚠️ **Fuji (21):** só tenho 1 Airbnb (reserva da Thamires). Confirmar se comporta **6 pessoas** (encontro dos 6) ou se o Rafaelo tem hospedagem própria lá.
+- 🔴 **Rafaelo:** NÃO tenho as reservas dele (reserva por conta) — não dá pra auditar as noites do Rafaelo.
+
+### 2) Voos — comprados COM número/data? (não só print de pesquisa)
+- ✅ **HX128** HK→Hangzhou (25/11 21:15) — nº + data + reserva confirmada. OK.
+- ✅ **CA183** Pequim→Tóquio (05/12 17:10) — nº + data + ref NKKEN8. OK.
+- 🟡 **Tóquio→Hong Kong** (HK Express, 22/11 23:55) — tem **código SCG3YQ** e horário, mas **falta o número do voo**. Marcado "pago (Leandro)".
+- 🟡 **Ida Brasil→Japão** (AF545 18/11 + AF282 20/11) — números do seu texto inicial e "pago" na lista, mas **não vi o e-ticket** nesta sessão.
+- ❌ **Osaka→Shanghai** (Felipana, 28/11 22:10) — **sem número, sem reserva** e **não estava na lista de pagos** da Thamires. Tratar como **NÃO confirmado**.
+- ❌ **Volta Japão→Brasil** (12/12) — a lista diz "pago (Air France)", mas **não tenho número/data reais** dessa volta (os AF antigos eram do roteiro via Pequim, que mudou).
+
+### 3) Reservas x nº de pessoas (2 ou 4)
+- ✅ **4 pessoas / 2 quartos:** Atour Xangai (4 ad., 2 qtos), Sunworld Pequim (2 qtos), COMMA HOUSE Tóquio (4 ad., apto 2 qtos). Batem.
+- ✅ **2 pessoas:** Tune Stay Kyoto (Quarto Duplo).
+- 🟡 **Confirmar ocupação (o print não mostrou nº de hóspedes):** Henn na Hotel Osaka, Empire HK, Nostalgia Hangzhou, Anyi Suzhou — devem ser p/ 2, mas **verificar**.
+- 🟡 **Fuji Airbnb:** verificar capacidade (4 ou 6 pessoas).
+
+---
+
 ## 🧩 LACUNAS — o que ainda FALTA (foco nos 4: 🟢 Thamandro + 🔵 Felipana)
 
 ### 🏨 Hospedagem por noite
