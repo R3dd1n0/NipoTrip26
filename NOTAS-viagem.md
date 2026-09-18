@@ -10,12 +10,19 @@
 
 ## ⚠️ PONTOS A CONFIRMAR ANTES DE APLICAR
 
+0. **De quem é cada reserva:** o Felipe manda coisas de 🔵 **Felipana**
+   (Felipe + Mariana), 🟢 **Thamandro** (Thami + Leandro) ou dos **4 juntos**.
+   🔴 **Rafaelo** (Rafael + Consuelo) reserva por conta própria — não recebo as
+   reservas dele. Quando não der pra saber de quem é, PERGUNTAR.
 1. **Nome do casal azul:** seu texto usa **"Marlipe"**, mas você pediu antes para
    manter **"Felipana"**. Nas notas mantive **Felipana** — confirmar qual vai pro site.
-2. **Kansai do Marlipe/Felipana + Rafaelo:** este "ROTEIRO FINAL 2026" vai
-   **Kyoto primeiro** (22→Kyoto, USJ só dia 27). O plano anterior que você mandou
-   ("só mariana e felipe") era **Osaka primeiro** (22→Osaka, USJ dia 23).
-   → Assumindo que **este ROTEIRO FINAL 2026 é o valendo**. Confirmar.
+2. **Kansai do Felipana + Rafaelo:** este "ROTEIRO FINAL 2026" vai
+   **Kyoto primeiro** (22→Kyoto, USJ só dia 27). O plano anterior era **Osaka
+   primeiro** (USJ dia 23). Assumindo que **este ROTEIRO FINAL 2026 é o valendo**.
+3. **⚠️ Tune Stay Kyoto (25→28/11) x roteiro:** o roteiro põe a Felipana em Kyoto
+   **22–25** e em Osaka **26–28**; mas o hotel reservado é Kyoto **25–28**. Não bate.
+   → A Felipana fica mais dias em Kyoto (e menos/nenhum em Osaka)? Ou as datas do
+   hotel/roteiro precisam de ajuste? **Confirmar.**
 
 ---
 
@@ -68,10 +75,12 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Hospedagem Fuji | Airbnb — 3172-1 Saiko, Fujikawaguchiko, Minamitsuru District, Yamanashi 401-0332 | 21/11 | Todos (os 6) | Reservado pela Thamires (Airbnb) |
 | Hotel Xangai | Atour Hotel Shanghai Bund Land Plaza (409 East Nanjing Rd) | 28/11 → 02/12 (2 quartos / 4 diárias) | Thamandro + Felipana (4 adultos) | Booking 6057.321.176 · ≈ R$5.692 |
 | Voo | HK Express — Haneda (HND T3) → Hong Kong (HKG T1) | 22/11 23:55 → 23/11 04:15 | 🟢 Thamandro | Cód. reserva **SCG3YQ** |
-| Voo | Hong Kong → Hangzhou | 25/11 21:15 | 🟢 Thamandro | nº a confirmar |
+| Voo | Hong Kong Airlines **HX128** — Hong Kong (HKG T2) → Hangzhou Xiaoshan (HGH T4) | 25/11 21:15 → 23:40 (2h25, Econômica) | 🟢 Thamandro | Reserva 1528371(...) · ≈ R$1.212 |
 | Voo | Osaka → Shanghai | 28/11 22:10 | 🔵 Felipana (Marlipe) | nº a confirmar |
-| Hotel Kyoto | Tune Stay Kyoto (Quarto Duplo) | 25/11 → 28/11 (3 noites) | 🔵 ou 🔴 (1 casal — confirmar quem) | Booking 5155888463 · ≈ R$2.502 |
+| Hotel Kyoto | Tune Stay Kyoto (Quarto Duplo) | 25/11 → 28/11 (3 noites: 25,26,27) | 🔵 Felipana (provável — Thamandro está na China nessas datas) | Booking 5155888463 · ≈ R$2.502 · ⚠️ datas não batem com o roteiro (ver dúvidas) |
 | Voo | Air China **CA183** — Pequim (PEK, Terminal 3) → Tóquio-Haneda (HND) | 05/12 17:10 → 21:30 (3h20, Economy) | Thamandro + Felipana | Ref. **NKKEN8** · ≈ R$4.987 total · status "Agendado" |
+| Hotel Hong Kong | Empire Hotel Kowloon — Tsim Sha Tsui (No.62 Kimberley Rd, TST) | 23/11 → 25/11 (2 noites) | 🟢 Thamandro | Booking 1528371849830727 |
+| Hotel Tóquio | COMMA HOUSE Nishi-ikebukuro (apto 2 quartos, Toshima) | 05/12 → 12/12 (7 diárias) | Thamandro + Felipana (4 adultos) | Booking 5976.616.628 · ≈ R$6.280 (reta final) |
 
 ---
 
@@ -84,6 +93,43 @@ na estação → Kawaguchiko. Trem: em aberto.
 - 🟢🔵 **Pequim → Tóquio:** 05/12 17:10→21:30 — Air China **CA183** (ref NKKEN8) ✅
 - 🔴 **Rafaelo volta:** Fukuoka → Tóquio → Brasil, 02/12 (a confirmar)
 - 🟢🔵 **Volta:** Tóquio → Brasil, 12/12 (a confirmar)
+
+---
+
+## 🧩 LACUNAS — o que ainda FALTA (foco nos 4: 🟢 Thamandro + 🔵 Felipana)
+
+### 🏨 Hospedagem por noite
+**🔵 Felipana (Felipe + Mariana):**
+- 21/11 Fuji ✅ · **22, 23, 24/11 Kyoto ❌ FALTA** (Tune Stay só cobre 25–27)
+- 25/11 Kyoto ✅ · 26–27/11 ⚠️ (hotel diz Kyoto; roteiro diz Osaka — resolver)
+- 28/11–01/12 Xangai ✅ (Atour) · **02, 03, 04/12 Pequim ❌ FALTA**
+- 05–11/12 Tóquio ✅ (COMMA HOUSE)
+
+**🟢 Thamandro (Thami + Leandro):**
+- 21/11 Fuji ✅ · 22/11 voo noturno (dorme no avião)
+- 23–24/11 Hong Kong ✅ (Empire) · **25–26/11 Hangzhou ❌ FALTA**
+- **27/11 Suzhou ou Xangai ❌ FALTA** · 28/11–01/12 Xangai ✅ (Atour)
+- **02, 03, 04/12 Pequim ❌ FALTA** · 05–11/12 Tóquio ✅ (COMMA HOUSE)
+
+> **Maiores buracos de hospedagem:** Kyoto 22–24 (Felipana), Hangzhou/Suzhou
+> 25–27 (Thamandro) e **Pequim 02–04 (os 4)**.
+
+### 🚆 Transporte — trechos em aberto
+- Haneda → Kawaguchiko (21/11) — trem a definir.
+- Kawaguchiko → Tóquio → Kyoto (22/11, Felipana) — trem a definir.
+- Nara bate-volta (25/11, Felipana) — local.
+- Kyoto → Osaka (26/11, Felipana — se mantiver Osaka).
+- Osaka → Xangai (28/11 22:10, Felipana) — **nº do voo a confirmar**.
+- Hangzhou → Suzhou (27/11, Thamandro) — trem cedo a definir.
+- Suzhou → Xangai (28/11 último trem, Thamandro) — a definir.
+- Xangai → Pequim (02/12, os 4) — trem-bala a reservar.
+- Bate-voltas de Tóquio: Karuizawa (07), Nikko (08), Nagano (09), Kawagoe (11) — a definir.
+- **Retornos ao Brasil (12/12, os 4)** — a definir.
+
+### ✈️ Transporte já CONFIRMADO
+- Ida: AF545 (18/11) + AF282 (20/11).
+- HK Express HND→HKG (22/11, SCG3YQ) · HX128 HKG→Hangzhou (25/11).
+- Air China CA183 Pequim→Tóquio (05/12).
 
 ---
 
