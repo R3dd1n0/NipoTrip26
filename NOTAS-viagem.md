@@ -136,9 +136,8 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 ### 3) Reservas x nº de pessoas (2 ou 4)
 - ✅ **4 pessoas / 2 quartos:** Atour Xangai (4 ad., 2 qtos), Sunworld Pequim (2 qtos), COMMA HOUSE Tóquio (4 ad., apto 2 qtos). Batem.
-- ✅ **2 pessoas:** Tune Stay Kyoto (Quarto Duplo).
-- 🟡 **Confirmar ocupação (o print não mostrou nº de hóspedes):** Henn na Hotel Osaka, Empire HK, Nostalgia Hangzhou, Anyi Suzhou — devem ser p/ 2, mas **verificar**.
-- 🟡 **Fuji Airbnb:** verificar capacidade (4 ou 6 pessoas).
+- ✅ **2 pessoas (1 quarto cada, confirmado pelo Felipe):** Tune Stay Kyoto e Henn na Hotel Osaka (Felipana); Empire HK, Nostalgia Hangzhou, Anyi Suzhou (Thamandro).
+- ✅ **Fuji Airbnb:** comporta os 6.
 
 ---
 
