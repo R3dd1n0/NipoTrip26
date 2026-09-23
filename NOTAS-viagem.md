@@ -3,7 +3,26 @@
 > **Modo atual:** ✅ **APLICADO no site em 18/09/2026.** Este caderno segue como
 > registro/rascunho. Novas mudanças: anotar aqui e avisar quando aplicar de novo.
 
-Última atualização: 2026-09-17
+Última atualização: 2026-09-23
+
+---
+
+## 🆕 NOVIDADES (pós-aplicação, 23/09) — reconciliar no próximo apply
+
+**⚠️ Mudança de data — USJ dia 24/11 (não 23):** a ida ao Universal Studios passa
+para **24/11**. No site hoje a Felipana faz USJ dia 23 → precisa mover p/ 24 quando
+reaplicarmos (e ajustar Osaka livre p/ 23).
+
+**🎢 Ingressos USJ (com fast pass) — ✅ comprados:**
+- 4× **1 Day Studio Pass** (Adulto ¥9.900) = ¥39.600
+- 4× **Universal Express Pass 7 ~Minecart & Selection~** (¥23.800) = ¥95.200
+- **Total ¥134.800** · comprador: **Consuelo Bernal** (consuelobrnl@gmail.com)
+- Quem: o Felipe disse **"casal da Mariana + Consuelo"** → ou seja, **Felipana + Rafaelo (4 pessoas) fazem USJ JUNTOS no dia 24/11**.
+  - ❓ **A confirmar:** isso significa que Rafaelo também vai ao USJ no dia 24 (junto da Felipana), e não no 27 como está no site? Reconciliar o Kansai dos dois quando aplicar.
+
+**🏨 Pequim — Sunworld Hotel Wangfujing (confirmação formal):**
+- Confirmação **5525632143** · 88 Dengshikou, Dongcheng · 4 adultos · 2 quartos · ~R$2.466 (CNY 3.232,44) · pagamento no hotel.
+- ✅ Confirma que o hotel de Pequim **é o Sunworld** (não "Manxin"). Felipe disse que a acomodação está no nome de **Mariana e Thamires** (as duas que reservaram) — cobre os 4 (Felipana + Thamandro).
 
 ---
 
