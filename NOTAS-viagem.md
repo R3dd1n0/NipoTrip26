@@ -7,7 +7,7 @@
 
 ---
 
-## 🆕 NOVIDADES (pós-aplicação, 23/09) — reconciliar no próximo apply
+## 🆕 NOVIDADES (pós-aplicação, 23/09) — ✅ APLICADO NO SITE (25/09)
 
 **⚠️ Mudança de data — USJ dia 24/11 (não 23):** a ida ao Universal Studios passa
 para **24/11**. No site hoje a Felipana faz USJ dia 23 → precisa mover p/ 24 quando
