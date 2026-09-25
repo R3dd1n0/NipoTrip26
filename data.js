@@ -168,18 +168,18 @@ const TRIP = {
     { data: "22/11", diaSemana: "Domingo", local: "Monte Fuji (manhã, todos)", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Monte Fuji e onsen pela manhã — todos juntos. À tarde cada casal segue: Felipana → Osaka; Rafaelo → Kyoto; Thamandro voa à noite p/ Hong Kong (UO623, 23:55).", transporte: "Manhã no lago Kawaguchiko; à tarde cada rumo." },
 
     // ---- FELIPANA · KANSAI (Osaka-first) ----
-    { data: "23/11", diaSemana: "Segunda", local: "Osaka — Universal Studios", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Universal Studios Osaka 🎢 — Super Nintendo World. Reservar ingresso + passe da Área Nintendo.", transporte: "Chegou véspera (22, Kawaguchiko → Osaka)." },
-    { data: "24/11", diaSemana: "Terça", local: "Osaka livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Dia livre (Dotonbori, Castelo). À noite, enviar as malas por takkyūbin.", transporte: "Metrô." },
+    { data: "23/11", diaSemana: "Segunda", local: "Osaka livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Dia livre (Dotonbori, Castelo). À noite, enviar as malas por takkyūbin.", transporte: "Chegou véspera (22, Kawaguchiko → Osaka)." },
+    { data: "24/11", diaSemana: "Terça", local: "Osaka — Universal Studios", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "USJ 🎢 com o Rafaelo — Super Nintendo World. Ingressos + Express Pass 7 (Minecart) já comprados.", transporte: "Metrô." },
     { data: "25/11", diaSemana: "Quarta", local: "Nara → Kyoto", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Café em Osaka, bate-volta a Nara (Grande Buda e cervos) e, à noite, dormir em Kyoto.", transporte: "Osaka → Nara → Kyoto." },
     { data: "26/11", diaSemana: "Quinta", local: "Kyoto livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Fushimi Inari, Arashiyama, Gion, Kiyomizu.", transporte: "Trens locais." },
     { data: "27/11", diaSemana: "Sexta", local: "Kyoto livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Mais Kyoto (templos, bairros; cabe o ensaio de quimono).", transporte: "Trens locais." },
 
     // ---- RAFAELO · KANSAI + SUL (Kyoto-first) ----
     { data: "23/11", diaSemana: "Segunda", local: "Kyoto livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Fushimi Inari, Gion, Kiyomizu.", transporte: "Chegou véspera (22, Kawaguchiko → Kyoto)." },
-    { data: "24/11", diaSemana: "Terça", local: "Kyoto livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Arashiyama e mais Kyoto.", transporte: "Trens locais." },
+    { data: "24/11", diaSemana: "Terça", local: "Universal Studios Osaka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "USJ 🎢 com a Felipana (Super Nintendo World). Express Pass 7 (Minecart).", transporte: "Bate-volta Kyoto → Osaka." },
     { data: "25/11", diaSemana: "Quarta", local: "Nara", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Bate-volta a Nara (Grande Buda e cervos).", transporte: "Bate-volta de Kyoto." },
     { data: "26/11", diaSemana: "Quinta", local: "Kyoto → Osaka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Manhã: seguem para Osaka.", transporte: "Kyoto → Osaka (~30 min)." },
-    { data: "27/11", diaSemana: "Sexta", local: "Universal Studios Osaka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "USJ 🎢.", transporte: "Metrô." },
+    { data: "27/11", diaSemana: "Sexta", local: "Osaka livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Dotonbori, Castelo, dia livre em Osaka.", transporte: "Metrô." },
     { data: "28/11", diaSemana: "Sábado", local: "Osaka livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Dotonbori, Castelo, dia livre.", transporte: "Metrô." },
     { data: "29/11", diaSemana: "Domingo", local: "Osaka → Hiroshima", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Segue pelo sul; dorme em Hiroshima.", transporte: "🚄 Osaka → Hiroshima." },
     { data: "30/11", diaSemana: "Segunda", local: "Hiroshima → Fukuoka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Hiroshima (Parque da Paz / Miyajima) e, no fim da tarde, Fukuoka (dorme lá).", transporte: "🚄 Hiroshima → Fukuoka." },
@@ -246,7 +246,7 @@ const TRIP = {
     diariaTotal: { iene: 16200, real: 525 },
     base22dias: "≈ R$11–14 mil/pessoa no Japão (fora a passagem internacional).",
     pontuais: [
-      { item: "USJ (Universal Studios Osaka)", valor: "Ingresso ~¥8.600–10.400/dia (~R$275–335). Área Nintendo pede passe de horário/Express — reservar." },
+      { item: "USJ (Universal Studios Osaka) — 24/11", valor: "✅ comprado (Felipana + Rafaelo): 4× 1-Day Studio Pass + 4× Express Pass 7 (Minecart) = ¥134.800 (~R$4.300 no grupo)." },
       { item: "Disney (Xangai 01/12 e Tóquio 07/12)", valor: "~R$250–320/dia por parque (Thamandro + Felipana)." },
       { item: "Hotel Xangai (Atour Bund, 28/11–02/12)", valor: "≈ R$5.692 (2 quartos / 4 diárias). ✅ pago." },
       { item: "Voo Pequim → Tóquio (05/12, CA183)", valor: "≈ R$4.987 (4 pessoas). ✅ pago." },
@@ -312,7 +312,7 @@ const TRIP = {
     { texto: "Aniversário da Thamy em Xangai (01/12)", feito: true },
     { texto: "Reservar trens da China (abrem 14 dias antes — Trip.com)", feito: false },
     { texto: "Reservar Fuji Excursion (abre 30 dias antes)", feito: false },
-    { texto: "Reservar USJ (ingresso + passe da Área Nintendo)", feito: false },
+    { texto: "USJ comprado — ingressos + Express Pass 7 (Minecart), Felipana + Rafaelo, dia 24/11", feito: true },
     { texto: "Reservar Disney (Xangai 01/12 e Tóquio 07/12)", feito: false },
     { texto: "07/12: Thamandro em Karuizawa ou Tóquio livre?", feito: false },
     { texto: "11/12: Kawagoe ou Tóquio livre?", feito: false },
