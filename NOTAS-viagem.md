@@ -7,6 +7,15 @@
 
 ---
 
+## 🆕 NOVIDADES (11/10) — a aplicar quando o Felipe mandar
+
+**🏰 Tokyo DisneySea — ✅ comprado (Felipana):**
+- 1-Day Passport · **07/12/2026** · Tokyo **DisneySea** · 2× Adulto ¥10.900 = **¥21.800** (cartão).
+- Reserva **A00633040367** · titular: Felipe/Mariana.
+- ➡️ No site: o 07/12 da Felipana já é "Tokyo Disney" — ao aplicar, especificar **DisneySea** e marcar Disney (Tóquio/Felipana) como comprado no checklist.
+
+---
+
 ## 🆕 NOVIDADES (pós-aplicação, 23/09) — ✅ APLICADO NO SITE (25/09)
 
 **⚠️ Mudança de data — USJ dia 24/11 (não 23):** a ida ao Universal Studios passa
