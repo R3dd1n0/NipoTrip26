@@ -164,7 +164,7 @@ const TRIP = {
     { data: "17–20/11", diaSemana: "Ter–Sex", local: "Nikko e/ou Nagano", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Nikko (Tōshō-gū) e/ou Nagano. Depois, volta a Tóquio para o encontro dos 6.", transporte: "Trem.", tbd: true },
 
     // ---- ENCONTRO NO FUJI (todos) ----
-    { data: "21/11", diaSemana: "Sábado", local: "Haneda → Kawaguchiko", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Chegada de Marlipe e Thamandro em Haneda (~06:50). Encontro dos 6 na estação e seguem para Kawaguchiko (Airbnb em Saiko).", transporte: "🚄 Haneda → Kawaguchiko." },
+    { data: "21/11", diaSemana: "Sábado", local: "Haneda → Kawaguchiko", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Chegada de Thamandro e Felipana em Haneda (~06:50). Encontro dos 6 e seguem para Kawaguchiko (Airbnb em Saiko). Rafaelo/Consuelo, que já estão no Japão, vão por conta.", transporte: "🚐 Transfer privativo (van) Haneda → Kawaguchiko p/ os 4 — reservado (AF282 rastreado)." },
     { data: "22/11", diaSemana: "Domingo", local: "Monte Fuji (manhã, todos)", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Monte Fuji e onsen pela manhã — todos juntos. À tarde cada casal segue: Felipana → Osaka; Rafaelo → Kyoto; Thamandro voa à noite p/ Hong Kong (UO623, 23:55).", transporte: "Manhã no lago Kawaguchiko; à tarde cada rumo." },
 
     // ---- FELIPANA · KANSAI (Osaka-first) ----
@@ -205,7 +205,7 @@ const TRIP = {
 
     // ---- RETA FINAL · TÓQUIO (Thamandro + Felipana) ----
     { data: "06/12", diaSemana: "Domingo", local: "Tóquio livre", quem: ["thamandro", "felipana"], bloco: "Reta final · Tóquio", atividades: "Bairros à escolha (Shibuya, Asakusa/Sensō-ji, Skytree...).", transporte: "Metrô. Base: COMMA HOUSE (Ikebukuro)." },
-    { data: "07/12", diaSemana: "Segunda", local: "Tokyo Disney", quem: ["felipana"], bloco: "Reta final · Tóquio", atividades: "Felipana: dia de parque (DisneySea ou Disneyland).", transporte: "Trem até Maihama." },
+    { data: "07/12", diaSemana: "Segunda", local: "Tokyo DisneySea", quem: ["felipana"], bloco: "Reta final · Tóquio", atividades: "Felipana: dia na Tokyo DisneySea. ✅ Ingressos comprados (1-Day Passport, 2 adultos).", transporte: "Trem até Maihama." },
     { data: "07/12", diaSemana: "Segunda", local: "Karuizawa (bate-volta)", quem: ["thamandro"], bloco: "Reta final · Tóquio", atividades: "Thamandro: bate-volta a Karuizawa (ou Tóquio livre).", transporte: "Trem.", tbd: true },
     { data: "08/12", diaSemana: "Terça", local: "Nikko (bate-volta)", quem: ["thamandro", "felipana"], bloco: "Reta final · Tóquio", atividades: "Tōshō-gū e natureza.", transporte: "Trem (bate-volta)." },
     { data: "09/12", diaSemana: "Quarta", local: "Nagano (bate-volta)", quem: ["thamandro", "felipana"], bloco: "Reta final · Tóquio", atividades: "Macacos da neve em Jigokudani.", transporte: "Trem (bate-volta)." },
@@ -247,7 +247,7 @@ const TRIP = {
     base22dias: "≈ R$11–14 mil/pessoa no Japão (fora a passagem internacional).",
     pontuais: [
       { item: "USJ (Universal Studios Osaka) — 24/11", valor: "✅ comprado (Felipana + Rafaelo): 4× 1-Day Studio Pass + 4× Express Pass 7 (Minecart) = ¥134.800 (~R$4.300 no grupo)." },
-      { item: "Disney (Xangai 01/12 e Tóquio 07/12)", valor: "~R$250–320/dia por parque (Thamandro + Felipana)." },
+      { item: "Disney", valor: "Tóquio DisneySea 07/12 (Felipana): ✅ comprado (¥21.800 / 2 ad.). Xangai 01/12 (os 4): ~R$250–320/pessoa — reservar." },
       { item: "Hotel Xangai (Atour Bund, 28/11–02/12)", valor: "≈ R$5.692 (2 quartos / 4 diárias). ✅ pago." },
       { item: "Voo Pequim → Tóquio (05/12, CA183)", valor: "≈ R$4.987 (4 pessoas). ✅ pago." },
       { item: "China (Thamandro + Felipana)", valor: "Voos + trens-bala + estadia (~8 dias): R$4.000–7.000/pessoa." },
@@ -313,7 +313,8 @@ const TRIP = {
     { texto: "Reservar trens da China (abrem 14 dias antes — Trip.com)", feito: false },
     { texto: "Reservar Fuji Excursion (abre 30 dias antes)", feito: false },
     { texto: "USJ comprado — ingressos + Express Pass 7 (Minecart), Felipana + Rafaelo, dia 24/11", feito: true },
-    { texto: "Reservar Disney (Xangai 01/12 e Tóquio 07/12)", feito: false },
+    { texto: "Tokyo DisneySea (07/12, Felipana) comprado · transfer Haneda→Kawaguchiko (21/11) reservado", feito: true },
+    { texto: "Reservar Disney de Xangai (01/12, os 4)", feito: false },
     { texto: "07/12: Thamandro em Karuizawa ou Tóquio livre?", feito: false },
     { texto: "11/12: Kawagoe ou Tóquio livre?", feito: false },
   ],
