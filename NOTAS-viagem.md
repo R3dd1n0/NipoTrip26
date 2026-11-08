@@ -112,6 +112,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 | Hotel Pequim | Sunworld Hotel Wangfujing (4★) — 88 Dengshikou, Dongcheng, Pequim | 02/12 → 05/12 (3 noites, 2 quartos) | Thamandro + Felipana | ✅ confirmado (hóspede Felipe) · ⚠️ Thamires citou "Manxin" — este (Sunworld) é o válido? |
 | Hotel Hangzhou | Nostalgia S Hotel (West Lake Intime), No.56 Hefang St, Shangcheng, Hangzhou | 25/11 → 27/11 (2 noites) | 🟢 Thamandro | Booking 1528371864893080 |
 | Hotel Tóquio | COMMA HOUSE Nishi-ikebukuro (apto 2 quartos, Toshima) | 05/12 → 12/12 (7 diárias) | Thamandro + Felipana (4 adultos) | Booking 5976.616.628 · ≈ R$6.280 (reta final) |
+| Transfer | Van privativa Haneda (HND) → Kawaguchiko (Airbnb Saiko) — xiooh travel (Booking Taxi) | 21/11 (chegada AF282, rastreada) · ~121 min · máx 4 pax | Thamandro + Felipana (os 4) | ✅ Ref. 726415355 · ¥40.590 · encontro no Balcão de Informações (Hall de Chegada) · 🔴 Rafaelo/Consuelo vão por conta |
 
 ---
 
@@ -186,7 +187,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 > Pequim é o Sunworld Wangfujing e não o "Manxin" que a Thamires citou).
 
 ### 🚆 Transporte — trechos em aberto
-- Haneda → Kawaguchiko (21/11) — Fuji Excursion/ônibus (abre 30d antes).
+- Haneda → Kawaguchiko (21/11) — ✅ van privativa (xiooh/Booking, ref 726415355, 4 pax). Rafaelo/Consuelo por conta.
 - Kawaguchiko → Osaka (22/11, Felipana) — trem a definir.
 - Nara bate-volta (25/11, Felipana) — local.
 - Osaka → Xangai (28/11 22:10, Felipana) — **confirmar se está pago + nº**.
