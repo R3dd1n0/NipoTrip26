@@ -7,7 +7,7 @@
 
 ---
 
-## 🆕 NOVIDADES (11/10) — a aplicar quando o Felipe mandar
+## 🆕 NOVIDADES (11/10) — ✅ APLICADO (08/11): DisneySea 07/12 + transfer Haneda→Kawaguchiko
 
 **🏰 Tokyo DisneySea — ✅ comprado (Felipana):**
 - 1-Day Passport · **07/12/2026** · Tokyo **DisneySea** · 2× Adulto ¥10.900 = **¥21.800** (cartão).
