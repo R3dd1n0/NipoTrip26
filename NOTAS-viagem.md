@@ -153,7 +153,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 - **Haneda/Tóquio ⇄ Fujikawaguchiko** (ida e volta): Fuji Excursion (trem) ou ônibus Highway. **Reserva abre 30 dias antes.**
 - **Hangzhou → Suzhou:** G-train. **Abre 14 dias antes (Trip.com).**
 - **Suzhou → Xangai:** G-train. **Abre 14 dias antes (Trip.com).**
-- **Xangai → Pequim:** Fuxing G-train. **Abre 14 dias antes (Trip.com).**
+- **Xangai → Pequim:** ✅ PRÉ-RESERVADO (09/11) na Trip.com — Xangai-Hongqiao → Pequim-Sul, **02/12 18:50**, 2ª classe, 4 pax (Thamires, Leandro, Felipe, Mariana). ~US$407 no grupo. Bilhete é emitido quando a venda abre (**18/11 13:45**). Conferir status depois do 18/11.
 
 ### 🚖 Traslados locais (resolver no dia — Didi/táxi/express)
 Chegada Japão → hotel · Hotel HK → aero HK · Aero Hangzhou → hotel · Estação
@@ -215,7 +215,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - Osaka → Xangai (28/11 22:10, Felipana) — **confirmar se está pago + nº**.
 - Hangzhou → Suzhou (27/11, Thamandro) — G-train (abre 14d antes).
 - Suzhou → Xangai (28/11 último trem, Thamandro) — G-train (14d).
-- Xangai → Pequim (02/12, os 4) — Fuxing G-train (14d).
+- Xangai → Pequim (02/12, os 4) — ✅ pré-reservado Trip.com (18:50, 2ª classe); bilhete sai 18/11.
 - Bate-voltas de Tóquio: Karuizawa (07), Nikko (08), Nagano (09), Kawagoe (11) — a definir (locais).
 - Retornos ao Brasil (12/12): ✅ pagos (Air France) — só anotar nº/horário.
 
@@ -230,7 +230,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 
 - [ ] **Pequim:** confirmar que o hotel é o **Sunworld Wangfujing** (Thamires citou "Manxin").
 - [ ] Trens (janela): Fuji Excursion (30d antes) · G-trains China (14d antes, Trip.com).
-- [ ] Reservar USJ e Disney (Xangai + Tóquio + talvez HK Disney). (Ryokan: cancelado — não reservar.)
+- [x] USJ ✅, DisneySea Tóquio ✅, Disney Xangai ✅ (01/12, 4 pax, ¥2.620, com Premier Access). (Ryokan: cancelado.) HK Disney: opcional.
 - [ ] 07/12: Thamandro faz Karuizawa ou Tóquio livre? · 11/12: Kawagoe ou Tóquio livre?
 - [ ] Rafaelo segue Osaka-first junto da Felipana no Kansai, ou Kyoto-first?
 - [ ] Regras de visto/trânsito na China (HK + continente) perto da data.
