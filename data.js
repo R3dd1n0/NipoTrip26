@@ -32,7 +32,7 @@ const TRIP = {
       membros: "Rafael + Consuelo",
       tag: "Chegam antes (15/11)",
       descricao:
-        "Começam uma semana antes (Tóquio, Kamakura & Enoshima, Nikko/Nagano), fazem o Kansai (Kyoto/Nara/Osaka/USJ) e o sul (Hiroshima/Fukuoka), e voltam ao Brasil em 02/12.",
+        "Chegam uma semana antes (Tóquio e Nikko), encontram todos no Fuji e fazem o Kansai com a Felipana (Osaka/USJ, Nara, Kyoto). Depois seguem sozinhos pelo sul (Hiroshima e Miyajima), voltam a Tóquio e embarcam em 03/12 (via Paris).",
     },
     {
       key: "thamandro",
@@ -65,7 +65,7 @@ const TRIP = {
       titulo: "Pré-viagem (Rafaelo)",
       quando: "15–20/11",
       quem: "🔴 Rafaelo",
-      resumo: "Rafaelo chega antes: Tóquio, Kamakura & Enoshima, Nikko/Nagano.",
+      resumo: "Rafaelo chega antes: Tóquio (Asakusa, Shibuya) e Nikko.",
     },
     {
       n: 2,
@@ -80,7 +80,7 @@ const TRIP = {
       quando: "22–28/11",
       quem: "3 rumos",
       resumo:
-        "Felipana no Kansai (Osaka/USJ, Nara, Kyoto); Rafaelo no Kansai + sul; Thamandro na China (Hong Kong → Hangzhou → Suzhou).",
+        "Felipana e Rafaelo juntos no Kansai (Osaka/USJ, Nara, Kyoto); Thamandro na China (Hong Kong → Hangzhou → Suzhou).",
     },
     {
       n: 4,
@@ -88,7 +88,7 @@ const TRIP = {
       quando: "28/11–12/12",
       quem: "🟢 Thamandro + 🔵 Felipana",
       resumo:
-        "Xangai (Disneyland + aniversário 01/12) e Pequim; volta a Tóquio (Disney, Nikko, Nagano). Rafaelo volta antes (02/12).",
+        "Xangai (Disneyland + aniversário 01/12) e Pequim; volta a Tóquio (Disney, Nikko, Nagano). Rafaelo faz o sul (Hiroshima/Miyajima) e volta em 03/12.",
     },
   ],
 
@@ -114,13 +114,13 @@ const TRIP = {
       { key: "kamakura", nome: "Kamakura", lat: 35.32, lon: 139.55, grupos: ["rafaelo"] },
       { key: "enoshima", nome: "Enoshima", lat: 35.30, lon: 139.48, grupos: ["rafaelo"] },
       { key: "nikko", nome: "Nikko", lat: 36.76, lon: 139.60, grupos: ["rafaelo", "thamandro", "felipana"] },
-      { key: "nagano", nome: "Nagano", lat: 36.65, lon: 138.18, grupos: ["rafaelo", "thamandro", "felipana"] },
+      { key: "nagano", nome: "Nagano", lat: 36.65, lon: 138.18, grupos: ["thamandro", "felipana"] },
       { key: "karuizawa", nome: "Karuizawa", lat: 36.35, lon: 138.60, grupos: ["thamandro", "felipana"] },
       { key: "kyoto", nome: "Kyoto", lat: 35.01, lon: 135.77, grupos: ["felipana", "rafaelo"] },
       { key: "nara", nome: "Nara", lat: 34.69, lon: 135.83, grupos: ["felipana", "rafaelo"] },
       { key: "osaka", nome: "Osaka (USJ)", lat: 34.69, lon: 135.50, grupos: ["felipana", "rafaelo"] },
       { key: "hiroshima", nome: "Hiroshima", lat: 34.39, lon: 132.46, grupos: ["rafaelo"] },
-      { key: "fukuoka", nome: "Fukuoka", lat: 33.59, lon: 130.40, grupos: ["rafaelo"] },
+      { key: "miyajima", nome: "Miyajima", lat: 34.30, lon: 132.32, grupos: ["rafaelo"] },
       { key: "hongkong", nome: "Hong Kong", lat: 22.32, lon: 114.17, grupos: ["thamandro"] },
       { key: "hangzhou", nome: "Hangzhou", lat: 30.27, lon: 120.15, grupos: ["thamandro"] },
       { key: "suzhou", nome: "Suzhou", lat: 31.30, lon: 120.62, grupos: ["thamandro"] },
@@ -130,16 +130,17 @@ const TRIP = {
     ],
     rotas: [
       { grupos: ["rafaelo", "thamandro", "felipana"], pontos: ["toquio", "kawaguchiko"] },
-      // Pré-viagem do Rafaelo
-      { grupos: ["rafaelo"], pontos: ["toquio", "kamakura", "enoshima"] },
+      // Pré-viagem do Rafaelo (Tóquio → Nikko)
       { grupos: ["rafaelo"], pontos: ["toquio", "nikko"] },
-      { grupos: ["rafaelo"], pontos: ["toquio", "nagano"], tbd: true },
-      // Felipana — Kansai (Osaka-first) e depois China
-      { grupos: ["felipana"], pontos: ["kawaguchiko", "osaka", "nara", "kyoto"] },
+      // Kansai juntos (Felipana + Rafaelo)
+      { grupos: ["felipana", "rafaelo"], pontos: ["kawaguchiko", "osaka", "nara", "kyoto"] },
+      // Felipana — segue para a China
       { grupos: ["felipana"], pontos: ["kyoto", "xangai"], voo: true },
-      // Rafaelo — Kansai (Kyoto-first) + sul + volta
-      { grupos: ["rafaelo"], pontos: ["kawaguchiko", "kyoto", "osaka", "hiroshima", "fukuoka"] },
-      { grupos: ["rafaelo"], pontos: ["fukuoka", "toquio"], voo: true },
+      // Rafaelo — sul (Hiroshima/Miyajima) e volta a Tóquio
+      { grupos: ["rafaelo"], pontos: ["kyoto", "hiroshima"] },
+      { grupos: ["rafaelo"], pontos: ["hiroshima", "miyajima"] },
+      { grupos: ["rafaelo"], pontos: ["hiroshima", "toquio"] },
+      { grupos: ["rafaelo"], pontos: ["toquio", "kamakura", "enoshima"] },
       // Thamandro — China por Hong Kong
       { grupos: ["thamandro"], pontos: ["toquio", "hongkong"], voo: true },
       { grupos: ["thamandro"], pontos: ["hongkong", "hangzhou"], voo: true },
@@ -159,32 +160,31 @@ const TRIP = {
    * ---------------------------------------------------------------- */
   roteiro: [
     // ---- PRÉ-VIAGEM (Rafaelo) ----
-    { data: "15/11", diaSemana: "Domingo", local: "Tóquio", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Chegada antecipada do Rafaelo. Tóquio: bairros e comida.", transporte: "Pouso em Haneda/Narita." },
-    { data: "16/11", diaSemana: "Segunda", local: "Kamakura & Enoshima", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Grande Buda de Kamakura e Enoshima — no mesmo dia.", transporte: "Trem (~1h de Tóquio)." },
-    { data: "17–20/11", diaSemana: "Ter–Sex", local: "Nikko e/ou Nagano", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Nikko (Tōshō-gū) e/ou Nagano. Depois, volta a Tóquio para o encontro dos 6.", transporte: "Trem.", tbd: true },
+    { data: "15/11", diaSemana: "Domingo", local: "Tóquio — chegada", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Chegada antecipada do Rafaelo em Haneda (19:55, via Paris). Check-in no Hotel Trend Asakusa e jantar leve.", transporte: "✈️ AF274 Paris → Haneda." },
+    { data: "16/11", diaSemana: "Segunda", local: "Tóquio — Asakusa", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Sensō-ji e Asakusa, Tsukiji Outer Market e, à tarde, teamLab Planets.", transporte: "Metrô." },
+    { data: "17/11", diaSemana: "Terça", local: "Tóquio — Ueno & Akihabara", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Ueno Park, Ameyoko e Akihabara.", transporte: "Metrô." },
+    { data: "18/11", diaSemana: "Quarta", local: "Tóquio — Shibuya", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Meiji Jingu, Harajuku e Shibuya (Shibuya Sky).", transporte: "Metrô." },
+    { data: "19/11", diaSemana: "Quinta", local: "Tóquio → Nikko", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Trem para Nikko. Villa Imperial Tamozawa, Tōshō-gū e Rinnō-ji.", transporte: "🚄 Limited Express (Revaty/Spacia)." },
+    { data: "20/11", diaSemana: "Sexta", local: "Nikko — Oku-Nikko", quem: ["rafaelo"], bloco: "Pré-viagem · Rafaelo", atividades: "Trilha de Senjōgahara e Cataratas de Kegon.", transporte: "Ônibus local." },
 
     // ---- ENCONTRO NO FUJI (todos) ----
-    { data: "21/11", diaSemana: "Sábado", local: "Haneda → Kawaguchiko", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Chegada de Thamandro e Felipana em Haneda (~06:50). Encontro dos 6 e seguem para Kawaguchiko (Airbnb em Saiko). Rafaelo/Consuelo, que já estão no Japão, vão por conta.", transporte: "🚐 Transfer privativo (van) Haneda → Kawaguchiko p/ os 4 — reservado (AF282 rastreado)." },
-    { data: "22/11", diaSemana: "Domingo", local: "Monte Fuji (manhã, todos)", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Monte Fuji e onsen pela manhã — todos juntos. À tarde cada casal segue: Felipana → Osaka; Rafaelo → Kyoto; Thamandro voa à noite p/ Hong Kong (UO623, 23:55).", transporte: "Manhã no lago Kawaguchiko; à tarde cada rumo." },
+    { data: "21/11", diaSemana: "Sábado", local: "Haneda → Kawaguchiko", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Chegada de Thamandro e Felipana em Haneda (~06:50). Encontro dos 6 e seguem para Kawaguchiko (Airbnb em Saiko). Rafaelo/Consuelo chegam de Nikko (Chureito Pagoda no caminho).", transporte: "🚐 Transfer privativo (van) Haneda → Kawaguchiko p/ os 4 — reservado (AF282 rastreado)." },
+    { data: "22/11", diaSemana: "Domingo", local: "Monte Fuji (manhã, todos)", quem: ["rafaelo", "thamandro", "felipana"], bloco: "Encontro dos 6 no Fuji", atividades: "Monte Fuji e Oishi Park pela manhã — todos juntos. À tarde cada rumo: Felipana e Rafaelo seguem juntos para Osaka; Thamandro voa à noite p/ Hong Kong (UO623, 23:55).", transporte: "Manhã no lago Kawaguchiko; à tarde Felipana+Rafaelo → Osaka." },
 
-    // ---- FELIPANA · KANSAI (Osaka-first) ----
-    { data: "23/11", diaSemana: "Segunda", local: "Osaka livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Dia livre (Dotonbori, Castelo). À noite, enviar as malas por takkyūbin.", transporte: "Chegou véspera (22, Kawaguchiko → Osaka)." },
-    { data: "24/11", diaSemana: "Terça", local: "Osaka — Universal Studios", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "USJ 🎢 com o Rafaelo — Super Nintendo World. Ingressos + Express Pass 7 (Minecart) já comprados.", transporte: "Metrô." },
-    { data: "25/11", diaSemana: "Quarta", local: "Nara → Kyoto", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Café em Osaka, bate-volta a Nara (Grande Buda e cervos) e, à noite, dormir em Kyoto.", transporte: "Osaka → Nara → Kyoto." },
-    { data: "26/11", diaSemana: "Quinta", local: "Kyoto livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Fushimi Inari, Arashiyama, Gion, Kiyomizu.", transporte: "Trens locais." },
-    { data: "27/11", diaSemana: "Sexta", local: "Kyoto livre", quem: ["felipana"], bloco: "Felipana · Kansai", atividades: "Mais Kyoto (templos, bairros; cabe o ensaio de quimono).", transporte: "Trens locais." },
+    // ---- KANSAI JUNTOS (Felipana + Rafaelo) ----
+    { data: "23/11", diaSemana: "Segunda", local: "Osaka", quem: ["felipana", "rafaelo"], bloco: "Kansai · Felipana + Rafaelo", atividades: "Castelo de Osaka, Amerikamura e Osaka Aquarium Kaiyukan. À noite, Dotonbori.", transporte: "Metrô." },
+    { data: "24/11", diaSemana: "Terça", local: "Osaka — Universal Studios", quem: ["felipana", "rafaelo"], bloco: "Kansai · Felipana + Rafaelo", atividades: "USJ 🎢 — Super Nintendo World (Felipana + Rafaelo). Ingressos + Express Pass 7 (Minecart) já comprados.", transporte: "Metrô." },
+    { data: "25/11", diaSemana: "Quarta", local: "Nara → Kyoto", quem: ["felipana", "rafaelo"], bloco: "Kansai · Felipana + Rafaelo", atividades: "Bate-volta a Nara (Nara Park e Tōdai-ji) e, à tarde, seguem para Kyoto.", transporte: "Osaka → Nara → Kyoto." },
+    { data: "26/11", diaSemana: "Quinta", local: "Kyoto", quem: ["felipana", "rafaelo"], bloco: "Kansai · Felipana + Rafaelo", atividades: "Rurikō-in, Nanzen-ji, cerimônia do chá, Gion e Yasaka. À noite, Pontocho e rio Kamo.", transporte: "Trens locais." },
+    { data: "27/11", diaSemana: "Sexta", local: "Kyoto — Arashiyama", quem: ["felipana", "rafaelo"], bloco: "Kansai · Felipana + Rafaelo", atividades: "Floresta de bambu de Arashiyama, Tenryū-ji, trem panorâmico de Sagano e Nishiki Market.", transporte: "Trens locais." },
 
-    // ---- RAFAELO · KANSAI + SUL (Kyoto-first) ----
-    { data: "23/11", diaSemana: "Segunda", local: "Kyoto livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Fushimi Inari, Gion, Kiyomizu.", transporte: "Chegou véspera (22, Kawaguchiko → Kyoto)." },
-    { data: "24/11", diaSemana: "Terça", local: "Universal Studios Osaka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "USJ 🎢 com a Felipana (Super Nintendo World). Express Pass 7 (Minecart).", transporte: "Bate-volta Kyoto → Osaka." },
-    { data: "25/11", diaSemana: "Quarta", local: "Nara", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Bate-volta a Nara (Grande Buda e cervos).", transporte: "Bate-volta de Kyoto." },
-    { data: "26/11", diaSemana: "Quinta", local: "Kyoto → Osaka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Manhã: seguem para Osaka.", transporte: "Kyoto → Osaka (~30 min)." },
-    { data: "27/11", diaSemana: "Sexta", local: "Osaka livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Dotonbori, Castelo, dia livre em Osaka.", transporte: "Metrô." },
-    { data: "28/11", diaSemana: "Sábado", local: "Osaka livre", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Dotonbori, Castelo, dia livre.", transporte: "Metrô." },
-    { data: "29/11", diaSemana: "Domingo", local: "Osaka → Hiroshima", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Segue pelo sul; dorme em Hiroshima.", transporte: "🚄 Osaka → Hiroshima." },
-    { data: "30/11", diaSemana: "Segunda", local: "Hiroshima → Fukuoka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Hiroshima (Parque da Paz / Miyajima) e, no fim da tarde, Fukuoka (dorme lá).", transporte: "🚄 Hiroshima → Fukuoka." },
-    { data: "01/12", diaSemana: "Terça", local: "Fukuoka", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Rafaelo em Fukuoka.", transporte: "Dia na cidade." },
-    { data: "02/12", diaSemana: "Quarta", local: "Fukuoka → Brasil", quem: ["rafaelo"], bloco: "Rafaelo · Kansai + sul", atividades: "Fim da viagem do Rafaelo.", transporte: "✈️ Fukuoka → Tóquio → Brasil (madrugada)." },
+    // ---- RAFAELO · SUL + VOLTA (sozinhos) ----
+    { data: "28/11", diaSemana: "Sábado", local: "Kyoto → Hiroshima", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Manhã em Kyoto (Fushimi Inari, Kiyomizu-dera) e, à tarde, trem para Hiroshima: Parque Memorial da Paz e Cúpula da Bomba Atômica. (A Felipana segue para a China.)", transporte: "🚄 Kyoto → Hiroshima." },
+    { data: "29/11", diaSemana: "Domingo", local: "Miyajima", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Ilha de Miyajima: santuário Itsukushima, Daishō-in e Monte Misen (trilha + teleférico).", transporte: "Trem + balsa (bate-volta)." },
+    { data: "30/11", diaSemana: "Segunda", local: "Hiroshima → Tóquio", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Castelo de Hiroshima e jardim Shukkei-en pela manhã; à tarde, trem de volta a Tóquio.", transporte: "🚄 Hiroshima → Tóquio." },
+    { data: "01/12", diaSemana: "Terça", local: "Tóquio", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Meiji Jingu, Harajuku, Omotesandō e Shibuya. À noite, Shinjuku iluminada.", transporte: "Metrô." },
+    { data: "02/12", diaSemana: "Quarta", local: "Kamakura & Enoshima", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Bate-volta a Kamakura (Grande Buda) e Enoshima.", transporte: "Trem (~1h de Tóquio)." },
+    { data: "03/12", diaSemana: "Quinta", local: "Tóquio → Brasil", quem: ["rafaelo"], bloco: "Rafaelo · sul + volta", atividades: "Jardins Leste do Palácio Imperial, almoço e compras em Ginza. À noite, embarque de volta (via Paris).", transporte: "✈️ AF279 Haneda → Paris → Fortaleza." },
 
     // ---- THAMANDRO · CHINA (Hong Kong) ----
     { data: "23/11", diaSemana: "Segunda", local: "Hong Kong", quem: ["thamandro"], bloco: "Thamandro · China (Hong Kong)", atividades: "Chegada em Hong Kong (04:15). Mandar mala por delivery do aeroporto p/ o hotel (Empire Kowloon, TST).", transporte: "✈️ chegou de madrugada (UO623)." },
@@ -218,18 +218,22 @@ const TRIP = {
    * 5. VOOS (todos confirmados, com número)
    * ---------------------------------------------------------------- */
   voos: [
-    { voo: "AF489", data: "18/11", hora: "21:50", trecho: "Fortaleza (FOR) → Paris (CDG) — ida (os 6)" },
-    { voo: "AF282", data: "20/11", hora: "09:50", trecho: "Paris (CDG) → Tóquio-Haneda (chega 21/11 ~06:50)" },
+    { voo: "AF489", data: "13/11", hora: "21:50", trecho: "🔴 Fortaleza (FOR) → Paris (CDG) — ida Rafaelo" },
+    { voo: "AF274", data: "14/11", hora: "22:20", trecho: "🔴 Paris (CDG) → Tóquio-Haneda (chega 15/11 19:55) — Rafaelo" },
+    { voo: "AF489", data: "18/11", hora: "21:50", trecho: "🟢🔵 Fortaleza (FOR) → Paris (CDG) — ida Thamandro + Felipana" },
+    { voo: "AF282", data: "20/11", hora: "09:50", trecho: "🟢🔵 Paris (CDG) → Tóquio-Haneda (chega 21/11 ~06:50)" },
     { voo: "UO623", data: "22/11", hora: "23:55", trecho: "🟢 Tóquio-Haneda → Hong Kong (chega 23/11 04:15) — Thamandro" },
     { voo: "HX128", data: "25/11", hora: "21:15", trecho: "🟢 Hong Kong → Hangzhou (chega 23:40) — Thamandro" },
     { voo: "HO1338", data: "28/11", hora: "22:10", trecho: "🔵 Osaka (KIX) → Xangai (PVG) (chega 23:40) — Felipana" },
+    { voo: "AF279", data: "03/12", hora: "23:30", trecho: "🔴 Tóquio-Haneda → Paris (CDG) — volta Rafaelo" },
+    { voo: "AF488", data: "04/12", hora: "14:30", trecho: "🔴 Paris (CDG) → Fortaleza (FOR) (chega 19:40) — volta Rafaelo" },
     { voo: "CA183", data: "05/12", hora: "17:10", trecho: "🟢🔵 Pequim (PEK) → Tóquio-Haneda (chega 21:30) — Thamandro + Felipana" },
-    { voo: "NH963", data: "12/12", hora: "17:25", trecho: "Tóquio-Haneda → Pequim (PEK) — volta" },
-    { voo: "AF381", data: "13/12", hora: "00:05", trecho: "Pequim (PEK) → Paris (CDG) — volta" },
-    { voo: "AF488", data: "13/12", hora: "14:30", trecho: "Paris (CDG) → Fortaleza (FOR) (chega 19:40) — volta" },
+    { voo: "NH963", data: "12/12", hora: "17:25", trecho: "🟢🔵 Tóquio-Haneda → Pequim (PEK) — volta" },
+    { voo: "AF381", data: "13/12", hora: "00:05", trecho: "🟢🔵 Pequim (PEK) → Paris (CDG) — volta" },
+    { voo: "AF488", data: "13/12", hora: "14:30", trecho: "🟢🔵 Paris (CDG) → Fortaleza (FOR) (chega 19:40) — volta" },
   ],
   voosNota:
-    "Todos os voos aéreos ✅ comprados (número + data). Ida/volta Air France (PNRs XOOM5W · X3QBBE); 🔴 Rafaelo volta antes (02/12, Fukuoka → Tóquio → Brasil). Toque no número do voo para ver o status.",
+    "Todos os voos aéreos ✅ comprados (número + data). Tudo via Air France (Paris em stopover). 🔴 Rafaelo viaja antes (13/11–04/12) e faz só o Japão; 🟢🔵 Thamandro e Felipana seguem para a China. Toque no número do voo para ver o status.",
 
   /* ----------------------------------------------------------------
    * 6. ORÇAMENTO
@@ -253,7 +257,7 @@ const TRIP = {
       { item: "China (Thamandro + Felipana)", valor: "Voos + trens-bala + estadia (~8 dias): R$4.000–7.000/pessoa." },
     ],
     totais: [
-      { grupo: "Rafaelo", valor: "Japão ~2,5 semanas (sem China); volta 02/12." },
+      { grupo: "Rafaelo", valor: "Japão ~3 semanas (sem China); volta 03/12 (via Paris)." },
       { grupo: "Thamandro", valor: "~R$16–20 mil/pessoa (China inclusa)." },
       { grupo: "Felipana", valor: "~R$16–20 mil/pessoa (USJ + China + Disney)." },
     ],
@@ -264,15 +268,18 @@ const TRIP = {
    * ---------------------------------------------------------------- */
   ondeFicar: [
     { cidade: "Kawaguchiko · Fuji (21)", bairro: "✅ Airbnb em Saiko (comporta os 6) — o encontro dos 6." },
-    { cidade: "Osaka (22–24)", bairro: "✅ 🔵 Henn na Hotel Express Osaka Namba Nipponbashi." },
-    { cidade: "Kyoto (25–27)", bairro: "✅ 🔵 Tune Stay Kyoto (Quarto Duplo)." },
+    { cidade: "Osaka (22–24)", bairro: "✅ 🔵🔴 Henn na Hotel Express Osaka Namba Nipponbashi (Felipana + Rafaelo)." },
+    { cidade: "Kyoto (25–27)", bairro: "✅ 🔵🔴 Tune Stay Kyoto (Felipana + Rafaelo)." },
     { cidade: "Hong Kong (23–24)", bairro: "✅ 🟢 Empire Hotel Kowloon — Tsim Sha Tsui." },
     { cidade: "Hangzhou (25–26)", bairro: "✅ 🟢 Nostalgia S Hotel (West Lake Intime)." },
     { cidade: "Suzhou (27)", bairro: "✅ 🟢 Anyi Hotel (Pingjiang Rd)." },
     { cidade: "Xangai (28–01)", bairro: "✅ 🟢🔵 Atour Hotel Shanghai Bund Land Plaza (2 quartos)." },
     { cidade: "Pequim (02–04)", bairro: "✅ 🟢🔵 Sunworld Hotel Wangfujing (2 quartos)." },
     { cidade: "Tóquio (05–11)", bairro: "✅ 🟢🔵 COMMA HOUSE Nishi-ikebukuro (apto 2 quartos)." },
-    { cidade: "Sul (29–01)", bairro: "🔴 Rafaelo: Hiroshima e Fukuoka (perto das estações)." },
+    { cidade: "🔴 Tóquio (15–19)", bairro: "✅ 🔴 Hotel Trend Asakusa Tawaramachi — pré-viagem do Rafaelo." },
+    { cidade: "🔴 Nikko (19–21)", bairro: "✅ 🔴 The Nest Nikko (Airbnb)." },
+    { cidade: "🔴 Hiroshima (28–30)", bairro: "✅ 🔴 Hotel Mystays Hiroshima Peace Park (Miyajima é bate-volta)." },
+    { cidade: "🔴 Tóquio (30/11–03/12)", bairro: "🔴 Rafaelo: reta final em Tóquio — hospedagem a reservar." },
   ],
 
   /* ----------------------------------------------------------------

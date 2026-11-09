@@ -3,7 +3,29 @@
 > **Modo atual:** ✅ **APLICADO no site em 18/09/2026.** Este caderno segue como
 > registro/rascunho. Novas mudanças: anotar aqui e avisar quando aplicar de novo.
 
-Última atualização: 2026-09-23
+Última atualização: 2026-11-09
+
+---
+
+## 🆕 NOVIDADES (09/11) — ✅ APLICADO: roteiro do 🔴 Rafaelo (planilha do Felipe)
+
+Recebi a **planilha do Rafaelo** (Google Sheets, "Visão Geral Roteiro Japão") — é o
+roteiro oficial do casal Rafael + Consuelo. Aplicado no site. **Supera todos os
+palpites antigos abaixo** (Fukuoka, "Kyoto-first", volta 02/12, Nagano — nada disso).
+
+**🔴 Rafaelo — plano real (só Japão, via Paris):**
+- **Voos:** ida **AF489 13/11** (FOR→CDG) + **AF274 14/11** (CDG→Haneda, chega 15/11 19:55);
+  volta **AF279 03/12** (Haneda→CDG) + **AF488 04/12** (CDG→FOR). Tudo Air France, pago.
+- **15–18/11 Tóquio** (Hotel Trend Asakusa): Asakusa/Sensō-ji, Tsukiji, teamLab, Ueno,
+  Akihabara, Meiji, Harajuku, Shibuya.
+- **19–20/11 Nikko** (The Nest Nikko): Tōshō-gū, Rinnō-ji, Senjōgahara, Kegon.
+- **21–22/11 Fuji** — encontro dos 6; 22 à tarde segue **junto da Felipana p/ Osaka**.
+- **23–27/11 Kansai JUNTO da Felipana** (mesmos hotéis: Henn na Osaka, Tune Stay Kyoto):
+  23 Osaka (Castelo/Kaiyukan), **24 USJ**, 25 Nara→Kyoto, 26–27 Kyoto.
+- **28/11 Kyoto → Hiroshima** (Hotel Mystays Peace Park) — aqui a Felipana vai p/ China.
+- **29/11 Miyajima** (bate-volta) · **30/11 Hiroshima → Tóquio** (shinkansen).
+- **01/12 Tóquio** · **02/12 Kamakura/Enoshima** · **03/12 Ginza/Palácio → embarque**.
+- ⚠️ **Falta:** hospedagem de Tóquio **30/11–03/12** (não reservada na planilha).
 
 ---
 
@@ -45,7 +67,7 @@ reaplicarmos (e ajustar Osaka livre p/ 23).
    manter **"Felipana"**. Nas notas mantive **Felipana** — confirmar qual vai pro site.
 2. **Kansai do Felipana — RESOLVIDO:** Felipana confirmou **Osaka primeiro**
    (22–24 Osaka, USJ dia 23; 25 Nara→Kyoto; 26–27 Kyoto; 28 voo Kyoto→Xangai).
-   ❓ Rafaelo segue a mesma ordem (Osaka-first) ou fica Kyoto-first? A confirmar.
+   ✅ RESOLVIDO (09/11): Rafaelo é **Osaka-first, junto da Felipana** (ver bloco 09/11 no topo).
 3. **Tune Stay Kyoto (25→28/11) — RESOLVIDO:** com a Felipana Osaka-first, as
    noites de Kyoto são **25, 26, 27** = batem certinho com o hotel. ✅
 
@@ -125,7 +147,7 @@ na estação → Kawaguchiko. Trem: em aberto.
 - 🔵 **Osaka → Shanghai (28/11 22:10):** ✅ HO1338 Juneyao Airlines (ref QFNY57).
 - 🟢🔵 **China → Japão (Pequim → Tóquio, 05/12):** ✅ Pago (Mariana) — Air China CA183.
 - 🟢🔵 **Japão → Brasil (volta):** ✅ Pago — Air France (nº/data a anotar).
-- 🔴 **Rafaelo volta:** Fukuoka → Tóquio → Brasil, 02/12 (por conta do Rafaelo).
+- 🔴 **Rafaelo volta:** ✅ ATUALIZADO (09/11) → **AF279 03/12** Haneda → Paris → Fortaleza (AF488 04/12). Sem Fukuoka.
 
 ### 🚅 Trens de alta velocidade / interurbanos — PENDENTES (janela de reserva!)
 - **Haneda/Tóquio ⇄ Fujikawaguchiko** (ida e volta): Fuji Excursion (trem) ou ônibus Highway. **Reserva abre 30 dias antes.**
@@ -149,7 +171,7 @@ Pequim → Hotel Manxin (Tiananmen) · Hotel Pequim → aeroporto (voo p/ Japão
 - 🔵 Felipana: Fuji(21) → Osaka(22–24) → Kyoto(25–27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
 - 🟢 Thamandro: Fuji(21) → [voo noturno 22] → HK(23–24) → Hangzhou(25–26) → Suzhou(27) → Xangai(28–01) → Pequim(02–04) → Tóquio(05–11). ✅
 - ✅ **Fuji (21):** Airbnb comporta **6 pessoas** (confirmado). Encontro dos 6 ok.
-- 🔴 **Rafaelo:** NÃO tenho as reservas dele (reserva por conta) — não dá pra auditar as noites do Rafaelo.
+- 🔴 **Rafaelo:** ✅ ATUALIZADO (09/11) — recebi a planilha dele. Noites reservadas: Tóquio 15–19, Nikko 19–21, Fuji 21–22, Osaka 22–25, Kyoto 25–28, Hiroshima 28–30. **Falta** a hospedagem de Tóquio 30/11–03/12.
 
 ### 2) Voos — comprados COM número/data? (não só print de pesquisa)
 - ✅ **IDA** AF489 (18/11) + AF282 (20/11) — Air France/Flying Blue, refs XOOM5W (Thamandro) e X3QBBE (Felipana). Comprados.
