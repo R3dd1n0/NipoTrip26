@@ -268,6 +268,7 @@ const TRIP = {
    * 7. ONDE FICAR (reservas confirmadas)
    * ---------------------------------------------------------------- */
   ondeFicar: [
+    { cidade: "Paris · escala (19)", bairro: "✅ 🟢🔵 B&B Hotel Paris Roissy CDG Aéroport — noite da escala antes do Japão (Thamandro + Felipana)." },
     { cidade: "Kawaguchiko · Fuji (21)", bairro: "✅ Airbnb em Saiko (comporta os 6) — o encontro dos 6." },
     { cidade: "Osaka (22–24)", bairro: "✅ 🔵🔴 Henn na Hotel Express Osaka Namba Nipponbashi (Felipana + Rafaelo)." },
     { cidade: "Kyoto (25–27)", bairro: "✅ 🔵🔴 Tune Stay Kyoto (Felipana + Rafaelo)." },
@@ -293,6 +294,8 @@ const TRIP = {
     { titulo: "China — vistos e entrada", texto: "Hong Kong tem imigração própria. Para o continente (Hangzhou/Xangai/Pequim), confirmar regras de isenção/trânsito perto da data e levar comprovantes." },
     { titulo: "Clima", texto: "Outono no pico em Kyoto (fim de nov); Tóquio lindo em dez (manhãs ~5–8°C). Pequim no inverno é fria e seca." },
     { titulo: "Aniversário da Thamy (01/12)", texto: "Comemoração na Disneyland de Xangai, com Thamandro + Felipana." },
+    { titulo: "Internet e apps (China)", texto: "eSIM de roaming faz Google/WhatsApp funcionarem na China sem VPN. Apps essenciais: Alipay e WeChat (pagamento), DiDi (táxi), Amap (mapas), Trip.com — baixar e vincular cartão ANTES de viajar. Proton VPN grátis como backup para o wifi do hotel. Na China, não ligar VPN por cima dos dados do eSIM." },
+    { titulo: "Emergência e consulados", texto: "Japão: polícia 110 · ambulância/bombeiros 119. China: polícia 110 · ambulância 120. Europa: 112. Consulado do Brasil em Tóquio (24h): +81 90-6949-5328. Embaixada em Pequim: +86 138 0121 0722. Consulado em Xangai: +86 131 6623 1312. Itamaraty 24h: +55 61 98260-0610." },
   ],
 
   /* ----------------------------------------------------------------
